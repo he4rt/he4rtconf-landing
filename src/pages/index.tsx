@@ -6,6 +6,7 @@ import GlobalStyles from 'styles/global'
 import Button from 'components/Button'
 import Title from 'components/Title'
 import Text from 'components/Text'
+import Header from 'components/Header'
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <GlobalStyles />
+      <Header />
       <Title color="dark" fontWeight={700} level={2} size="small">
         Sobre o evento
       </Title>
