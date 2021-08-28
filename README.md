@@ -8,7 +8,7 @@ Mostrar quais assuntos serão abordados durante o evento
 Mostrar para o público que esse evento é para todas as pessoas sem restrição de idade e conhecimento. Qualquer um pode participar e aprender.
 
 - 4. Quem serão os palestrantes
-Aqui mostrar uma foto, breve descrição de quem é a pessoa e as redes sociais mais importante. No máximo 3 redes sociais. 
+Aqui mostrar uma foto, breve descrição de quem é a pessoa e as redes sociais mais importante. No máximo 3 redes sociais.
 
 - 5. O que é a He4rt Developers?
 Um breve resumo sobre a He4rt, visão, tamanho, projetos e etc. A ideia é que as pessoas conheçam a mente por trás do evento.
