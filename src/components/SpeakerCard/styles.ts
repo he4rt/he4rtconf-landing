@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  background: #0A0A0A;
+  background: #0a0a0a;
   padding: 5rem 6rem;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
     bottom: -2px;
     width: 100%;
     height: 2px;
-    background: linear-gradient(356.91deg, #782CF0 -7.12%, #996CDF 133.4%);
+    background: linear-gradient(356.91deg, #782cf0 -7.12%, #996cdf 133.4%);
   }
 `
 
@@ -31,10 +31,10 @@ export const Avatar = styled.div`
     object-fit: cover;
     border-radius: 999px;
   }
-`;
+`
 
 export const Name = styled.h3`
-  color: #F7F7F7;
+  color: #f7f7f7;
   margin-top: 16px;
   margin-bottom: 6px;
   font-style: normal;
@@ -42,17 +42,17 @@ export const Name = styled.h3`
   font-size: 24px;
   text-align: center;
   letter-spacing: -0.02em;
-`;
+`
 
 export const Stack = styled.span`
-  color: #6D6B70;
+  color: #6d6b70;
   font-size: 18px;
   text-align: center;
   letter-spacing: -0.02em;
-`;
+`
 
 export const Description = styled.p`
-  color: #F7F7F7;
+  color: #f7f7f7;
   text-align: center;
   font-size: 1.8rem;
   margin-top: 1.6rem;
