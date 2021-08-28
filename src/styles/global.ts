@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'DM Sans', sans-serif;
     &::before,
     &::after {
       box-sizing: inherit;
@@ -15,10 +16,6 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 62.5%;
-  }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
   }
 `
 
