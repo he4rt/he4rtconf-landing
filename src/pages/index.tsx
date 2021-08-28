@@ -4,6 +4,7 @@ import Head from 'next/head'
 import GlobalStyles from 'styles/global'
 
 import Button from 'components/Button'
+import Title from 'components/Title'
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +22,9 @@ const Home: NextPage = () => {
         />
       </Head>
       <GlobalStyles />
-      <h1>He4rt Conf</h1>
+      <Title fontWeight={700} level={2} size="small">
+        Sobre o evento
+      </Title>
       <Button>Garantir vaga</Button>
     </>
   )
