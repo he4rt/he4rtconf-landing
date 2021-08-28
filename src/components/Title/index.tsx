@@ -2,13 +2,20 @@ import { WrapperTitle } from './styles'
 
 export type TitleProps = {
   level: 1 | 2 | 3 | 4 | 5 | 6
-  fontWeight: 600 | 700
-  size: 'small' | 'huge'
+  fontWeight: 400 | 600 | 700
+  size: 'small' | 'medium' | 'huge'
+  color: 'light' | 'dark'
   children: string
 }
 
-const Title = ({ children, level, fontWeight, size }: TitleProps) => (
-  <WrapperTitle level={level} fontWeight={fontWeight} size={size}>
+const Title = ({
+  children,
+  level,
+  fontWeight,
+  size,
+  color = 'light'
+}: TitleProps) => (
+  <WrapperTitle level={level} fontWeight={fontWeight} size={size} color={color}>
     {children}
   </WrapperTitle>
 )
