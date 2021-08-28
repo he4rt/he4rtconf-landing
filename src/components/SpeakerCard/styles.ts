@@ -1,6 +1,14 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.secondBlack};
+
+    &:after {
+      background: ${theme.colors.purpleLightGradient};
+    }
+  `}
+
   background: #0a0a0a;
   padding: 5rem 6rem;
   display: flex;
@@ -8,6 +16,7 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
+
   &:after {
     position: absolute;
     display: block;
@@ -15,7 +24,6 @@ export const Wrapper = styled.div`
     bottom: -2px;
     width: 100%;
     height: 2px;
-    background: linear-gradient(356.91deg, #782cf0 -7.12%, #996cdf 133.4%);
   }
 `
 
@@ -26,6 +34,7 @@ export const Avatar = styled.div`
   position: relative;
   background: transparent;
   border-radius: 999px;
+
   img {
     width: 100%;
     object-fit: cover;
@@ -34,27 +43,36 @@ export const Avatar = styled.div`
 `
 
 export const Name = styled.h3`
-  color: #f7f7f7;
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    font-style: normal;
+    font-weight: ${theme.font.weight.light};
+    font-size: ${theme.font.sizes.medium};
+  `}
+
   margin-top: 16px;
   margin-bottom: 6px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
   text-align: center;
   letter-spacing: -0.02em;
 `
 
 export const Stack = styled.span`
-  color: #6d6b70;
-  font-size: 18px;
+  ${({ theme }) => css`
+    color: ${theme.colors.gray};
+    font-size: ${theme.font.sizes.small};
+  `}
+
   text-align: center;
   letter-spacing: -0.02em;
 `
 
 export const Description = styled.p`
-  color: #f7f7f7;
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    font-size: ${theme.font.sizes.small};
+  `}
+
   text-align: center;
-  font-size: 1.8rem;
   margin-top: 1.6rem;
   letter-spacing: -0.02em;
 `

@@ -1,8 +1,16 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const WrapperButton = styled.button`
-  background: linear-gradient(356.91deg, #782cf0 -7.12%, #996cdf 133.4%);
-  color: #f7f7f7;
+  ${({ theme }) => css`
+    background: ${theme.colors.purpleLightGradient};
+    color: ${theme.colors.white};
+    font-weight: ${theme.font.weight.normal};
+    font-size: ${theme.font.sizes.small};
+
+    &:hover {
+      background: ${theme.colors.purpleDarkGradient};
+    }
+  `}
 
   padding: 1.6rem 3.2rem;
   border-radius: 6px;
@@ -13,11 +21,4 @@ export const WrapperButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
-
-  font-weight: 500;
-  font-size: 1.8rem;
-
-  &:hover {
-    background: linear-gradient(356.91deg, #3c157b -7.12%, #6e4ea0 133.4%);
-  }
 `
