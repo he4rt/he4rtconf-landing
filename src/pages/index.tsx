@@ -5,6 +5,7 @@ import GlobalStyles from 'styles/global'
 
 import Button from 'components/Button'
 import Title from 'components/Title'
+import Text from 'components/Text'
 
 const Home: NextPage = () => {
   return (
@@ -22,9 +23,14 @@ const Home: NextPage = () => {
         />
       </Head>
       <GlobalStyles />
-      <Title fontWeight={700} level={2} size="small">
+      <Title color="dark" fontWeight={700} level={2} size="small">
         Sobre o evento
       </Title>
+      <Text>
+        O evento será 100% gratuito e disponibilizara de forma pública todos os
+        materiais produzidos para a conf através do Github e redes sociais da
+        He4rt Developers.
+      </Text>
       <Button>Garantir vaga</Button>
     </>
   )
