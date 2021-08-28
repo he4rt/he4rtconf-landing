@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
+import GlobalStyles from 'styles/global'
+
 const Home: NextPage = () => {
   return (
     <>
@@ -12,7 +14,8 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Eai</h1>
+      <GlobalStyles />
+      <h1>He4rt Conf</h1>
     </>
   )
 }
