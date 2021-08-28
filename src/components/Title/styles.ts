@@ -21,7 +21,6 @@ export const WrapperTitle = styled.h1.attrs<TitleProps>(({ level }) => ({
 }))<TitleProps>`
   ${({ theme, fontWeight, size, color }) => css`
     font-weight: ${fontWeight};
-    /* TODO mudar a verificação quando tiver o theme para passar somente as cores */
     color: ${theme.colors[color]};
     letter-spacing: -0.02em;
 
