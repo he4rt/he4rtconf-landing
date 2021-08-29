@@ -9,6 +9,7 @@ import Button from 'components/Button'
 import Title from 'components/Title'
 import Text from 'components/Text'
 import Header from 'components/Header'
+import NoticeCard from 'components/NoticeCard'
 
 const Home: NextPage = () => {
   return (
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
         He4rt Developers.
       </Text>
       <Button>Garantir vaga</Button>
+      <NoticeCard />
     </ThemeProvider>
   )
 }
