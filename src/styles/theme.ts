@@ -26,6 +26,26 @@ const theme = {
       'linear-gradient(356.91deg, #782CF0 -7.12%, #996CDF 133.4%)',
     purpleDarkGradient:
       'linear-gradient(356.91deg, #3C157B -7.12%, #6E4EA0 133.4%)'
+  },
+  container: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px'
+  },
+  breakpoints: {
+    lessThan: {
+      sm: '@media (max-width: 640px)',
+      md: '@media (max-width: 768px)',
+      lg: '@media (max-width: 1024px)',
+      xl: '@media (max-width: 1280px)'
+    },
+    greaterThan: {
+      sm: '@media (min-width: 640px)',
+      md: '@media (min-width: 768px)',
+      lg: '@media (min-width: 1024px)',
+      xl: '@media (min-width: 1280px)'
+    }
   }
 }
 
