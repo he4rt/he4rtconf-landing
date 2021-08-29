@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from 'styles/global'
+import theme from 'styles/theme'
 
 import Button from 'components/Button'
 import Title from 'components/Title'
@@ -10,7 +12,7 @@ import Header from 'components/Header'
 
 const Home: NextPage = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
         <title>He4rt Conference | 2021</title>
         <meta
@@ -25,7 +27,7 @@ const Home: NextPage = () => {
       </Head>
       <GlobalStyles />
       <Header />
-      <Title color="dark" fontWeight={700} level={2} size="small">
+      <Title color="white" fontWeight={700} level={2} size="small">
         Sobre o evento
       </Title>
       <Text>
@@ -34,7 +36,7 @@ const Home: NextPage = () => {
         He4rt Developers.
       </Text>
       <Button>Garantir vaga</Button>
-    </>
+    </ThemeProvider>
   )
 }
 

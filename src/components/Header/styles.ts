@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const WrapperHeader = styled.header`
   width: 100%;
@@ -15,18 +15,20 @@ export const WrapperLinks = styled.div`
 `
 
 export const Link = styled.a`
-  font-family: 'DM Sans';
-  font-weight: 400;
-  font-size: 1.8rem;
+  ${({ theme }) => css`
+    font-weight: ${theme.font.weight.light};
+    font-size: ${theme.font.sizes.small};
+    color: ${theme.colors.white};
+
+    &:hover {
+      color: ${theme.colors.purple};
+    }
+  `}
+
   line-height: 2.3rem;
   letter-spacing: -0.02em;
-  color: #f7f7f7;
   cursor: pointer;
   margin-right: 3.2rem;
-
-  &:hover {
-    color: #782bf1;
-  }
 
   &:last-child {
     margin-right: 0;

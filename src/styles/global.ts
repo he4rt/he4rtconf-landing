@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -7,7 +7,10 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'DM Sans', sans-serif;
+    ${({ theme }) => css`
+      font-family: ${theme.font.family};
+    `}
+
     &::before,
     &::after {
       box-sizing: inherit;
@@ -16,6 +19,12 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 62.5%;
+  }
+
+  body {
+    ${({ theme }) => css`
+      background-color: ${theme.colors.background};
+    `}
   }
 `
 
