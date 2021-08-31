@@ -1,8 +1,14 @@
 import FaqItem from 'components/FaqItem'
+import Title from 'components/Title'
 
-const FaqList = () => {
+import { Wrapper } from './styles'
+
+const FaqSection = () => {
   return (
-    <>
+    <Wrapper>
+      <Title color="white" fontWeight={700} level={2} size="medium">
+        FAQ
+      </Title>
       <FaqItem
         question="O evento é gratuito?"
         answer="Sim, é gratuito e não será cobrado e nem vendido nada depois."
@@ -20,8 +26,8 @@ const FaqList = () => {
         question="O que eu irei aprender?"
         answer="Sim, é gratuito e não será cobrado e nem vendido nada depois."
       />
-    </>
+    </Wrapper>
   )
 }
 
-export default FaqList
+export default FaqSection
