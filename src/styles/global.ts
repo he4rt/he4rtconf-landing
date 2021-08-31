@@ -25,6 +25,7 @@ const GlobalStyles = createGlobalStyle`
     ${({ theme }) => css`
       background-color: ${theme.colors.background};
     `}
+    overflow-x: hidden;
   }
 `
 
