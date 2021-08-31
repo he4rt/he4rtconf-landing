@@ -19,6 +19,7 @@ const theme = {
     primary: '#0B0B0B',
     black: '#0D0D0D',
     secondBlack: '#0A0A0A',
+    border: '#181818',
     gray: '#6d6b70',
     purple: '#782BF1',
     white: '#F7F7F7',
@@ -32,20 +33,20 @@ const theme = {
     sm: '640px',
     md: '768px',
     lg: '1024px',
-    xl: '1280px'
+    xl: '1120px'
   },
   breakpoints: {
     lessThan: {
       sm: '@media (max-width: 640px)',
       md: '@media (max-width: 768px)',
       lg: '@media (max-width: 1024px)',
-      xl: '@media (max-width: 1280px)'
+      xl: '@media (max-width: 1120px)'
     },
     greaterThan: {
       sm: '@media (min-width: 640px)',
       md: '@media (min-width: 768px)',
       lg: '@media (min-width: 1024px)',
-      xl: '@media (min-width: 1280px)'
+      xl: '@media (min-width: 1120px)'
     }
   }
 }
