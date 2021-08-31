@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   margin: 0 auto;
 
