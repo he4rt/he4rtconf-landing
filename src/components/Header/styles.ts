@@ -1,12 +1,13 @@
+import Container from 'components/Container'
 import styled, { css } from 'styled-components'
 
-export const WrapperHeader = styled.header`
+export const WrapperHeader = styled(Container)`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
-  padding: 5rem 15rem;
+  padding: 5rem 0;
 `
 
 export const WrapperLinks = styled.nav`

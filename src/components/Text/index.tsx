@@ -1,7 +1,8 @@
+import { ReactNode } from 'react'
 import { WrapperText } from './styles'
 
 type TextProps = {
-  children: string
+  children: ReactNode
 }
 
 const Text = ({ children, ...props }: TextProps) => (
