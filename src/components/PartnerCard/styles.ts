@@ -19,8 +19,8 @@ export const Wrapper = styled.div`
 
 export const Logo = styled.div`
   width: 100%;
-  height: 12.4rem;
-  width: 12.4rem;
+  height: 9.6rem;
+  width: 9.6rem;
   position: relative;
   background: transparent;
   border-radius: 999px;
@@ -30,6 +30,5 @@ export const Logo = styled.div`
   img {
     width: 100%;
     object-fit: cover;
-    border-radius: 999px;
   }
 `
