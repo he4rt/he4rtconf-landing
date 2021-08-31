@@ -6,6 +6,7 @@ export type TitleProps = {
   size: 'small' | 'medium' | 'huge'
   color: 'white' | 'gray'
   children: string
+  center?: boolean
 }
 
 const Title = ({
@@ -13,9 +14,18 @@ const Title = ({
   level,
   fontWeight,
   size,
-  color = 'white'
+  color = 'white',
+  center,
+  ...props
 }: TitleProps) => (
-  <WrapperTitle level={level} fontWeight={fontWeight} size={size} color={color}>
+  <WrapperTitle
+    center={center}
+    level={level}
+    fontWeight={fontWeight}
+    size={size}
+    color={color}
+    {...props}
+  >
     {children}
   </WrapperTitle>
 )

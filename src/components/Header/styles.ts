@@ -9,7 +9,7 @@ export const WrapperHeader = styled.header`
   padding: 5rem 15rem;
 `
 
-export const WrapperLinks = styled.div`
+export const WrapperLinks = styled.nav`
   display: flex;
   align-items: center;
 `

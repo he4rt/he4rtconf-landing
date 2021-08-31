@@ -4,6 +4,8 @@ type TextProps = {
   children: string
 }
 
-const Text = ({ children }: TextProps) => <WrapperText>{children}</WrapperText>
+const Text = ({ children, ...props }: TextProps) => (
+  <WrapperText {...props}>{children}</WrapperText>
+)
 
 export default Text

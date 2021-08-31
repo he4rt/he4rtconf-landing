@@ -19,11 +19,12 @@ const wrapperTitleModifiers = {
 export const WrapperTitle = styled.h1.attrs<TitleProps>(({ level }) => ({
   as: `h${level}`
 }))<TitleProps>`
-  ${({ theme, fontWeight, size, color }) => css`
+  ${({ theme, fontWeight, size, color, center }) => css`
     font-weight: ${fontWeight};
     color: ${theme.colors[color]};
     letter-spacing: -0.02em;
 
+    ${center && 'text-align: center;'}
     ${!!size && wrapperTitleModifiers[size](theme)}
   `}
 `
