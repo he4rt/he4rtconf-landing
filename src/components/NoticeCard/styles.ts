@@ -5,6 +5,9 @@ export const WrapperNoticeCard = styled.div`
     background-color: ${theme.colors.primary};
     border-radius: 6px;
     padding: 8.4rem 9.6rem;
+    margin: 0 6.4rem;
+    position: relative;
+    bottom: -10rem;
   `}
 
   h2 {

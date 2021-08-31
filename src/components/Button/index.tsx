@@ -4,8 +4,8 @@ type ButtonProps = {
   children: string
 }
 
-const Button = ({ children }: ButtonProps) => (
-  <WrapperButton>{children}</WrapperButton>
+const Button = ({ children, ...props }: ButtonProps) => (
+  <WrapperButton {...props}>{children}</WrapperButton>
 )
 
 export default Button
