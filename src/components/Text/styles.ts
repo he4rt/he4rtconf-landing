@@ -8,5 +8,9 @@ export const WrapperText = styled.p`
     font-weight: ${theme.font.weight.light};
     font-size: ${theme.font.sizes.small};
     color: ${theme.colors.gray};
+
+    ${theme.breakpoints.lessThan.md} {
+      font-size: ${theme.font.sizes.xsmall};
+    }
   `}
 `

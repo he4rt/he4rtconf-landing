@@ -19,7 +19,7 @@ const FaqItem = ({ question, answer, opened, ...props }: FaqProps) => {
       <Top onClick={() => setOpened(!openedState)}>
         <Question
           color="white"
-          fontWeight={400}
+          fontWeight="light"
           level={3}
           size="small"
           opened={openedState}

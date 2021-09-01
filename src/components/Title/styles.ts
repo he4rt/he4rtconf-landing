@@ -5,14 +5,26 @@ import { TitleProps } from '.'
 const wrapperTitleModifiers = {
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.medium};
+
+    ${theme.breakpoints.lessThan.md} {
+      font-size: ${theme.font.sizes.small};
+    }
   `,
 
   medium: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.large};
+
+    ${theme.breakpoints.lessThan.md} {
+      font-size: ${theme.font.sizes.medium};
+    }
   `,
 
   huge: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.huge};
+
+    ${theme.breakpoints.lessThan.md} {
+      font-size: ${theme.font.sizes.large};
+    }
   `
 }
 
@@ -20,7 +32,7 @@ export const WrapperTitle = styled.h1.attrs<TitleProps>(({ level }) => ({
   as: `h${level}`
 }))<TitleProps>`
   ${({ theme, fontWeight, size, color, center }) => css`
-    font-weight: ${fontWeight};
+    font-weight: ${theme.font.weight[fontWeight]};
     color: ${theme.colors[color]};
     letter-spacing: -0.02em;
 

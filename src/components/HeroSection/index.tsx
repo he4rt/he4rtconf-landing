@@ -5,10 +5,10 @@ import { Wrapper, Info, HeartBox } from './styles'
 const HeroSection = ({ ...props }) => (
   <Wrapper {...props}>
     <Info>
-      <Title color="white" fontWeight={600} level={1} size="huge">
+      <Title color="white" fontWeight="semibold" level={1} size="huge">
         Participe do maior evento de tecnologia
       </Title>
-      <Title color="gray" fontWeight={400} level={3} size="small">
+      <Title color="gray" fontWeight="light" level={3} size="small">
         Um evento pensado para iniciantes, com palestras, desafios e muito mais!
       </Title>
       <Button>Garantir vaga</Button>

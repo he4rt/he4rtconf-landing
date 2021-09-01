@@ -13,7 +13,7 @@ const partners = [
 
 const PartnersSection = ({ ...props }) => (
   <Wrapper {...props}>
-    <Title center color="white" fontWeight={700} level={2} size="medium">
+    <Title center color="white" fontWeight="bold" level={2} size="medium">
       Nossos patrocinadores
     </Title>
     <PartnersList>

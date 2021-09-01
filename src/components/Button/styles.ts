@@ -7,6 +7,10 @@ export const WrapperButton = styled.button`
     font-weight: ${theme.font.weight.normal};
     font-size: ${theme.font.sizes.small};
 
+    ${theme.breakpoints.lessThan.md} {
+      font-size: ${theme.font.sizes.xsmall};
+    }
+
     &:hover {
       background: ${theme.colors.purpleDarkGradient};
     }

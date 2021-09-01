@@ -5,10 +5,10 @@ import { Wrapper, Description, ContentsList } from './styles'
 
 const ContentsSection = ({ ...props }) => (
   <Wrapper {...props}>
-    <Title center color="white" fontWeight={700} level={2} size="medium">
+    <Title center color="white" fontWeight="bold" level={2} size="medium">
       Diversidade de conteúdos e tecnologias
     </Title>
-    <Description center color="gray" fontWeight={400} level={3} size="small">
+    <Description center color="gray" fontWeight="light" level={3} size="small">
       Conteúdos e palestras sobre as mais modernas tecnologias, desde o
       back-end, até o front-end.
     </Description>

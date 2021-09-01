@@ -40,7 +40,7 @@ const speakers = [
 
 const SpeakersSection = ({ ...props }) => (
   <Wrapper {...props}>
-    <Title center color="white" fontWeight={700} level={2} size="medium">
+    <Title center color="white" fontWeight="bold" level={2} size="medium">
       Palestrantes do evento
     </Title>
     <SpeakersList>
