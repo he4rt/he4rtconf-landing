@@ -1,5 +1,6 @@
 import Container from 'components/Container'
-import styled from 'styled-components'
+
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled(Container)`
   display: flex;
@@ -23,4 +24,10 @@ export const Info = styled.div`
 export const HeartBox = styled.div`
   position: absolute;
   right: -30%;
+  z-index: -1;
+  ${({ theme }) => css`
+    ${theme.breakpoints.lessThan.md} {
+      opacity: 0.5;
+    }
+  `}
 `
