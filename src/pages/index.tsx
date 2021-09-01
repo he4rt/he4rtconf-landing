@@ -59,12 +59,12 @@ const Home: NextPage = () => {
         }}
       >
         <div style={{ maxWidth: '57rem' }}>
-          <Title color="white" fontWeight={600} level={1} size="huge">
+          <Title color="white" fontWeight="semibold" level={1} size="huge">
             Participe do maior evento de tecnologia
           </Title>
           <Title
             color="gray"
-            fontWeight={400}
+            fontWeight="light"
             level={3}
             size="small"
             style={{ marginTop: '1.6rem' }}
@@ -75,7 +75,7 @@ const Home: NextPage = () => {
           <Button style={{ marginTop: '3.2rem' }}>Garantir vaga</Button>
         </div>
         <div style={{ position: 'absolute', right: '-10rem', bottom: '13rem' }}>
-          <svg
+          {/* <svg
             width="665"
             height="611"
             viewBox="0 0 665 611"
@@ -148,7 +148,7 @@ const Home: NextPage = () => {
                 <stop offset="1" stopColor="#0F0818" />
               </linearGradient>
             </defs>
-          </svg>
+          </svg> */}
         </div>
       </Container>
       <Container
@@ -173,7 +173,7 @@ const Home: NextPage = () => {
         <div style={{ maxWidth: '64rem' }}>
           <Title
             color="white"
-            fontWeight={700}
+            fontWeight="bold"
             level={2}
             size="medium"
             style={{ marginBottom: '3.2rem' }}
@@ -201,7 +201,7 @@ const Home: NextPage = () => {
         <Title
           center
           color="white"
-          fontWeight={700}
+          fontWeight="bold"
           level={2}
           size="medium"
           style={{ marginBottom: '6rem' }}
@@ -224,7 +224,7 @@ const Home: NextPage = () => {
         <Title
           center
           color="white"
-          fontWeight={700}
+          fontWeight="bold"
           level={2}
           size="medium"
           style={{ marginBottom: '1.6rem' }}
@@ -234,7 +234,7 @@ const Home: NextPage = () => {
         <Title
           center
           color="gray"
-          fontWeight={400}
+          fontWeight="light"
           level={3}
           size="small"
           style={{ maxWidth: '67rem', margin: '0 auto', marginBottom: '8rem' }}
@@ -259,7 +259,7 @@ const Home: NextPage = () => {
         <Title
           center
           color="white"
-          fontWeight={700}
+          fontWeight="bold"
           level={2}
           size="medium"
           style={{ marginBottom: '6rem' }}
@@ -280,7 +280,7 @@ const Home: NextPage = () => {
         </div>
       </Container>
       <Container style={{ paddingTop: '15rem', paddingBottom: '15rem' }}>
-        <Title color="white" fontWeight={700} level={2} size="medium">
+        <Title color="white" fontWeight="bold" level={2} size="medium">
           FAQ
         </Title>
         <FaqList />
