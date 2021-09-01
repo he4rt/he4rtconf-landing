@@ -1,3 +1,5 @@
+import { AiFillGithub } from 'react-icons/ai'
+
 import Button from 'components/Button'
 import Title from 'components/Title'
 import { Wrapper, Info, HeartBox } from './styles'
@@ -11,7 +13,10 @@ const HeroSection = ({ ...props }) => (
       <Title color="gray" fontWeight="light" level={3} size="small">
         Um evento pensado para iniciantes, com palestras, desafios e muito mais!
       </Title>
-      <Button>Garantir vaga</Button>
+      <Button>
+        <AiFillGithub size={24} />
+        Garantir vaga com GitHub
+      </Button>
     </Info>
     <HeartBox>
       <svg

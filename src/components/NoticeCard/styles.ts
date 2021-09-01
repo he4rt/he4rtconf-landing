@@ -28,8 +28,3 @@ export const Content = styled(Container)`
     }
   `}
 `
-
-export const Form = styled.div`
-  display: flex;
-  margin-top: 3.6rem;
-`
