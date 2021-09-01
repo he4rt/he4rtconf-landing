@@ -1,7 +1,17 @@
 import Container from 'components/Container'
+import Image from 'next/image'
+
 import styled, { css } from 'styled-components'
 
 import { MobileHeaderProps } from '.'
+
+export const Logo = styled(Image)`
+  ${({ theme }) => css`
+    ${theme.breakpoints.lessThan.md} {
+      margin-left: 3.2rem !important;
+    }
+  `}
+`
 
 export const WrapperLinks = styled.nav`
   display: flex;
@@ -10,6 +20,10 @@ export const WrapperLinks = styled.nav`
 
 export const WrapperMenu = styled.menu<Pick<MobileHeaderProps, 'isOpen'>>`
   ${({ theme, isOpen }) => css`
+    ${theme.breakpoints.greaterThan.md} {
+      display: none;
+    }
+
     background-color: ${theme.colors.background};
     position: fixed;
     top: 0;
@@ -20,16 +34,12 @@ export const WrapperMenu = styled.menu<Pick<MobileHeaderProps, 'isOpen'>>`
     z-index: 20;
     height: 100vh;
     width: 100vw;
-    border: 1px solid red;
 
     > svg {
       position: absolute;
-      top: 0;
-      right: 0;
-      margin: 1.6rem;
+      top: 3rem;
+      right: 3.2rem;
       cursor: pointer;
-      width: 3.2rem;
-      height: 3.2rem;
       color: ${theme.colors.white};
     }
   `}
@@ -41,6 +51,9 @@ export const MobileWrapper = styled.div`
       color: ${theme.colors.white};
     }
     cursor: pointer;
+    ${theme.breakpoints.lessThan.md} {
+      margin-right: 3.2rem;
+    }
   `}
 `
 
@@ -52,21 +65,21 @@ export const WrapperHeader = styled(Container)`
   background-color: transparent;
   padding: 5rem 0;
 
-  ${WrapperLinks} {
-    ${({ theme }) => css`
-      ${theme.breakpoints.lessThan.md} {
+  ${({ theme }) => css`
+    ${theme.breakpoints.lessThan.md} {
+      padding: 2rem 0;
+      margin-bottom: 4rem;
+      ${WrapperLinks} {
         display: none;
       }
-    `}
-  }
+    }
 
-  ${MobileWrapper} {
-    ${({ theme }) => css`
+    ${MobileWrapper} {
       ${theme.breakpoints.greaterThan.md} {
         display: none;
       }
-    `}
-  }
+    }
+  `}
 `
 
 export const Link = styled.a`
