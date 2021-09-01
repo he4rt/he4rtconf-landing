@@ -9,7 +9,7 @@ const Contents = ({ contents }: ContentsProps) => (
     {contents.map((content) => (
       <ContentDetail
         color="white"
-        fontWeight={400}
+        fontWeight="light"
         level={3}
         size="small"
         center

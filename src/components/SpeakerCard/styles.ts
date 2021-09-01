@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components'
 
+import Text from 'components/Text'
+import Title from 'components/Title'
+
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors.secondBlack};
@@ -42,14 +45,7 @@ export const Avatar = styled.div`
   }
 `
 
-export const Name = styled.h3`
-  ${({ theme }) => css`
-    color: ${theme.colors.white};
-    font-style: normal;
-    font-weight: ${theme.font.weight.light};
-    font-size: ${theme.font.sizes.medium};
-  `}
-
+export const Name = styled(Title)`
   margin-top: 16px;
   margin-bottom: 6px;
   text-align: center;
@@ -66,10 +62,9 @@ export const Stack = styled.span`
   letter-spacing: -0.02em;
 `
 
-export const Description = styled.p`
+export const Description = styled(Text)`
   ${({ theme }) => css`
     color: ${theme.colors.white};
-    font-size: ${theme.font.sizes.small};
   `}
 
   text-align: center;

@@ -19,11 +19,13 @@ const SpeakerCard = ({ image, name, ...props }: SpeakerProps) => (
         objectFit="cover"
       />
     </Avatar>
-    <Name>Vitor Hugo Lima</Name>
+    <Name level={3} color="white" fontWeight="light" size="small">
+      Vitor Hugo Lima
+    </Name>
     <Stack>Front-end Developer no Ifood</Stack>
     <Description>
       Front-End Developer há alguns anos, meio metido a designer e conhecido
-      como o "Chatão do ReScript" por onde passa.
+      como o &quot;Chatão do ReScript&quot; por onde passa.
     </Description>
   </Wrapper>
 )
