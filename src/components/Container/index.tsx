@@ -18,6 +18,9 @@ const Container = styled.section`
     ${theme.breakpoints.greaterThan.xl} {
       max-width: ${theme.container.xl};
     }
+    ${theme.breakpoints.lessThan.md} {
+      padding: 0 3.2rem;
+    }
   `}
 `
 

@@ -1,12 +1,11 @@
-import { WrapperNoticeCard, Form } from './styles'
+import { WrapperNoticeCard, Content, Form } from './styles'
 
 import Title from 'components/Title'
 import Button from 'components/Button'
-import Container from 'components/Container'
 
 const NoticeCard = () => (
   <WrapperNoticeCard>
-    <Container as="div">
+    <Content as="div">
       <Title level={2} color="white" size="medium" fontWeight="bold">
         Fique por dentro de tudo
       </Title>
@@ -19,7 +18,7 @@ const NoticeCard = () => (
       <Form>
         <Button>Entrar</Button>
       </Form>
-    </Container>
+    </Content>
   </WrapperNoticeCard>
 )
 
