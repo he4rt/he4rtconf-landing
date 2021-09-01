@@ -1,5 +1,5 @@
 import Container from 'components/Container'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled(Container)`
   padding-top: 15rem;
@@ -13,7 +13,12 @@ export const ImageBox = styled.div`
   position: absolute;
   height: 48rem;
   width: 72rem;
-  left: -18rem;
+  left: -30%;
+  ${({ theme }) => css`
+    ${theme.breakpoints.lessThan.md} {
+      display: none;
+    }
+  `}
 `
 
 export const Info = styled.div`
