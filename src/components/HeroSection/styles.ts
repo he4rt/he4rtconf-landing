@@ -22,6 +22,5 @@ export const Info = styled.div`
 
 export const HeartBox = styled.div`
   position: absolute;
-  right: -10rem;
-  bottom: 13rem;
+  right: -30%;
 `
