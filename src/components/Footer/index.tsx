@@ -11,7 +11,9 @@ const Footer = () => (
       <Content as="div">
         <Image width={260} height={56} src={logo} alt="Logo he4rt" />
         <Contributors>
-          Design por <a href="https://twitter.com">Rebecca Gonzalez</a>
+          Desenvolvido por <a href="https://github.com/kjkGustavo">Gustavo</a> e{' '}
+          <a href="https://github.com/m7he4rt">m7he4rt</a> com design de{' '}
+          <a href="https://dribbble.com/rebeccagonzalez">Rebecca Gonzalez</a>
         </Contributors>
       </Content>
     </FooterContent>

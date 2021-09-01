@@ -17,14 +17,26 @@ export const Content = styled(Container)`
   align-items: center;
   padding-bottom: 6.4rem;
   padding-top: 15.7rem;
+  ${({ theme }) => css`
+    ${theme.breakpoints.lessThan.md} {
+      flex-direction: column;
+    }
+  `}
 `
 
 export const Contributors = styled(Text)`
-  color: ${({ theme }) => theme.colors.white};
+  ${({ theme }) => css`
+    ${theme.breakpoints.lessThan.md} {
+      margin-top: 2rem;
+    }
 
-  a {
-    color: ${({ theme }) => theme.colors.background};
-    font-weight: 700;
-    text-decoration: none;
-  }
+    color: ${theme.colors.white};
+    text-align: center;
+
+    a {
+      color: ${theme.colors.border};
+      font-weight: 700;
+      text-decoration: none;
+    }
+  `}
 `
