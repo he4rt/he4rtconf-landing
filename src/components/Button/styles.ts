@@ -16,6 +16,10 @@ export const WrapperButton = styled.button`
     }
   `}
 
+  > svg {
+    margin-right: 1.6rem;
+  }
+
   padding: 1.6rem 3.2rem;
   border-radius: 6px;
   display: flex;
