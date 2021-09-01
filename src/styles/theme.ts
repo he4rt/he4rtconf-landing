@@ -8,6 +8,7 @@ const theme = {
       bold: 700
     },
     sizes: {
+      xsmall: '1.6rem',
       small: '1.8rem',
       medium: '2.4rem',
       large: '3.6rem',
