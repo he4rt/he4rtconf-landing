@@ -6,7 +6,7 @@ import { Wrapper } from './styles'
 const FaqSection = () => {
   return (
     <Wrapper>
-      <Title color="white" fontWeight={700} level={2} size="medium">
+      <Title color="white" fontWeight="bold" level={2} size="medium">
         FAQ
       </Title>
       <FaqItem

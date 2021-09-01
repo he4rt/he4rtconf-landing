@@ -11,7 +11,7 @@ const AboutSection = ({ ...props }) => (
       <Image src={about} layout="fill" objectFit="cover" />
     </ImageBox>
     <Info>
-      <Title color="white" fontWeight={700} level={2} size="medium">
+      <Title color="white" fontWeight="bold" level={2} size="medium">
         Sobre o evento
       </Title>
       <Text>
