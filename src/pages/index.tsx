@@ -1,13 +1,7 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import { ThemeProvider } from 'styled-components'
-
-import GlobalStyles from 'styles/global'
-import theme from 'styles/theme'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
-
 import HeroSection from 'components/HeroSection'
 import AboutSection from 'components/AboutSection'
 import SpeakersSection from 'components/SpeakersSection'
@@ -17,17 +11,20 @@ import FaqSection from 'components/FaqSection'
 
 const Home: NextPage = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
+    <>
       <Header />
-      <HeroSection />
+      <HeroSection
+        title="Participe do maior evento de tecnologia"
+        subtitle="Um evento pensado para iniciantes, com palestras, desafios e muito mais!"
+        haveButton
+      />
       <AboutSection />
       <SpeakersSection />
       <ContentsSection />
       <PartnersSection />
       <FaqSection />
       <Footer />
-    </ThemeProvider>
+    </>
   )
 }
 
