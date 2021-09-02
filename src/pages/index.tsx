@@ -13,7 +13,11 @@ const Home: NextPage = () => {
   return (
     <>
       <Header />
-      <HeroSection />
+      <HeroSection
+        title="Participe do maior evento de tecnologia"
+        subtitle="Um evento pensado para iniciantes, com palestras, desafios e muito mais!"
+        haveButton
+      />
       <AboutSection />
       <SpeakersSection />
       <ContentsSection />

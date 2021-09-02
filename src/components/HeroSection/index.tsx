@@ -1,22 +1,31 @@
+import { ReactNode } from 'react'
 import { AiFillGithub } from 'react-icons/ai'
 
 import Button from 'components/Button'
 import Title from 'components/Title'
 import { Wrapper, Info, HeartBox } from './styles'
 
-const HeroSection = ({ ...props }) => (
+type HeroProps = {
+  title: string | ReactNode
+  subtitle: string | ReactNode
+  haveButton?: boolean
+}
+
+const HeroSection = ({ title, subtitle, haveButton, ...props }: HeroProps) => (
   <Wrapper {...props}>
     <Info>
       <Title color="white" fontWeight="semibold" level={1} size="huge">
-        Participe do maior evento de tecnologia
+        {title}
       </Title>
       <Title color="gray" fontWeight="light" level={3} size="small">
-        Um evento pensado para iniciantes, com palestras, desafios e muito mais!
+        {subtitle}
       </Title>
-      <Button>
-        <AiFillGithub size={24} />
-        Garantir vaga com GitHub
-      </Button>
+      {haveButton ? (
+        <Button>
+          <AiFillGithub size={24} />
+          Garantir vaga com GitHub
+        </Button>
+      ) : null}
     </Info>
     <HeartBox>
       <svg

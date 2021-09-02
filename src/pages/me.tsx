@@ -1,23 +1,66 @@
 import type { NextPage } from 'next'
 import { FaTwitch, FaDiscord } from 'react-icons/fa'
 
-import Title from 'components/Title'
+import Header from 'components/Header'
+import HeroSection from 'components/HeroSection'
+import Highlight from 'components/Highlight'
+import NoticeCard from 'components/NoticeCard'
 import Button from 'components/Button'
 
 const Me: NextPage = () => {
   return (
     <>
-      <Title level={1} color="white" fontWeight="normal" size="medium">
-        Página sobre o usuário
-      </Title>
-      <Button>
-        <FaTwitch size={24} />
-        Entrar com a Twitch
-      </Button>
-      <Button>
-        <FaDiscord size={24} />
-        Entrar com o Discord
-      </Button>
+      <Header />
+      <HeroSection
+        title={
+          <>
+            Parabéns. Sua vaga está garantida.{' '}
+            <Highlight size="huge" fontWeight="semibold">
+              :)
+            </Highlight>
+          </>
+        }
+        subtitle={
+          <>
+            Continue indo além, participe da gamificação, basta apenas entrar
+            com o{' '}
+            <Highlight size="small" fontWeight="light">
+              Twitter
+            </Highlight>{' '}
+            ou{' '}
+            <Highlight size="small" fontWeight="light">
+              Discord
+            </Highlight>{' '}
+            e você já está dentro.
+          </>
+        }
+      />
+      <NoticeCard
+        title="Participe da nossa gamificação."
+        subtitle={
+          <>
+            Continue indo além, participe da gamificação, basta apenas entrar
+            com o{' '}
+            <Highlight size="small" fontWeight="light">
+              Twitter
+            </Highlight>{' '}
+            ou{' '}
+            <Highlight size="small" fontWeight="light">
+              Discord
+            </Highlight>{' '}
+            e você já está dentro.
+          </>
+        }
+      >
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Button>
+            <FaTwitch size={24} /> Entrar com Twitter
+          </Button>
+          <Button>
+            <FaDiscord size={24} /> Entrar com Discord
+          </Button>
+        </div>
+      </NoticeCard>
     </>
   )
 }
