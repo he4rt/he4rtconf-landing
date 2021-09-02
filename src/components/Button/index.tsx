@@ -1,7 +1,8 @@
+import { ReactNode } from 'react'
 import { WrapperButton } from './styles'
 
 type ButtonProps = {
-  children: string
+  children: ReactNode
 }
 
 const Button = ({ children, ...props }: ButtonProps) => (

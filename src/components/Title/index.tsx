@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { WrapperTitle } from './styles'
 
 export type TitleProps = {
@@ -5,7 +6,7 @@ export type TitleProps = {
   fontWeight: 'light' | 'normal' | 'semibold' | 'bold'
   size: 'small' | 'medium' | 'huge'
   color: 'white' | 'gray'
-  children: string
+  children: string | ReactNode
   center?: boolean
 }
 
