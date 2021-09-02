@@ -1,5 +1,4 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { GetServerSideProps, NextPage } from 'next'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from 'styles/global'
@@ -14,6 +13,7 @@ import SpeakersSection from 'components/SpeakersSection'
 import ContentsSection from 'components/ContentsSection'
 import PartnersSection from 'components/PartnersSection'
 import FaqSection from 'components/FaqSection'
+import Router from 'next/router'
 
 const Home: NextPage = () => {
   return (
@@ -29,6 +29,16 @@ const Home: NextPage = () => {
       <Footer />
     </ThemeProvider>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (data) => {
+  console.log(data)
+  return {
+    redirect: {
+      destination: '/profile',
+      permanent: false
+    }
+  }
 }
 
 export default Home
