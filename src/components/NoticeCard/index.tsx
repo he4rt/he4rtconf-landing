@@ -9,8 +9,8 @@ type NoticeProps = {
   children?: ReactNode
 }
 
-const NoticeCard = ({ title, subtitle, children }: NoticeProps) => (
-  <WrapperNoticeCard>
+const NoticeCard = ({ title, subtitle, children, ...props }: NoticeProps) => (
+  <WrapperNoticeCard {...props}>
     <Content as="div">
       <Title level={2} color="white" size="medium" fontWeight="bold">
         {title}
