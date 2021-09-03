@@ -1,10 +1,29 @@
-import { createContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import Router from 'next/router'
 import { setCookie } from 'nookies'
-export const AuthContext = createContext({})
 
-export const AuthProvider = ({ children }: any) => {
-  const [user, setUser] = useState<any>(null)
+import { WithChildren } from 'common/WithChildren'
+import { InfoProps } from 'common/User'
+
+type UserProps = {
+  user?: InfoProps
+  access_token: string
+}
+
+type AuthContextProps = {
+  user?: UserProps
+  isAuthenticated: boolean
+  signIn: (token: string) => void
+}
+
+export const AuthContext = createContext<AuthContextProps>({
+  user: undefined,
+  isAuthenticated: false,
+  signIn: () => console.error('no auth provider')
+})
+
+export const AuthProvider = ({ children }: WithChildren) => {
+  const [user, setUser] = useState<UserProps>()
 
   const isAuthenticated = !!user
 
@@ -12,7 +31,8 @@ export const AuthProvider = ({ children }: any) => {
     setCookie(undefined, 'access_token', token, {
       maxAge: 60 * 60 * 1
     })
-    setUser({ user: 'Eu', token })
+
+    setUser({ user: undefined, access_token: token })
 
     Router.push('/me')
   }
@@ -22,4 +42,14 @@ export const AuthProvider = ({ children }: any) => {
       {children}
     </AuthContext.Provider>
   )
+}
+
+export const useAuth = () => {
+  const ctx = useContext(AuthContext)
+
+  if (ctx === undefined) {
+    throw new Error('useAuth must be used within a AuthProvider')
+  }
+
+  return ctx
 }
