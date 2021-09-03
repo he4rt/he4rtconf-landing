@@ -12,7 +12,9 @@ import {
   User,
   ImageBox,
   Gamification,
-  GamificationText
+  GamificationText,
+  RevokeLinks,
+  DeleteAccount
 } from './styles'
 
 type ProfileCardProps = Pick<
@@ -42,7 +44,7 @@ const ProfileCard = ({
         </ImageBox>
 
         <div>
-          <Title level={5} color="white" fontWeight="bold" size="small">
+          <Title level={5} color="white" fontWeight="bold" size="xsmall">
             {github_username}
           </Title>
           <Text>{email}</Text>
@@ -51,7 +53,7 @@ const ProfileCard = ({
 
       <Gamification>
         <div>
-          <Title level={5} color="white" fontWeight="bold" size="small">
+          <Title level={5} color="white" fontWeight="bold" size="xsmall">
             Gamificação
           </Title>
           <Text>Última atualização - {character.updated_at}</Text>
@@ -69,6 +71,11 @@ const ProfileCard = ({
         </div>
       </Gamification>
     </ContentProfile>
+
+    <RevokeLinks>
+      <DeleteAccount>Deletar conta</DeleteAccount>
+      <Text>Deslogar</Text>
+    </RevokeLinks>
   </WrapperProfile>
 )
 

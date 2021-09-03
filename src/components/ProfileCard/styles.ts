@@ -16,10 +16,9 @@ export const ContentProfile = styled(Content)`
   ${({ theme }) => css`
     border-top: 1px solid ${theme.colors.border};
     border-bottom: 1px solid ${theme.colors.border};
-    padding: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   `}
 `
 
@@ -36,6 +35,16 @@ export const User = styled.div`
     > p {
       margin: 0.8rem 0%;
     }
+  }
+
+  &:after {
+    content: '';
+    left: 45%;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 2px;
+    background: ${({ theme }) => theme.colors.border};
   }
 `
 
@@ -81,5 +90,21 @@ export const GamificationText = styled(Text)`
       width: 2.6rem;
       height: 2.6rem;
     }
+  `}
+`
+export const RevokeLinks = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+
+  p {
+    cursor: pointer;
+  }
+`
+
+export const DeleteAccount = styled(Text)`
+  ${({ theme }) => css`
+    color: ${theme.colors.red};
+    margin-right: 5rem;
   `}
 `
