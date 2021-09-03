@@ -4,7 +4,7 @@ import { FaTwitch, FaDiscord } from 'react-icons/fa'
 import Title from 'components/Title'
 import Text from 'components/Text'
 
-import { InfoProps } from 'services/provider'
+import { InfoProps } from 'common/User'
 
 import {
   WrapperProfile,
@@ -56,7 +56,14 @@ const ProfileCard = ({
           <Title level={5} color="white" fontWeight="bold" size="xsmall">
             Gamificação
           </Title>
-          <Text>Última atualização - {character.updated_at}</Text>
+          <Text>
+            Última atualização -{' '}
+            {new Date(character.updated_at).toLocaleString('pt-BR', {
+              year: 'numeric',
+              month: 'numeric',
+              day: 'numeric'
+            })}
+          </Text>
         </div>
 
         <div>
