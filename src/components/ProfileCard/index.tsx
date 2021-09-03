@@ -56,7 +56,14 @@ const ProfileCard = ({
           <Title level={5} color="white" fontWeight="bold" size="xsmall">
             Gamificação
           </Title>
-          <Text>Última atualização - {character.updated_at}</Text>
+          <Text>
+            Última atualização -{' '}
+            {new Date(character.updated_at).toLocaleString('pt-BR', {
+              year: 'numeric',
+              month: 'numeric',
+              day: 'numeric'
+            })}
+          </Text>
         </div>
 
         <div>
