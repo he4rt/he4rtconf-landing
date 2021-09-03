@@ -14,7 +14,9 @@ import {
   Gamification,
   GamificationText,
   RevokeLinks,
-  DeleteAccount
+  DeleteAccount,
+  GamificationWrapperText,
+  ButtonLink
 } from './styles'
 
 type ProfileCardProps = Pick<
@@ -67,14 +69,21 @@ const ProfileCard = ({
         </div>
 
         <div>
-          <GamificationText>
-            <FaTwitch />
-            {messages.twitch} mensagens
-          </GamificationText>
-          <GamificationText>
-            <FaDiscord />
-            {messages.discord} mensagens
-          </GamificationText>
+          <GamificationWrapperText>
+            <GamificationText>
+              <FaTwitch />
+              {messages.twitch} mensagens
+            </GamificationText>
+            <ButtonLink>Desconectar</ButtonLink>
+          </GamificationWrapperText>
+
+          <GamificationWrapperText>
+            <GamificationText>
+              <FaDiscord />
+              {messages.discord} mensagens
+            </GamificationText>
+            <ButtonLink>Desconectar</ButtonLink>
+          </GamificationWrapperText>
         </div>
       </Gamification>
     </ContentProfile>
