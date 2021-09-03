@@ -1,4 +1,5 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
+import { parseCookies } from 'nookies'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
@@ -26,6 +27,18 @@ const Home: NextPage = () => {
       <Footer />
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { access_token } = parseCookies(ctx)
+  if (access_token) {
+    return {
+      redirect: {
+        destination: '/me',
+        permanent: false
+      }
+    }
+  }
 }
 
 export default Home

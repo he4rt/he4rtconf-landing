@@ -1,8 +1,9 @@
+import { AuthProvider } from 'contexts/Auth'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
-
 import GlobalStyles from 'styles/global'
+
 import theme from 'styles/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -21,8 +22,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Component {...pageProps} />
-      <GlobalStyles />
+      <AuthProvider>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </AuthProvider>
     </ThemeProvider>
   )
 }
