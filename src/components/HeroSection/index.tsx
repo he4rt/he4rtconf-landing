@@ -21,10 +21,12 @@ const HeroSection = ({ title, subtitle, haveButton, ...props }: HeroProps) => (
         {subtitle}
       </Title>
       {haveButton ? (
-        <Button>
-          <AiFillGithub size={24} />
-          Garantir vaga com GitHub
-        </Button>
+        <a href="https://github.com/login/oauth/authorize?client_id=Iv1.1feba30e5c20fc4c&redirect_uri=http://localhost:3000/me&scope=user%20user:email&response_type=code">
+          <Button>
+            <AiFillGithub size={24} />
+            Garantir vaga com GitHub
+          </Button>
+        </a>
       ) : null}
     </Info>
     <HeartBox>

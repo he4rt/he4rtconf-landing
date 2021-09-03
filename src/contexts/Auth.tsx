@@ -9,13 +9,12 @@ export const AuthProvider = ({ children }: any) => {
   const isAuthenticated = !!user
 
   const signIn = async (token: string) => {
-    console.log(token)
     setCookie(undefined, 'access_token', token, {
       maxAge: 60 * 60 * 1
     })
     setUser({ user: 'Eu', token })
 
-    Router.push('/profile')
+    Router.push('/me')
   }
 
   return (

@@ -1,3 +1,4 @@
+import Button from 'components/Button'
 import Container from 'components/Container'
 
 import styled, { css } from 'styled-components'
@@ -14,6 +15,10 @@ export const Wrapper = styled(Container)`
 
   button {
     margin-top: 3.2rem;
+  }
+
+  a {
+    text-decoration: none;
   }
 `
 

@@ -1,4 +1,6 @@
 import type { GetServerSideProps, NextPage } from 'next'
+import { parseCookies } from 'nookies'
+
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import HeroSection from 'components/HeroSection'
@@ -27,12 +29,14 @@ const Home: NextPage = () => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (data) => {
-  console.log(data)
-  return {
-    redirect: {
-      destination: '/profile',
-      permanent: false
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { access_token } = parseCookies(ctx)
+  if (access_token) {
+    return {
+      redirect: {
+        destination: '/me',
+        permanent: false
+      }
     }
   }
 }
