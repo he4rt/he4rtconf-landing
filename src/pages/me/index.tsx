@@ -6,12 +6,12 @@ import HeroSection from 'components/HeroSection'
 import Highlight from 'components/Highlight'
 import Button from 'components/Button'
 import ProfileCard from 'components/ProfileCard'
+import Footer from 'components/Footer'
 
 import { Card, WrapperButtons } from './styles'
 import { parseCookies } from 'nookies'
 import { axiosClient } from 'services/axios'
-import Footer from 'components/Footer'
-import { InfoProps } from 'services/provider'
+import { InfoProps } from 'common/User'
 
 type MeProps = {
   user: InfoProps
@@ -40,38 +40,34 @@ const SubTitlePage = () => (
   </>
 )
 
-const Me = ({ user }: MeProps) => {
-  console.log('user on component', user)
+const Me = ({ user }: MeProps) => (
+  <>
+    <Header />
+    <HeroSection title={<TitlePage />} subtitle={<SubTitlePage />} />
+    <Card title="Participe da nossa gamificação." subtitle={<SubTitlePage />}>
+      <WrapperButtons>
+        <Button>
+          <FaTwitch size={24} /> Entrar com a Twitch
+        </Button>
+        <Button>
+          <FaDiscord size={24} /> Entrar com Discord
+        </Button>
+      </WrapperButtons>
+    </Card>
 
-  return (
-    <>
-      <Header />
-      <HeroSection title={<TitlePage />} subtitle={<SubTitlePage />} />
-      <Card title="Participe da nossa gamificação." subtitle={<SubTitlePage />}>
-        <WrapperButtons>
-          <Button>
-            <FaTwitch size={24} /> Entrar com a Twitch
-          </Button>
-          <Button>
-            <FaDiscord size={24} /> Entrar com Discord
-          </Button>
-        </WrapperButtons>
-      </Card>
-
-      <ProfileCard
-        github_username={user.github_username}
-        email={user.email}
-        image={
-          user.image ||
-          'https://cdn.discordapp.com/avatars/426540070028443688/9bdc585ce3df9ba9d2b6cb0866977876.webp'
-        }
-        messages={user.messages}
-        character={user.character}
-      />
-      <Footer />
-    </>
-  )
-}
+    <ProfileCard
+      github_username={user.github_username}
+      email={user.email}
+      image={
+        user.image ||
+        'https://cdn.discordapp.com/avatars/426540070028443688/9bdc585ce3df9ba9d2b6cb0866977876.webp'
+      }
+      messages={user.messages}
+      character={user.character}
+    />
+    <Footer />
+  </>
+)
 
 export const getServerSideProps: GetServerSideProps = async (
   ctx: GetServerSidePropsContext

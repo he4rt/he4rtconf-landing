@@ -1,7 +1,11 @@
 import axios from 'axios'
+import { GetServerSidePropsContext } from 'next'
 import { parseCookies } from 'nookies'
+import { ParsedUrlQuery } from 'querystring'
 
-export const axiosClient = (ctx?: any) => {
+export const axiosClient = (
+  ctx?: GetServerSidePropsContext<ParsedUrlQuery>
+) => {
   const { access_token } = parseCookies(ctx)
 
   const confApi = axios.create({

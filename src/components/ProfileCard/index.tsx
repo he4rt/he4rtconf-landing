@@ -4,7 +4,7 @@ import { FaTwitch, FaDiscord } from 'react-icons/fa'
 import Title from 'components/Title'
 import Text from 'components/Text'
 
-import { InfoProps } from 'services/provider'
+import { InfoProps } from 'common/User'
 
 import {
   WrapperProfile,
