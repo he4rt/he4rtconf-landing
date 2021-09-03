@@ -8,8 +8,7 @@ import Button from 'components/Button'
 import ProfileCard from 'components/ProfileCard'
 
 import { Card, WrapperButtons } from './styles'
-import { AuthContext } from 'contexts/Auth'
-import { useContext } from 'react'
+import { useAuth } from 'contexts/Auth'
 import { parseCookies } from 'nookies'
 import { axiosClient } from 'services/axios'
 import Footer from 'components/Footer'
@@ -38,13 +37,14 @@ const SubTitlePage = () => (
 )
 
 const Me: NextPage = () => {
-  const { signIn } = useContext(AuthContext)
+  const { signIn } = useAuth()
+
   return (
     <>
       <Header />
       <HeroSection title={<TitlePage />} subtitle={<SubTitlePage />} />
       <Card title="Participe da nossa gamificação." subtitle={<SubTitlePage />}>
-        <WrapperButtons onClick={() => signIn()}>
+        <WrapperButtons onClick={() => signIn}>
           <Button>
             <FaTwitch size={24} /> Entrar com a Twitch
           </Button>
