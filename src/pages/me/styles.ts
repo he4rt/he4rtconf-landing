@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import NoticeCard from 'components/NoticeCard'
 
@@ -14,4 +14,16 @@ export const WrapperButtons = styled.div`
   > button {
     margin-right: 4.2rem;
   }
+
+  ${({ theme }) => css`
+    ${theme.breakpoints.lessThan.md} {
+      flex-direction: column;
+
+      > button {
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+  `}
 `

@@ -47,7 +47,7 @@ const Me = ({ user }: MeProps) => (
     <Card title="Participe da nossa gamificação." subtitle={<SubTitlePage />}>
       <WrapperButtons>
         <Button>
-          <FaTwitch size={24} /> Entrar com a Twitch
+          <FaTwitch size={24} /> Entrar com Twitch
         </Button>
         <Button>
           <FaDiscord size={24} /> Entrar com Discord
@@ -60,7 +60,7 @@ const Me = ({ user }: MeProps) => (
       email={user.email}
       image={
         user.image ||
-        'https://cdn.discordapp.com/avatars/426540070028443688/9bdc585ce3df9ba9d2b6cb0866977876.webp'
+        'https://media.discordapp.net/attachments/547568121226068008/883410330116587540/Camada_1.png'
       }
       messages={user.messages}
       character={user.character}
