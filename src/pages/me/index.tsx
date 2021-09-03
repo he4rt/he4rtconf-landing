@@ -1,14 +1,11 @@
 import type { GetServerSideProps, GetServerSidePropsContext } from 'next'
-import { FaTwitch, FaDiscord } from 'react-icons/fa'
 
 import Header from 'components/Header'
 import HeroSection from 'components/HeroSection'
 import Highlight from 'components/Highlight'
-import Button from 'components/Button'
 import ProfileCard from 'components/ProfileCard'
 import Footer from 'components/Footer'
 
-import { Card, WrapperButtons } from './styles'
 import { parseCookies } from 'nookies'
 import { axiosClient } from 'services/axios'
 import { InfoProps } from 'common/User'
@@ -44,27 +41,20 @@ const Me = ({ user }: MeProps) => (
   <>
     <Header />
     <HeroSection title={<TitlePage />} subtitle={<SubTitlePage />} />
-    <Card title="Participe da nossa gamificação." subtitle={<SubTitlePage />}>
-      <WrapperButtons>
-        <Button>
-          <FaTwitch size={24} /> Entrar com a Twitch
-        </Button>
-        <Button>
-          <FaDiscord size={24} /> Entrar com Discord
-        </Button>
-      </WrapperButtons>
-    </Card>
 
     <ProfileCard
       github_username={user.github_username}
       email={user.email}
       image={
         user.image ||
-        'https://cdn.discordapp.com/avatars/426540070028443688/9bdc585ce3df9ba9d2b6cb0866977876.webp'
+        'https://media.discordapp.net/attachments/547568121226068008/883410330116587540/Camada_1.png'
       }
       messages={user.messages}
       character={user.character}
+      twitch_id={user.twitch_id}
+      discord_id={user.discord_id}
     />
+
     <Footer />
   </>
 )

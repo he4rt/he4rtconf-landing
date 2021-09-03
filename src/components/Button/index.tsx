@@ -6,7 +6,9 @@ type ButtonProps = {
 }
 
 const Button = ({ children, ...props }: ButtonProps) => (
-  <WrapperButton {...props}>{children}</WrapperButton>
+  <WrapperButton {...props}>
+    <span>{children}</span>
+  </WrapperButton>
 )
 
 export default Button

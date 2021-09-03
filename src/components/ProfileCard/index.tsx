@@ -14,12 +14,20 @@ import {
   Gamification,
   GamificationText,
   RevokeLinks,
-  DeleteAccount
+  DeleteAccount,
+  GamificationWrapperText,
+  ButtonLink
 } from './styles'
 
 type ProfileCardProps = Pick<
   InfoProps,
-  'email' | 'image' | 'github_username' | 'character' | 'messages'
+  | 'email'
+  | 'image'
+  | 'github_username'
+  | 'character'
+  | 'messages'
+  | 'twitch_id'
+  | 'discord_id'
 >
 
 const ProfileCard = ({
@@ -27,7 +35,9 @@ const ProfileCard = ({
   image,
   github_username,
   character,
-  messages
+  messages,
+  twitch_id,
+  discord_id
 }: ProfileCardProps) => (
   <WrapperProfile>
     <ContentProfile>
@@ -67,14 +77,43 @@ const ProfileCard = ({
         </div>
 
         <div>
-          <GamificationText>
-            <FaTwitch />
-            {messages.twitch} mensagens
-          </GamificationText>
-          <GamificationText>
-            <FaDiscord />
-            {messages.discord} mensagens
-          </GamificationText>
+          <GamificationWrapperText>
+            {twitch_id === null ? (
+              <>
+                <GamificationText>Desconectado</GamificationText>
+                <ButtonLink>
+                  <FaTwitch /> Entre com Twitch
+                </ButtonLink>
+              </>
+            ) : (
+              <>
+                <GamificationText>
+                  <FaTwitch />
+                  {messages.twitch} mensagens
+                </GamificationText>
+                <ButtonLink>Desconectar</ButtonLink>
+              </>
+            )}
+          </GamificationWrapperText>
+
+          <GamificationWrapperText>
+            {discord_id === null ? (
+              <>
+                <GamificationText>Desconectado</GamificationText>
+                <ButtonLink>
+                  <FaTwitch /> Entre com Discord
+                </ButtonLink>
+              </>
+            ) : (
+              <>
+                <GamificationText>
+                  <FaDiscord />
+                  {messages.discord} mensagens
+                </GamificationText>
+                <ButtonLink>Desconectar</ButtonLink>
+              </>
+            )}
+          </GamificationWrapperText>
         </div>
       </Gamification>
     </ContentProfile>
