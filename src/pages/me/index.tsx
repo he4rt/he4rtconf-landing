@@ -1,14 +1,11 @@
 import type { GetServerSideProps, GetServerSidePropsContext } from 'next'
-import { FaTwitch, FaDiscord } from 'react-icons/fa'
 
 import Header from 'components/Header'
 import HeroSection from 'components/HeroSection'
 import Highlight from 'components/Highlight'
-import Button from 'components/Button'
 import ProfileCard from 'components/ProfileCard'
 import Footer from 'components/Footer'
 
-import { Card, WrapperButtons } from './styles'
 import { parseCookies } from 'nookies'
 import { axiosClient } from 'services/axios'
 import { InfoProps } from 'common/User'
@@ -44,16 +41,6 @@ const Me = ({ user }: MeProps) => (
   <>
     <Header />
     <HeroSection title={<TitlePage />} subtitle={<SubTitlePage />} />
-    <Card title="Participe da nossa gamificação." subtitle={<SubTitlePage />}>
-      <WrapperButtons>
-        <Button>
-          <FaTwitch size={24} /> Entrar com Twitch
-        </Button>
-        <Button>
-          <FaDiscord size={24} /> Entrar com Discord
-        </Button>
-      </WrapperButtons>
-    </Card>
 
     <ProfileCard
       github_username={user.github_username}
@@ -64,7 +51,10 @@ const Me = ({ user }: MeProps) => (
       }
       messages={user.messages}
       character={user.character}
+      twitch_id={user.twitch_id}
+      discord_id={user.discord_id}
     />
+
     <Footer />
   </>
 )

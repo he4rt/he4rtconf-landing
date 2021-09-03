@@ -105,6 +105,7 @@ export const Gamification = styled.div`
     ${theme.breakpoints.lessThan.md} {
       div {
         flex-direction: column;
+        margin: 1rem 0;
       }
     }
   `}
