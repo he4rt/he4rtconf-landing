@@ -5,6 +5,7 @@ import Header from 'components/Header'
 import HeroSection from 'components/HeroSection'
 import Highlight from 'components/Highlight'
 import Button from 'components/Button'
+import ProfileCard from 'components/ProfileCard'
 
 import { Card, WrapperButtons } from './styles'
 import { AuthContext } from 'contexts/Auth'
@@ -52,6 +53,31 @@ const Me: NextPage = () => {
           </Button>
         </WrapperButtons>
       </Card>
+
+      <ProfileCard
+        github_username="NexTuRHe4rt"
+        email="gabriel@gmail.com"
+        image="https://cdn.discordapp.com/avatars/426540070028443688/9bdc585ce3df9ba9d2b6cb0866977876.webp"
+        messages={{
+          discord: 100,
+          twitch: 100
+        }}
+        character={{
+          id: 1,
+          user_id: 1,
+          level: 1,
+          current_exp: 0,
+          created_at: '2021-09-02T01:20:32.000000Z',
+          updated_at: '02/09/2021',
+          levelup_exp: {
+            id: 1,
+            required: 10,
+            created_at: '10/04/2020',
+            updated_at: '10/04/2020'
+          },
+          levelup_percentage: '0.00'
+        }}
+      />
       <Footer />
     </>
   )
