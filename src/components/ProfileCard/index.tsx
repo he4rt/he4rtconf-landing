@@ -18,6 +18,8 @@ import {
   GamificationWrapperText,
   ButtonLink
 } from './styles'
+import Router from 'next/router'
+import Container from 'components/Container'
 
 type ProfileCardProps = Pick<
   InfoProps,
@@ -80,8 +82,14 @@ const ProfileCard = ({
           <GamificationWrapperText>
             {twitch_id === null ? (
               <>
-                <GamificationText>Desconectado</GamificationText>
-                <ButtonLink>
+                <GamificationText>
+                  <FaTwitch /> Desconectado
+                </GamificationText>
+                <ButtonLink
+                  onClick={() =>
+                    (window.location.href = `${process.env.NEXT_PUBLIC_TWITCH_URL}`)
+                  }
+                >
                   <FaTwitch /> Entre com Twitch
                 </ButtonLink>
               </>
@@ -91,7 +99,11 @@ const ProfileCard = ({
                   <FaTwitch />
                   {messages.twitch} mensagens
                 </GamificationText>
-                <ButtonLink>Desconectar</ButtonLink>
+                <ButtonLink
+                  onClick={() => Router.push('/me/delete?provider=twitch')}
+                >
+                  Desconectar
+                </ButtonLink>
               </>
             )}
           </GamificationWrapperText>
@@ -99,9 +111,15 @@ const ProfileCard = ({
           <GamificationWrapperText>
             {discord_id === null ? (
               <>
-                <GamificationText>Desconectado</GamificationText>
-                <ButtonLink>
-                  <FaTwitch /> Entre com Discord
+                <GamificationText>
+                  <FaDiscord /> Desconectado
+                </GamificationText>
+                <ButtonLink
+                  onClick={() =>
+                    (window.location.href = `${process.env.NEXT_PUBLIC_DISCORD_URL}`)
+                  }
+                >
+                  <FaDiscord /> Entre com Discord
                 </ButtonLink>
               </>
             ) : (
@@ -110,18 +128,25 @@ const ProfileCard = ({
                   <FaDiscord />
                   {messages.discord} mensagens
                 </GamificationText>
-                <ButtonLink>Desconectar</ButtonLink>
+                <ButtonLink
+                  onClick={() => Router.push('/me/delete?provider=discord')}
+                >
+                  Desconectar
+                </ButtonLink>
               </>
             )}
           </GamificationWrapperText>
         </div>
       </Gamification>
     </ContentProfile>
-
-    <RevokeLinks>
-      <DeleteAccount>Deletar conta</DeleteAccount>
-      <Text>Deslogar</Text>
-    </RevokeLinks>
+    <Container>
+      <RevokeLinks>
+        <Text onClick={() => Router.push('/me/logout')}>Deslogar</Text>
+        <DeleteAccount onClick={() => Router.push('/me/delete')}>
+          Deletar conta
+        </DeleteAccount>
+      </RevokeLinks>
+    </Container>
   </WrapperProfile>
 )
 

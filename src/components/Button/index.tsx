@@ -3,6 +3,7 @@ import { WrapperButton } from './styles'
 
 type ButtonProps = {
   children: ReactNode
+  onClick?: () => void
 }
 
 const Button = ({ children, ...props }: ButtonProps) => (

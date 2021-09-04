@@ -3,15 +3,22 @@ import { AiFillGithub } from 'react-icons/ai'
 
 import Button from 'components/Button'
 import Title from 'components/Title'
-import { Wrapper, Info, HeartBox } from './styles'
+import { Wrapper, Info, HeartBox, Error } from './styles'
 
 type HeroProps = {
   title: string | ReactNode
   subtitle: string | ReactNode
   haveButton?: boolean
+  errorMessage?: string
 }
 
-const HeroSection = ({ title, subtitle, haveButton, ...props }: HeroProps) => (
+const HeroSection = ({
+  title,
+  subtitle,
+  haveButton,
+  errorMessage,
+  ...props
+}: HeroProps) => (
   <Wrapper {...props}>
     <Info>
       <Title color="white" fontWeight="semibold" level={1} size="huge">
@@ -21,12 +28,15 @@ const HeroSection = ({ title, subtitle, haveButton, ...props }: HeroProps) => (
         {subtitle}
       </Title>
       {haveButton ? (
-        <a href="https://github.com/login/oauth/authorize?client_id=Iv1.1feba30e5c20fc4c&redirect_uri=http://localhost:3000/me&scope=user%20user:email&response_type=code">
-          <Button>
-            <AiFillGithub size={24} />
-            Garantir vaga com GitHub
-          </Button>
-        </a>
+        <>
+          <a href="https://github.com/login/oauth/authorize?client_id=Iv1.1feba30e5c20fc4c&redirect_uri=http://localhost:3000/me&scope=user%20user:email&response_type=code">
+            <Button>
+              <AiFillGithub size={24} />
+              Garantir vaga com GitHub
+            </Button>
+          </a>
+          {errorMessage ? <Error>{errorMessage}</Error> : null}
+        </>
       ) : null}
     </Info>
     <HeartBox>

@@ -2,8 +2,11 @@ import Container from 'components/Container'
 import Text from 'components/Text'
 
 import styled, { css } from 'styled-components'
+import { FooterProps } from '.'
 
-export const Wrapper = styled.footer``
+export const Wrapper = styled.footer<FooterProps>`
+  ${({ notice }) => !notice && 'margin-top: 15rem;'}
+`
 
 export const FooterContent = styled.div`
   background-color: ${({ theme }) => theme.colors.purple};
@@ -11,13 +14,15 @@ export const FooterContent = styled.div`
   background-size: cover;
 `
 
-export const Content = styled(Container)`
+export const Content = styled(Container)<FooterProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 6.4rem;
-  padding-top: 15.7rem;
-  ${({ theme }) => css`
+
+  ${({ theme, notice }) => css`
+    ${notice ? 'padding-top: 15.7rem' : 'padding-top: 6.4rem'};
+
     ${theme.breakpoints.lessThan.md} {
       flex-direction: column;
     }

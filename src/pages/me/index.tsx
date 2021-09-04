@@ -65,16 +65,26 @@ export const getServerSideProps: GetServerSideProps = async (
   const { access_token } = parseCookies(ctx)
   const axios = axiosClient(ctx)
   if (ctx.query?.code) {
-    const { data } = await axios.get('auth/oauth/github', {
-      params: { code: ctx.query?.code }
-    })
-    ctx.res.setHeader('set-cookie', [
-      `access_token=${data.accessToken.accessToken}`
-    ])
-    return {
-      redirect: {
-        destination: '/me',
-        permanent: false
+    try {
+      const { data } = await axios.get('auth/oauth/github', {
+        params: { code: ctx.query?.code }
+      })
+      ctx.res.setHeader('set-cookie', [
+        `access_token=${data.accessToken.accessToken}`
+      ])
+      return {
+        redirect: {
+          destination: '/me',
+          permanent: false
+        }
+      }
+    } catch (err: any) {
+      // TODO: Arrumar type ^
+      return {
+        redirect: {
+          destination: `/?error=${err.response.data.message}`,
+          permanent: false
+        }
       }
     }
   }
