@@ -3,6 +3,7 @@ import { WrapperText } from './styles'
 
 type TextProps = {
   children: ReactNode
+  onClick?: () => void
 }
 
 const Text = ({ children, ...props }: TextProps) => (

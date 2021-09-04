@@ -19,6 +19,10 @@ export const WrapperNoticeCard = styled.div`
   h2 {
     margin-bottom: 3.2rem;
   }
+
+  h3 {
+    margin-bottom: 2.2rem;
+  }
 `
 
 export const Content = styled(Container)`

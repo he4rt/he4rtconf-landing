@@ -99,6 +99,7 @@ export const Gamification = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
   }
 
   ${({ theme }) => css`
@@ -150,10 +151,10 @@ export const RevokeLinks = styled.div`
 export const DeleteAccount = styled(Text)`
   ${({ theme }) => css`
     color: ${theme.colors.red};
-    margin-right: 5rem;
+    margin-left: 5rem;
 
     ${theme.breakpoints.lessThan.md} {
-      margin-right: 0;
+      margin-left: 0;
     }
   `}
 `
