@@ -20,12 +20,14 @@ const NoticeCard = ({ title, subtitle, children, ...props }: NoticeProps) => (
       <Title level={3} color="gray" size="small" fontWeight="light">
         {subtitle}
       </Title>
-      <a href="https://github.com/login/oauth/authorize?client_id=Iv1.1feba30e5c20fc4c&redirect_uri=http://localhost:3000/me&scope=user%20user:email&response_type=code">
-        <Button>
-          <AiFillGithub size={24} />
-          Garantir vaga com GitHub
-        </Button>
-      </a>
+      <Button
+        onClick={() =>
+          (window.location.href = `${process.env.NEXT_PUBLIC_GITHUB_URL}`)
+        }
+      >
+        <AiFillGithub size={24} />
+        Garantir vaga com GitHub
+      </Button>
       {children}
     </Content>
   </WrapperNoticeCard>
