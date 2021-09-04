@@ -1,5 +1,5 @@
-import Button from 'components/Button'
 import Container from 'components/Container'
+import Text from 'components/Text'
 
 import styled, { css } from 'styled-components'
 
@@ -35,4 +35,8 @@ export const HeartBox = styled.div`
       opacity: 0.5;
     }
   `}
+`
+export const Error = styled(Text)`
+  margin-top: 1.5rem;
+  color: red;
 `
