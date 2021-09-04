@@ -1,37 +1,10 @@
-import { DiscordProps, TwitchProps } from 'common/Provider'
+import { RevokeProps } from 'common/Provider'
+import { axiosClient } from './axios'
+import { parseCookies } from 'nookies'
 
-export const updateUserWithTwitch = async ({
-  twitch_id,
-  twitch_username
-}: TwitchProps) => {
-  const response = await fetch('api', {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      twitch_id,
-      twitch_username
-    })
-  })
+export const revokeUserOAuth = async ({ provider }: RevokeProps) => {}
 
-  return response.json()
-}
-
-export const updateUserWithDiscord = async ({
-  discord_id,
-  discord_username
-}: DiscordProps) => {
-  const response = await fetch('api', {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      discord_id,
-      discord_username
-    })
-  })
-
-  return response.json()
+export const deleteAccount = async () => {
+  const { access_token } = parseCookies()
+  console.log(access_token)
 }
