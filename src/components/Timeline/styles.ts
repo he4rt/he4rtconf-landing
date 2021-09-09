@@ -14,3 +14,7 @@ export const Wrapper = styled(Container)`
     margin: 0 auto;
   }
 `
+
+export const ContentTimeline = styled.div`
+  padding-top: 5rem;
+`
