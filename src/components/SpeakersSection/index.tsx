@@ -3,42 +3,27 @@ import Title from 'components/Title'
 import { Wrapper, SpeakersList } from './styles'
 import SpeakerCard from 'components/SpeakerCard'
 
-const speakersTwo = [
-  {
-    name: 'Vitor Hugo Lima',
-    stack: 'Front-end Developer no Ifood',
-    description:
-      'Front-End Developer há alguns anos, meio metido a designer e conhecido como o "Chatão do ReScript" por onde passa.',
-    image:
-      'https://cdn.discordapp.com/avatars/426540070028443688/9bdc585ce3df9ba9d2b6cb0866977876.webp'
-  },
-  {
-    name: 'Vitor Hugo Lima',
-    stack: 'Front-end Developer no Ifood',
-    description:
-      'Front-End Developer há alguns anos, meio metido a designer e conhecido como o "Chatão do ReScript" por onde passa.',
-    image:
-      'https://cdn.discordapp.com/avatars/426540070028443688/9bdc585ce3df9ba9d2b6cb0866977876.webp'
-  },
-  {
-    name: 'Vitor Hugo Lima',
-    stack: 'Front-end Developer no Ifood',
-    description:
-      'Front-End Developer há alguns anos, meio metido a designer e conhecido como o "Chatão do ReScript" por onde passa.',
-    image:
-      'https://cdn.discordapp.com/avatars/426540070028443688/9bdc585ce3df9ba9d2b6cb0866977876.webp'
-  },
-  {
-    name: 'Vitor Hugo Lim1a',
-    stack: 'Front-end Developer no Ifood',
-    description:
-      'Front-End Developer há alguns anos, meio metido a designer e conhecido como o "Chatão do ReScript" por onde passa.',
-    image:
-      'https://cdn.discordapp.com/avatars/426540070028443688/9bdc585ce3df9ba9d2b6cb0866977876.webp'
-  }
-]
+export type SpeakersProps = {
+  id: number
+  name: string
+  title: string
+  slug: string
+  description: string
+  badge_path: string
+  twitter_url: string
+  github_url: string
+  instagram_url: string
+  linkedin_url: string
+  active: boolean
+  created_at: string
+  updated_at: string
+}
 
-const SpeakersSection = ({ speakers, ...props }) => (
+type SpeakersSectionProps = {
+  speakers: SpeakersProps[]
+}
+
+const SpeakersSection = ({ speakers, ...props }: SpeakersSectionProps) => (
   <Wrapper {...props}>
     <Title center color="white" fontWeight="bold" level={2} size="medium">
       Palestrantes do evento

@@ -1,28 +1,28 @@
 import Image from 'next/image'
 
-import { Wrapper, Avatar, Name, Stack, Description } from './styles'
+import { Wrapper, Avatar, Name, Stack } from './styles'
 
-export type SpeakerProps = {
-  name: string
-  stack: string
-  description: string
-  badge_path: string
-  title: string
-  slug: string
-}
+import { SpeakersProps } from 'components/SpeakersSection'
+
+type SpeakerCardProps = Pick<
+  SpeakersProps,
+  'name' | 'badge_path' | 'title' | 'slug'
+>
 
 const SpeakerCard = ({
+  name,
   badge_path,
   slug,
-  name,
   title,
   ...props
-}: SpeakerProps) => (
+}: SpeakerCardProps) => (
   <Wrapper {...props}>
     <Avatar>
       <Image
         src={
-          'https://media.discordapp.net/attachments/547568121226068008/883410330116587540/Camada_1.png'
+          slug === 'em-breve'
+            ? 'https://media.discordapp.net/attachments/547568121226068008/883410330116587540/Camada_1.png'
+            : badge_path
         }
         alt={`Avatar de ${name}`}
         layout="fill"
@@ -30,7 +30,7 @@ const SpeakerCard = ({
       />
     </Avatar>
     <Name level={3} color="white" fontWeight="light" size="small">
-      Vitor Hugo Lima
+      {name}
     </Name>
     <Stack>{title}</Stack>
     {/*<Description>

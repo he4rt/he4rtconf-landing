@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 
-import Text from 'components/Text'
 import Title from 'components/Title'
 
 export const Wrapper = styled.div`
@@ -59,15 +58,5 @@ export const Stack = styled.span`
   `}
 
   text-align: center;
-  letter-spacing: -0.02em;
-`
-
-export const Description = styled(Text)`
-  ${({ theme }) => css`
-    color: ${theme.colors.white};
-  `}
-
-  text-align: center;
-  margin-top: 1.6rem;
   letter-spacing: -0.02em;
 `

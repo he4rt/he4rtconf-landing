@@ -5,16 +5,17 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 import HeroSection from 'components/HeroSection'
 import AboutSection from 'components/AboutSection'
-import SpeakersSection from 'components/SpeakersSection'
+import SpeakersSection, { SpeakersProps } from 'components/SpeakersSection'
 import ContentsSection from 'components/ContentsSection'
-import PartnersSection from 'components/PartnersSection'
+import PartnersSection, { PartnersProps } from 'components/PartnersSection'
 import FaqSection from 'components/FaqSection'
+import Timeline from 'components/Timeline'
 import { axiosClient } from 'services/axios'
 
 type HomeProps = {
   errorMessage?: string
-  speakers: any
-  partners: any
+  speakers: SpeakersProps[]
+  partners: PartnersProps[]
 }
 
 const Home = ({ errorMessage, speakers, partners }: HomeProps) => {
@@ -30,6 +31,7 @@ const Home = ({ errorMessage, speakers, partners }: HomeProps) => {
       <AboutSection />
       <SpeakersSection speakers={speakers} />
       <ContentsSection />
+      <Timeline />
       <PartnersSection partners={partners} />
       <FaqSection />
       <Footer notice />

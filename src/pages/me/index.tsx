@@ -5,6 +5,7 @@ import HeroSection from 'components/HeroSection'
 import Highlight from 'components/Highlight'
 import ProfileCard from 'components/ProfileCard'
 import Footer from 'components/Footer'
+import Ticket from 'components/Ticket'
 
 import { parseCookies } from 'nookies'
 import { axiosClient } from 'services/axios'
@@ -41,6 +42,12 @@ const Me = ({ user }: MeProps) => (
   <>
     <Header />
     <HeroSection title={<TitlePage />} subtitle={<SubTitlePage />} />
+    {/* <Ticket
+      githubUsername={user.github_username}
+      username={user.github_username}
+      ticketNumber="014747"
+      userImg={user.image}
+    /> */}
 
     <ProfileCard
       github_username={user.github_username}
