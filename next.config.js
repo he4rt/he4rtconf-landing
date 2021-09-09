@@ -7,7 +7,8 @@ module.exports = withPWA({
     domains: [
       'cdn.discordapp.com',
       'media.discordapp.net',
-      'avatars.githubusercontent.com'
+      'avatars.githubusercontent.com',
+      'conf.he4rt.app'
     ]
   },
   pwa: {
