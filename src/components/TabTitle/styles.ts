@@ -11,6 +11,10 @@ export const WrapperTab = styled.li<StyleTabProps>`
 
   ${({ theme, isActive }) => css`
     border-bottom: 1px solid ${isActive ? theme.colors.purple : 'transparent'};
+
+    ${theme.breakpoints.lessThan.md} {
+      margin-right: 3rem;
+    }
   `}
 `
 
