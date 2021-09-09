@@ -9,6 +9,7 @@ import SpeakersSection from 'components/SpeakersSection'
 import ContentsSection from 'components/ContentsSection'
 import PartnersSection from 'components/PartnersSection'
 import FaqSection from 'components/FaqSection'
+import Timeline from 'components/Timeline'
 import { axiosClient } from 'services/axios'
 
 type HomeProps = {
@@ -30,6 +31,7 @@ const Home = ({ errorMessage, speakers, partners }: HomeProps) => {
       <AboutSection />
       <SpeakersSection speakers={speakers} />
       <ContentsSection />
+      <Timeline />
       <PartnersSection partners={partners} />
       <FaqSection />
       <Footer notice />
