@@ -32,7 +32,7 @@ const Home = ({ errorMessage, speakers, partners, talks }: HomeProps) => (
     />
     <AboutSection />
     <SpeakersSection speakers={speakers} />
-    <ContentsSection />
+    {/*<ContentsSection />*/}
     <Timeline
       first={Object.values(talks)[0]}
       second={Object.values(talks)[2]}
