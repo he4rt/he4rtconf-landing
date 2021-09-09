@@ -10,7 +10,7 @@ export const Wrapper = styled(Container)`
 
   > h3 {
     text-align: center;
-    width: 65rem;
+    max-width: 65rem;
     margin: 0 auto;
   }
 `

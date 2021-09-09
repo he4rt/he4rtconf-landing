@@ -2,10 +2,30 @@ import Title from 'components/Title'
 import TimelineItem from 'components/TimelineItem'
 import Tabs from 'components/Tabs'
 import Tab from 'components/Tab'
+import { SpeakersProps } from 'components/SpeakersSection'
 
 import { Wrapper, ContentTimeline } from './styles'
 
-const Timeline = () => (
+export type TalkProps = {
+  id: number
+  speaker_id: number
+  title: string
+  date: string
+  created_at: string
+  updated_at: string
+  talk_date: string
+  talk_hour: string
+  status: 'Em breve' | 'Ao vivo agora' | 'Finalizado'
+  speaker: SpeakersProps
+}
+
+type TimelineProps = {
+  first: TalkProps[]
+  second: TalkProps[]
+  third: TalkProps[]
+}
+
+const Timeline = ({ first, second, third }: TimelineProps) => (
   <Wrapper>
     <Title color="white" fontWeight="bold" size="medium" level={2}>
       Fique por dentro da programação do evento
@@ -18,36 +38,31 @@ const Timeline = () => (
     <ContentTimeline>
       <Tabs>
         <Tab title="01/10/2021">
-          <TimelineItem name="Abertura" schedule="17:30" tag="Finalizado" />
-          <TimelineItem
-            name="Palestra"
-            schedule="16:30"
-            speaker="Palestrante X"
-            tag="Ao vivo agora"
-          />
-          <TimelineItem
-            name="Como o PHP vai morrer daqui X anos"
-            schedule="19:00"
-            tag="Em breve"
-            speaker="Palestrante Y"
-          />
+          {first.map((item) => (
+            <TimelineItem
+              key={`key-talks-first-day-${item.id}`}
+              speakerName={item.speaker.name}
+              {...item}
+            />
+          ))}
         </Tab>
         <Tab title="02/10/2021">
-          <TimelineItem
-            name="Palestra"
-            schedule="16:30"
-            speaker="Palestrante Z"
-            tag="Ao vivo agora"
-          />
-          <TimelineItem
-            name="Palestra"
-            schedule="19:00"
-            tag="Em breve"
-            speaker="Palestrante E"
-          />
+          {second.map((item) => (
+            <TimelineItem
+              key={`key-talks-second-day-${item.id}`}
+              speakerName={item.speaker.name}
+              {...item}
+            />
+          ))}
         </Tab>
         <Tab title="03/10/2021">
-          <TimelineItem name="Fechamento" schedule="19:00" tag="Em breve" />
+          {third.map((item) => (
+            <TimelineItem
+              key={`key-talks-third-day-${item.id}`}
+              speakerName={item.speaker.name}
+              {...item}
+            />
+          ))}
         </Tab>
       </Tabs>
     </ContentTimeline>

@@ -1,30 +1,33 @@
 import { WrapperTimeline, Content, Tag, Speaker } from './styles'
 
 import Title from 'components/Title'
+import { TalkProps } from 'components/Timeline'
 
-export type TimelineItemProps = {
-  schedule: string
-  name: string
-  speaker?: string
-  tag: 'Em breve' | 'Ao vivo agora' | 'Finalizado'
-}
+type TimelineItemProps = {
+  speakerName: string
+} & Pick<TalkProps, 'title' | 'status' | 'talk_hour'>
 
-const TimelineItem = ({ name, schedule, tag, speaker }: TimelineItemProps) => (
+const TimelineItem = ({
+  title,
+  status,
+  talk_hour,
+  speakerName
+}: TimelineItemProps) => (
   <WrapperTimeline>
     <Content>
       <Title level={3} color="gray" fontWeight="normal" size="small">
-        {schedule}
+        {talk_hour}
       </Title>
       <Title level={3} color="white" fontWeight="light" size="small">
-        {name}
+        {title}
       </Title>
-      {speaker !== null ? (
+      {speakerName !== null ? (
         <Speaker level={3} color="white" fontWeight="light" size="small">
-          {speaker}
+          {speakerName}
         </Speaker>
       ) : null}
     </Content>
-    <Tag tag={tag}>{tag}</Tag>
+    <Tag tag={status}>{status}</Tag>
   </WrapperTimeline>
 )
 
