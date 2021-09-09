@@ -3,7 +3,7 @@ import Title from 'components/Title'
 import { Wrapper, SpeakersList } from './styles'
 import SpeakerCard from 'components/SpeakerCard'
 
-const speakers = [
+const speakersTwo = [
   {
     name: 'Vitor Hugo Lima',
     stack: 'Front-end Developer no Ifood',
@@ -38,14 +38,14 @@ const speakers = [
   }
 ]
 
-const SpeakersSection = ({ ...props }) => (
+const SpeakersSection = ({ speakers, ...props }) => (
   <Wrapper {...props}>
     <Title center color="white" fontWeight="bold" level={2} size="medium">
       Palestrantes do evento
     </Title>
     <SpeakersList>
       {speakers.map((speaker) => (
-        <SpeakerCard key={speaker.name} {...speaker} />
+        <SpeakerCard key={speaker.id} {...speaker} />
       ))}
     </SpeakersList>
   </Wrapper>
