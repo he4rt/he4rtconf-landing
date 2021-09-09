@@ -20,30 +20,30 @@ const Timeline = () => (
         <Tab title="01/10/2021">
           <TimelineItem name="Abertura" schedule="17:30" tag="Finalizado" />
           <TimelineItem
-            name="Como funciona o Client do League of Legends"
+            name="Palestra"
             schedule="16:30"
-            speaker="Anna Campelo"
+            speaker="Palestrante X"
             tag="Ao vivo agora"
           />
           <TimelineItem
             name="Como o PHP vai morrer daqui X anos"
             schedule="19:00"
             tag="Em breve"
-            speaker="Daniel Reis"
+            speaker="Palestrante Y"
           />
         </Tab>
         <Tab title="02/10/2021">
           <TimelineItem
-            name="Palestra de RH"
+            name="Palestra"
             schedule="16:30"
-            speaker="Hanna"
+            speaker="Palestrante Z"
             tag="Ao vivo agora"
           />
           <TimelineItem
-            name="Palestra ReScript"
+            name="Palestra"
             schedule="19:00"
             tag="Em breve"
-            speaker="FakeNickels"
+            speaker="Palestrante E"
           />
         </Tab>
         <Tab title="03/10/2021">
