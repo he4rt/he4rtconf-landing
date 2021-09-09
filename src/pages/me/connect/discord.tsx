@@ -17,7 +17,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       access_token: data.access_token,
       refresh_token: data.refresh_token
     })
-    console.log('discord', ctx.query.code)
   }
 
   return {
