@@ -4,12 +4,13 @@ import { Wrapper, Logo } from './styles'
 
 type PartnerProps = {
   image: string
+  url: string
 }
 
-const PartnerCard = ({ image, ...props }: PartnerProps) => (
+const PartnerCard = ({ url, image, ...props }: PartnerProps) => (
   <Wrapper {...props}>
-    <Logo>
-      <Image src={image} layout="fill" objectFit="cover" />
+    <Logo href={url} target="_blank">
+      <Image src={image} layout="fill" objectFit="contain" />
     </Logo>
   </Wrapper>
 )
