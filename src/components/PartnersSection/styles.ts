@@ -1,5 +1,6 @@
+import styled, { css } from 'styled-components'
+
 import Container from 'components/Container'
-import styled from 'styled-components'
 
 export const Wrapper = styled(Container)`
   padding-top: 15rem;
@@ -13,4 +14,12 @@ export const PartnersList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25rem, 2fr));
   gap: 3.2rem;
+
+  ${({ theme }) => css`
+    ${theme.breakpoints.lessThan.md} {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  `}
 `
