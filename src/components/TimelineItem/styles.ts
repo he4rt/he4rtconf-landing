@@ -31,25 +31,25 @@ export const Speaker = styled(Title)`
 `
 
 const tagModifiers = (
-  { tag }: Pick<TimelineItemProps, 'tag'>,
+  { status }: Pick<TimelineItemProps, 'status'>,
   theme: DefaultTheme
 ) => {
-  if (tag === 'Ao vivo agora') {
+  if (status === 'Ao vivo agora') {
     return theme.colors.red
   }
 
-  if (tag === 'Em breve') {
+  if (status === 'Em breve') {
     return theme.colors.green
   }
 
   return theme.colors.gray
 }
 
-export const Tag = styled(Text)<Pick<TimelineItemProps, 'tag'>>`
-  ${({ theme, tag }) => css`
+export const Tag = styled(Text)<Pick<TimelineItemProps, 'status'>>`
+  ${({ theme, status }) => css`
     font-weight: ${theme.font.weight.bold};
     font-size: ${theme.font.sizes.xsmall};
 
-    color: ${tagModifiers({ tag }, theme)};
+    color: ${tagModifiers({ status }, theme)};
   `}
 `

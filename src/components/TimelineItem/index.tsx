@@ -3,7 +3,7 @@ import { WrapperTimeline, Content, Tag, Speaker } from './styles'
 import Title from 'components/Title'
 import { TalkProps } from 'components/Timeline'
 
-type TimelineItemProps = {
+export type TimelineItemProps = {
   speakerName: string
 } & Pick<TalkProps, 'title' | 'status' | 'talk_hour'>
 
@@ -27,7 +27,7 @@ const TimelineItem = ({
         </Speaker>
       ) : null}
     </Content>
-    <Tag tag={status}>{status}</Tag>
+    <Tag status={status}>{status}</Tag>
   </WrapperTimeline>
 )
 
