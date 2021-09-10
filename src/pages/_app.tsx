@@ -15,7 +15,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="description"
           content="Muito mais que um evento, a He4rt Conf é uma iniciativa que visa democratizar e facilitar o acesso a conteúdos de alta qualidade produzidos pela comunidade, para a comunidade."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/assets/hearticon.ico" />
+        <link rel="apple-touch-icon" href="/assets/hearticon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
           rel="stylesheet"
