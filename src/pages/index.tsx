@@ -6,19 +6,16 @@ import Footer from 'components/Footer'
 import HeroSection from 'components/HeroSection'
 import AboutSection from 'components/AboutSection'
 import SpeakersSection, { SpeakersProps } from 'components/SpeakersSection'
-import ContentsSection from 'components/ContentsSection'
 import PartnersSection, { PartnersProps } from 'components/PartnersSection'
 import FaqSection from 'components/FaqSection'
-import Timeline, { TalkProps } from 'components/Timeline'
+import Timeline, { ScheduleProps } from 'components/Timeline'
 import { axiosClient } from 'services/axios'
-
-type TalksResponse = Record<string, TalkProps[]>
 
 type HomeProps = {
   errorMessage?: string
   speakers: SpeakersProps[]
   partners: PartnersProps[]
-  talks: TalksResponse
+  talks: ScheduleProps[]
 }
 
 const Home = ({ errorMessage, speakers, partners, talks }: HomeProps) => (
@@ -33,11 +30,7 @@ const Home = ({ errorMessage, speakers, partners, talks }: HomeProps) => (
     <AboutSection />
     <SpeakersSection speakers={speakers} />
     {/*<ContentsSection />*/}
-    <Timeline
-      first={Object.values(talks)[0]}
-      second={Object.values(talks)[2]}
-      third={Object.values(talks)[1]}
-    />
+    <Timeline talks={talks} />
     <PartnersSection partners={partners} />
     <FaqSection />
     <Footer notice />

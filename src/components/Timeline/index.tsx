@@ -6,6 +6,11 @@ import { SpeakersProps } from 'components/SpeakersSection'
 
 import { Wrapper, ContentTimeline } from './styles'
 
+export type ScheduleProps = {
+  day: string
+  talks: TalkProps[]
+}
+
 export type TalkProps = {
   id: number
   speaker_id: number
@@ -20,12 +25,10 @@ export type TalkProps = {
 }
 
 type TimelineProps = {
-  first: TalkProps[]
-  second: TalkProps[]
-  third: TalkProps[]
+  talks: ScheduleProps[]
 }
 
-const Timeline = ({ first, second, third }: TimelineProps) => (
+const Timeline = ({ talks }: TimelineProps) => (
   <Wrapper>
     <Title color="white" fontWeight="bold" size="medium" level={2}>
       Fique por dentro da programação do evento
@@ -34,36 +37,19 @@ const Timeline = ({ first, second, third }: TimelineProps) => (
       Conteúdos e palestras sobre as mais modernas tecnologias, desde o
       back-end, até o front-end.
     </Title>
-
     <ContentTimeline>
       <Tabs>
-        <Tab title="01/10/2021">
-          {first.map((item) => (
-            <TimelineItem
-              key={`key-talks-first-day-${item.id}`}
-              speakerName={item.speaker.name}
-              {...item}
-            />
-          ))}
-        </Tab>
-        <Tab title="02/10/2021">
-          {second.map((item) => (
-            <TimelineItem
-              key={`key-talks-second-day-${item.id}`}
-              speakerName={item.speaker.name}
-              {...item}
-            />
-          ))}
-        </Tab>
-        <Tab title="03/10/2021">
-          {third.map((item) => (
-            <TimelineItem
-              key={`key-talks-third-day-${item.id}`}
-              speakerName={item.speaker.name}
-              {...item}
-            />
-          ))}
-        </Tab>
+        {talks.map((schedule) => (
+          <Tab title={schedule.day} key={schedule.day}>
+            {schedule.talks.map((talk) => (
+              <TimelineItem
+                key={`key-talks-first-day-${talk.id}`}
+                speakerName={talk.speaker.name}
+                {...talk}
+              />
+            ))}
+          </Tab>
+        ))}
       </Tabs>
     </ContentTimeline>
   </Wrapper>
