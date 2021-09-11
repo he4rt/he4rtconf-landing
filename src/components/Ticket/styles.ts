@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components'
 
 export const WrapperTicket = styled.div`
+  --size: 1;
   width: 650px;
   height: 320px;
-  margin: 100px auto;
   position: relative;
   transition: all 300ms cubic-bezier(0.03, 0.98, 0.53, 0.99) 0s;
   border-radius: 20px;
@@ -46,7 +46,7 @@ export const ContentTicket = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
-    background: ${theme.colors.primary};
+    background: linear-gradient(90deg, #050505 0%, #161616 100.01%);
     border-radius: 15px;
 
     &::before {
@@ -78,7 +78,12 @@ export const ContentTicket = styled.div`
 `
 
 export const Profile = styled.div`
-  padding: calc(39px * 1) calc(155px * 1) calc(39px * 1) calc(58px * 1);
+  padding: calc(39px * var(--size)) calc(155px * var(--size))
+    calc(39px * var(--size)) calc(58px * var(--size));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 
   p {
     color: ${({ theme }) => theme.colors.white};
@@ -122,15 +127,31 @@ export const Profile = styled.div`
 `
 
 export const TicketEvent = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: calc(16px * var(--size));
   align-items: center;
-  justify-content: space-between;
+
+  svg {
+    width: calc(200px * var(--size));
+  }
 
   ${({ theme }) => css`
-    p {
+    .link {
+      color: ${theme.colors.gray};
+      font-size: calc(${theme.font.sizes.xsmall} * var(--size));
+    }
+    .about {
+      font-weight: ${theme.font.weight.light};
+      font-size: calc(${theme.font.sizes.xsmall} * var(--size));
+      span {
+        color: ${theme.colors.purple};
+      }
+    }
+    .date {
       color: ${theme.colors.white};
-      font-size: ${theme.font.sizes.xsmall};
-      font-weight: ${theme.font.weight.bold};
+      font-size: calc(${theme.font.sizes.xsmall} * var(--size));
+      font-weight: ${theme.font.weight.light};
       text-transform: uppercase;
     }
   `}

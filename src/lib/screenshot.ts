@@ -8,8 +8,7 @@ const browserInstance = puppeteer.launch({
       ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
       : process.platform === 'linux'
       ? '/usr/bin/google-chrome'
-      : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-  headless: false
+      : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 })
 
 export default async function screenshot(url: string) {
