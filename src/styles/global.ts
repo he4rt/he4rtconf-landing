@@ -19,6 +19,8 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 62.5%;
+    color: #fff;
+    background-color: #111;
   }
 
   body {
