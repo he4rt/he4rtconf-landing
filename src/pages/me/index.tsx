@@ -42,12 +42,13 @@ const Me = ({ user }: MeProps) => (
   <>
     <Header />
     <HeroSection title={<TitlePage />} subtitle={<SubTitlePage />} />
-    {/* <Ticket
+    <Ticket
       githubUsername={user.github_username}
       username={user.github_username}
-      ticketNumber="014747"
+      ticketNumber={user.id}
       userImg={user.image}
-    /> */}
+      style={{ margin: '100px auto' }}
+    />
 
     <ProfileCard
       github_username={user.github_username}
