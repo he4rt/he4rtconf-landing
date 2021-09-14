@@ -26,10 +26,11 @@ export type TalkProps = {
 
 type TimelineProps = {
   talks: ScheduleProps[]
+  id?: string
 }
 
-const Timeline = ({ talks }: TimelineProps) => (
-  <Wrapper>
+const Timeline = ({ talks, id }: TimelineProps) => (
+  <Wrapper id={id}>
     <Title color="white" fontWeight="bold" size="medium" level={2}>
       Fique por dentro da programação do evento
     </Title>
