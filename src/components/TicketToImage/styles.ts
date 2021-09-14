@@ -1,26 +1,27 @@
 import styled, { css } from 'styled-components'
 
 export const WrapperTicket = styled.div`
-  --size: 1;
-  width: 650px;
-  height: 320px;
+  --size: calc(1700 / 650);
+  width: 1700px;
+  height: 863px;
+  margin: 100px auto;
   position: relative;
   transition: all 300ms cubic-bezier(0.03, 0.98, 0.53, 0.99) 0s;
-  border-radius: 20px;
-  padding: 5px;
+  border-radius: 40px;
+  padding: 15px;
   overflow: hidden;
 
   ${({ theme }) => css`
-    background-color: ${theme.colors.purple};
+    background: ${theme.colors.purple};
 
     &::before {
       content: '';
       display: block;
       position: absolute;
-      top: 130px;
-      left: -30px;
-      width: 60px;
-      height: 60px;
+      top: calc(130px * var(--size));
+      left: calc(-34px * var(--size));
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       background: ${theme.colors.purple};
       z-index: 2;
@@ -30,10 +31,10 @@ export const WrapperTicket = styled.div`
       content: '';
       display: block;
       position: absolute;
-      top: 130px;
-      right: -30px;
-      width: 60px;
-      height: 60px;
+      top: calc(130px * var(--size));
+      right: calc(-34px * var(--size));
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       background: ${theme.colors.purple};
       z-index: 2;
@@ -47,18 +48,18 @@ export const ContentTicket = styled.div`
     height: 100%;
     position: relative;
     background: linear-gradient(90deg, #050505 0%, #161616 100.01%);
-    border-radius: 15px;
+    border-radius: 40px;
 
     &::before {
       content: '';
       display: block;
       position: absolute;
-      top: 130px;
-      left: -30px;
-      width: 50px;
-      height: 50px;
+      top: calc(130px * var(--size));
+      left: -90px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      background: ${theme.colors.background};
+      background: #020202;
       z-index: 3;
     }
 
@@ -66,12 +67,12 @@ export const ContentTicket = styled.div`
       content: '';
       display: block;
       position: absolute;
-      top: 130px;
-      right: -30px;
-      width: 50px;
-      height: 50px;
+      top: calc(130px * var(--size));
+      right: -90px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      background: ${theme.colors.background};
+      background: #020202;
       z-index: 3;
     }
   `}
@@ -92,35 +93,37 @@ export const Profile = styled.div`
   .content-profile {
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
 
   .profile-image {
-    width: calc(82px * 1);
-    height: calc(82px * 1);
+    width: calc(80px * var(--size));
+    height: calc(80px * var(--size));
     border-radius: 50%;
   }
 
   .profile-text {
     margin: 0;
+    margin-left: calc(15px * var(--size));
 
     .profile-name {
-      font-size: calc(32px * 1);
-      margin: 10px 0 5px 20px;
+      font-size: calc(32px * var(--size));
       font-weight: 700;
     }
 
     .profile-username {
-      margin: 0 0 5px 20px;
       color: #8a8f98;
       display: flex;
-      font-size: 1.2rem;
+      font-size: calc(15px * var(--size));
+      align-items: center;
     }
 
     .profile-githubIcon {
+      display: inline-flex;
       > svg {
-        width: 18px;
-        height: 18px;
-        margin-right: 5px;
+        width: 52px;
+        height: 52px;
+        margin-right: 14px;
       }
     }
   }
@@ -163,14 +166,14 @@ export const NumberWrapper = styled.div`
   bottom: 0;
 
   .number {
-    transform: rotate(90deg) translateY(calc(100px * 1));
+    transform: rotate(90deg) translateY(calc(100px * var(--size)));
     transform-origin: bottom right;
-    font-size: calc(40px * 1);
-    font-weight: 700;
+    font-size: calc(40px * var(--size));
+    font-weight: 900;
     text-align: center;
     padding-bottom: 35px;
-    width: calc(320px - 10px);
-    border-bottom: 2px dashed #333;
+    width: calc(330px * var(--size));
+    border-bottom: 3px dashed #333;
     color: ${({ theme }) => theme.colors.white};
   }
 `

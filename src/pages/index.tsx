@@ -1,4 +1,5 @@
 import type { GetServerSideProps } from 'next'
+import Head from 'next/head'
 import { parseCookies } from 'nookies'
 
 import Header from 'components/Header'
@@ -16,27 +17,45 @@ type HomeProps = {
   speakers: SpeakersProps[]
   partners: PartnersProps[]
   talks: ScheduleProps[]
+  referral?: string
 }
 
-const Home = ({ errorMessage, speakers, partners, talks }: HomeProps) => (
-  <>
-    <Header />
-    <HeroSection
-      title="Participe do maior evento de tecnologia"
-      subtitle="Um evento pensado para iniciantes, com palestras, desafios e muito mais!"
-      haveButton
-      errorMessage={errorMessage}
-      id="initial"
-    />
-    <AboutSection id="about" />
-    <SpeakersSection speakers={speakers} id="speakers" />
-    {/*<ContentsSection />*/}
-    <Timeline talks={talks} id="content" />
-    <PartnersSection partners={partners} id="partners" />
-    <FaqSection id="faq" />
-    <Footer notice />
-  </>
-)
+const Home = ({
+  errorMessage,
+  speakers,
+  partners,
+  talks,
+  referral
+}: HomeProps) => {
+  console.log(process.env.NEXT_PUBLIC_SITE_URL)
+  return (
+    <>
+      <Head>
+        {referral && (
+          <meta
+            property="og:image"
+            content={`${process.env.NEXT_PUBLIC_SITE_URL}/api/ticket-image/${referral}`}
+          ></meta>
+        )}
+      </Head>
+      <Header />
+      <HeroSection
+        title="Participe do maior evento de tecnologia"
+        subtitle="Um evento pensado para iniciantes, com palestras, desafios e muito mais!"
+        haveButton
+        errorMessage={errorMessage}
+        id="initial"
+      />
+      <AboutSection id="about" />
+      <SpeakersSection speakers={speakers} id="speakers" />
+      {/*<ContentsSection />*/}
+      <Timeline talks={talks} id="content" />
+      <PartnersSection partners={partners} id="partners" />
+      <FaqSection id="faq" />
+      <Footer notice />
+    </>
+  )
+}
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { access_token } = parseCookies(ctx)
@@ -56,7 +75,21 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   if (ctx.query.error) {
     return {
       props: {
+        speakers: speakersRes.data.data,
+        partners: partnersRes.data,
+        talks: talksRes.data,
         errorMessage: ctx.query.error
+      }
+    }
+  }
+
+  if (ctx.query.referral) {
+    return {
+      props: {
+        speakers: speakersRes.data.data,
+        partners: partnersRes.data,
+        talks: talksRes.data,
+        referral: ctx.query.referral
       }
     }
   }

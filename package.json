@@ -16,9 +16,11 @@
   },
   "dependencies": {
     "axios": "^0.21.2",
+    "chrome-aws-lambda": "^10.1.0",
     "next": "11.1.1",
     "next-pwa": "^5.3.1",
     "nookies": "^2.5.2",
+    "puppeteer-core": "^10.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
