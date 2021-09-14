@@ -10,6 +10,7 @@ type HeroProps = {
   subtitle: string | ReactNode
   haveButton?: boolean
   errorMessage?: string
+  id?: string
 }
 
 const HeroSection = ({
@@ -17,9 +18,10 @@ const HeroSection = ({
   subtitle,
   haveButton,
   errorMessage,
+  id,
   ...props
 }: HeroProps) => (
-  <Wrapper {...props}>
+  <Wrapper id={id} {...props}>
     <Info>
       <Title color="white" fontWeight="semibold" level={1} size="huge">
         {title}
