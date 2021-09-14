@@ -17,6 +17,7 @@ type HomeProps = {
   speakers: SpeakersProps[]
   partners: PartnersProps[]
   talks: ScheduleProps[]
+  referral?: string
 }
 
 const Home = ({
