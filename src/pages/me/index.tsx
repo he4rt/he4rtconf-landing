@@ -47,7 +47,6 @@ const Me = ({ user }: MeProps) => (
       username={user.github_username}
       ticketNumber={user.id}
       userImg={user.image}
-      style={{ margin: '100px auto' }}
     />
 
     <ProfileCard
