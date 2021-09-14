@@ -20,54 +20,66 @@ export type MobileHeaderProps = {
   setOpen: () => void
 }
 
-const MobileHeader = ({ isOpen, setOpen }: MobileHeaderProps) => (
-  <WrapperMenu isOpen={isOpen}>
-    <IoMdClose size={36} aria-label="Close Menu" onClick={setOpen} />
-    <MenuNav>
-      <Link href="#" onClick={setOpen}>
-        Início
-      </Link>
-      <Link href="#" onClick={setOpen}>
-        O evento
-      </Link>
-      <Link href="#" onClick={setOpen}>
-        Conteúdos
-      </Link>
-      <Link href="#" onClick={setOpen}>
-        Quem somos
-      </Link>
-      <Link href="#" onClick={setOpen}>
-        Apoiadores
-      </Link>
-      <Link href="#" onClick={setOpen}>
-        FAQ
-      </Link>
-    </MenuNav>
-  </WrapperMenu>
-)
+export type HeaderProps = {
+  accessToken?: string
+}
 
-const Header = () => {
+const MobileHeader = ({ isOpen, setOpen }: MobileHeaderProps) => {
+  return (
+    <WrapperMenu isOpen={isOpen}>
+      <IoMdClose size={36} aria-label="Close Menu" onClick={setOpen} />
+      <MenuNav>
+        <Link href="#initial" onClick={setOpen}>
+          Início
+        </Link>
+        <Link href="#about" onClick={setOpen}>
+          O evento
+        </Link>
+        <Link href="#speakers" onClick={setOpen}>
+          Palestrantes
+        </Link>
+        <Link href="#content" onClick={setOpen}>
+          Conteúdos
+        </Link>
+        <Link href="#partners" onClick={setOpen}>
+          Apoiadores
+        </Link>
+        <Link href="#faq" onClick={setOpen}>
+          FAQ
+        </Link>
+      </MenuNav>
+    </WrapperMenu>
+  )
+}
+
+const Header = ({ accessToken }: HeaderProps) => {
   const [open, setOpen] = useState<boolean>(false)
 
   return (
-    <WrapperHeader as="header">
+    <WrapperHeader as="header" accessToken={accessToken}>
       <Logo width={260} height={56} src={logo} alt="Logo he4rt" />
       <WrapperLinks>
-        <Link href="#">Início</Link>
-        <Link href="#">O evento</Link>
-        <Link href="#">Conteúdos</Link>
-        <Link href="#">Quem somos</Link>
-        <Link href="#">Apoiadores</Link>
-        <Link href="#">FAQ</Link>
+        {!accessToken ? (
+          <>
+            <Link href="#initial">Início</Link>
+            <Link href="#about">O evento</Link>
+            <Link href="#speakers">Palestrantes</Link>
+            <Link href="#content">Conteúdos</Link>
+            <Link href="#partners">Apoiadores</Link>
+            <Link href="#faq">FAQ</Link>
+          </>
+        ) : null}
       </WrapperLinks>
 
-      <MobileWrapper>
-        <AiOutlineMenu
-          size={36}
-          aria-label="Open Menu"
-          onClick={() => setOpen(true)}
-        />
-      </MobileWrapper>
+      {!accessToken ? (
+        <MobileWrapper>
+          <AiOutlineMenu
+            size={36}
+            aria-label="Open Menu"
+            onClick={() => setOpen(true)}
+          />
+        </MobileWrapper>
+      ) : null}
 
       <MobileHeader isOpen={open} setOpen={() => setOpen((prev) => !prev)} />
     </WrapperHeader>
