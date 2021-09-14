@@ -10,10 +10,10 @@ export type SpeakersProps = {
   slug: string
   description: string
   badge_path: string
-  twitter_url: string
-  github_url: string
-  instagram_url: string
-  linkedin_url: string
+  twitter_url: string | null
+  github_url: string | null
+  instagram_url: string | null
+  linkedin_url: string | null
   active: boolean
   created_at: string
   updated_at: string
@@ -21,10 +21,11 @@ export type SpeakersProps = {
 
 type SpeakersSectionProps = {
   speakers: SpeakersProps[]
+  id?: string
 }
 
-const SpeakersSection = ({ speakers, ...props }: SpeakersSectionProps) => (
-  <Wrapper {...props}>
+const SpeakersSection = ({ speakers, id, ...props }: SpeakersSectionProps) => (
+  <Wrapper id={id} {...props}>
     <Title center color="white" fontWeight="bold" level={2} size="medium">
       Palestrantes do evento
     </Title>

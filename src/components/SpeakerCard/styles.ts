@@ -60,3 +60,34 @@ export const Stack = styled.span`
   text-align: center;
   letter-spacing: -0.02em;
 `
+
+export const WrapperIcons = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+
+  a {
+    margin-right: 3rem;
+    text-decoration: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+
+    ${({ theme }) => css`
+      color: ${theme.colors.white};
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: ${theme.colors.purple};
+      }
+    `}
+  }
+`

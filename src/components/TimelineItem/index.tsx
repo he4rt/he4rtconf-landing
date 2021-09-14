@@ -1,4 +1,4 @@
-import { WrapperTimeline, Content, Tag, Speaker } from './styles'
+import { WrapperTimeline, Content, Tag } from './styles'
 
 import Title from 'components/Title'
 import { TalkProps } from 'components/Timeline'
@@ -15,16 +15,28 @@ const TimelineItem = ({
 }: TimelineItemProps) => (
   <WrapperTimeline>
     <Content>
-      <Title level={3} color="gray" fontWeight="normal" size="small">
+      <Title
+        className="talkHour"
+        level={3}
+        color="gray"
+        fontWeight="normal"
+        size="xsmall"
+      >
         {talk_hour}
       </Title>
       <Title level={3} color="white" fontWeight="light" size="small">
         {title}
       </Title>
       {speakerName !== null ? (
-        <Speaker level={3} color="white" fontWeight="light" size="small">
+        <Title
+          className="speaker"
+          level={3}
+          color="gray"
+          fontWeight="light"
+          size="xsmall"
+        >
           {speakerName}
-        </Speaker>
+        </Title>
       ) : null}
     </Content>
     <Tag status={status}>{status}</Tag>

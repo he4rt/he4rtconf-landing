@@ -6,5 +6,6 @@ export const WrapperTab = styled.div`
     align-items: center;
     justify-content: center;
     margin-bottom: 3rem;
+    list-style: none;
   }
 `
