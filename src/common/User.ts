@@ -1,5 +1,6 @@
 export type InfoProps = {
   id: number
+  name: string
   email: string
   image: string
   discord_id: string

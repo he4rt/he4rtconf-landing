@@ -1,3 +1,4 @@
+import { InfoProps } from 'common/User'
 import TicketPage from 'components/TicketPage'
 import TicketToImage from 'components/TicketToImage'
 import { GetServerSideProps } from 'next'
@@ -6,20 +7,17 @@ import { useRouter } from 'next/router'
 import { axiosClient } from 'services/axios'
 
 export type TicketImageProps = {
-  id: number
-  name: string
-  image: string
-  github_username: string
+  user: Pick<
+    InfoProps,
+    'name' | 'image' | 'github_username' | 'id' | 'messages'
+  >
 }
 
-const TicketImage = ({
-  id,
-  name,
-  image,
-  github_username
-}: TicketImageProps) => {
+const TicketImage = ({ user }: TicketImageProps) => {
   const { query } = useRouter()
-  if (!query.username) return <></>
+  if (!query.username || !user) return <></>
+
+  const { id, name, image, github_username } = user
 
   return (
     <>
@@ -46,11 +44,23 @@ const TicketImage = ({
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const axios = await axiosClient(ctx)
   const { username } = ctx.query
-  const { data } = await axios.get(`/users/${username}`)
+  if (!username) {
+    return {
+      notFound: true
+    }
+  }
 
-  return {
-    props: {
-      ...data
+  try {
+    const { data } = await axios.get(`/users/${username}`)
+
+    return {
+      props: {
+        user: data
+      }
+    }
+  } catch (e) {
+    return {
+      notFound: true
     }
   }
 }
