@@ -8,6 +8,7 @@ const theme = {
       bold: 700
     },
     sizes: {
+      xxsmall: '1.4rem',
       xsmall: '1.6rem',
       small: '1.8rem',
       medium: '2.4rem',
@@ -22,6 +23,7 @@ const theme = {
     secondBlack: '#0A0A0A',
     border: '#181818',
     gray: '#6d6b70',
+    lightGray: '#7A787D',
     purple: '#782BF1',
     white: '#F7F7F7',
     green: '#0CCA4A',
