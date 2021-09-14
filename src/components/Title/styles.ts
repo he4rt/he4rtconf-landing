@@ -3,6 +3,14 @@ import styled, { css, DefaultTheme } from 'styled-components'
 import { TitleProps } from '.'
 
 const wrapperTitleModifiers = {
+  xxsmall: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.xsmall};
+
+    ${theme.breakpoints.lessThan.md} {
+      font-size: ${theme.font.sizes.xxsmall};
+    }
+  `,
+
   xsmall: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.small};
 

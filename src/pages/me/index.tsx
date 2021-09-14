@@ -13,6 +13,7 @@ import { InfoProps } from 'common/User'
 
 type MeProps = {
   user: InfoProps
+  access_token: string
 }
 
 const TitlePage = () => (
@@ -38,9 +39,9 @@ const SubTitlePage = () => (
   </>
 )
 
-const Me = ({ user }: MeProps) => (
+const Me = ({ user, access_token }: MeProps) => (
   <>
-    <Header />
+    <Header accessToken={access_token} />
     <HeroSection title={<TitlePage />} subtitle={<SubTitlePage />} />
     <Ticket
       githubUsername={user.github_username}
@@ -109,7 +110,8 @@ export const getServerSideProps: GetServerSideProps = async (
 
     return {
       props: {
-        user: response.data
+        user: response.data,
+        access_token
       }
     }
   } catch (e) {

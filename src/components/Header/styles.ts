@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import styled, { css } from 'styled-components'
 
-import { MobileHeaderProps } from '.'
+import { HeaderProps, MobileHeaderProps } from '.'
 
 export const Logo = styled(Image)`
   ${({ theme }) => css`
@@ -57,7 +57,7 @@ export const MobileWrapper = styled.div`
   `}
 `
 
-export const WrapperHeader = styled(Container)`
+export const WrapperHeader = styled(Container)<HeaderProps>`
   width: 100%;
   display: flex;
   align-items: center;
@@ -65,10 +65,12 @@ export const WrapperHeader = styled(Container)`
   background-color: transparent;
   padding: 5rem 0;
 
-  ${({ theme }) => css`
+  ${({ theme, accessToken }) => css`
     ${theme.breakpoints.lessThan.md} {
       padding: 2rem 0;
       margin-bottom: 4rem;
+      justify-content: ${!accessToken ? 'space-between' : 'center'};
+
       ${WrapperLinks} {
         display: none;
       }

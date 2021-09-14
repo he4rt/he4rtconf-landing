@@ -4,10 +4,11 @@ import { WrapperTitle } from './styles'
 export type TitleProps = {
   level: 1 | 2 | 3 | 4 | 5 | 6
   fontWeight: 'light' | 'normal' | 'semibold' | 'bold'
-  size: 'xsmall' | 'small' | 'medium' | 'huge'
+  size: 'xxsmall' | 'xsmall' | 'small' | 'medium' | 'huge'
   color: 'white' | 'gray'
   children: string | ReactNode
   center?: boolean
+  className?: string
 }
 
 const Title = ({
