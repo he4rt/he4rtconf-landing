@@ -3,9 +3,13 @@ import Title from 'components/Title'
 
 import { Wrapper } from './styles'
 
-const FaqSection = () => {
+type FaqProps = {
+  id?: string
+}
+
+const FaqSection = ({ id }: FaqProps) => {
   return (
-    <Wrapper>
+    <Wrapper id={id}>
       <Title color="white" fontWeight="bold" level={2} size="medium">
         FAQ
       </Title>

@@ -1,14 +1,13 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
 import Text from 'components/Text'
-import Title from 'components/Title'
 import { TimelineItemProps } from '.'
 
 export const WrapperTimeline = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 7rem;
+  margin-bottom: 6rem;
   ${({ theme }) => css`
     border-bottom: 1px solid ${theme.colors.border};
   `}
@@ -19,15 +18,19 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  h3 {
-    margin-bottom: 1rem;
-  }
-`
-
-export const Speaker = styled(Title)`
   ${({ theme }) => css`
-    color: ${theme.colors.purple};
+    .talkHour {
+      color: ${theme.colors.purple};
+    }
   `}
+
+  h3 {
+    margin-bottom: 0.3rem;
+  }
+
+  .speaker {
+    margin-bottom: 2rem;
+  }
 `
 
 const tagModifiers = (
@@ -47,9 +50,13 @@ const tagModifiers = (
 
 export const Tag = styled(Text)<Pick<TimelineItemProps, 'status'>>`
   ${({ theme, status }) => css`
-    font-weight: ${theme.font.weight.bold};
+    font-weight: ${theme.font.weight.normal};
     font-size: ${theme.font.sizes.xsmall};
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.6rem;
+    text-transform: uppercase;
 
-    color: ${tagModifiers({ status }, theme)};
+    color: ${theme.colors.white};
+    background-color: ${tagModifiers({ status }, theme)};
   `}
 `

@@ -44,13 +44,14 @@ const Home = ({
         subtitle="Um evento pensado para iniciantes, com palestras, desafios e muito mais!"
         haveButton
         errorMessage={errorMessage}
+        id="initial"
       />
-      <AboutSection />
-      <SpeakersSection speakers={speakers} />
+      <AboutSection id="about" />
+      <SpeakersSection speakers={speakers} id="speakers" />
       {/*<ContentsSection />*/}
-      <Timeline talks={talks} />
-      <PartnersSection partners={partners} />
-      <FaqSection />
+      <Timeline talks={talks} id="content" />
+      <PartnersSection partners={partners} id="partners" />
+      <FaqSection id="faq" />
       <Footer notice />
     </>
   )

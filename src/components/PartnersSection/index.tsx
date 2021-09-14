@@ -16,10 +16,11 @@ export type PartnersProps = {
 
 type PartnersSectionProps = {
   partners: PartnersProps[]
+  id: string
 }
 
-const PartnersSection = ({ partners, ...props }: PartnersSectionProps) => (
-  <Wrapper {...props}>
+const PartnersSection = ({ partners, id, ...props }: PartnersSectionProps) => (
+  <Wrapper id={id} {...props}>
     <Title center color="white" fontWeight="bold" level={2} size="medium">
       Nossos patrocinadores
     </Title>
