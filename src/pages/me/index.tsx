@@ -10,6 +10,7 @@ import Ticket from 'components/Ticket'
 import { parseCookies } from 'nookies'
 import { axiosClient } from 'services/axios'
 import { InfoProps } from 'common/User'
+import TicketToImage from 'components/TicketToImage'
 
 type MeProps = {
   user: InfoProps
@@ -43,13 +44,6 @@ const Me = ({ user, access_token }: MeProps) => (
   <>
     <Header accessToken={access_token} />
     <HeroSection title={<TitlePage />} subtitle={<SubTitlePage />} />
-    <Ticket
-      githubUsername={user.github_username}
-      username={user.github_username}
-      ticketNumber={user.id}
-      userImg={user.image}
-    />
-
     <ProfileCard
       github_username={user.github_username}
       email={user.email}

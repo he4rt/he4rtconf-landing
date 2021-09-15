@@ -4,6 +4,7 @@ import { AiFillGithub } from 'react-icons/ai'
 import Button from 'components/Button'
 import Title from 'components/Title'
 import { Wrapper, Info, HeartBox, Error } from './styles'
+import Ticket from 'components/Ticket'
 
 type HeroProps = {
   title: string | ReactNode
@@ -119,6 +120,12 @@ const HeroSection = ({
         </defs>
       </svg>
     </HeartBox>
+    <Ticket
+      githubUsername={'kjkGustavo'}
+      username={'Gustavo'}
+      ticketNumber={1}
+      userImg={'https://avatars.githubusercontent.com/u/47262260?v=4'}
+    />
   </Wrapper>
 )
 
