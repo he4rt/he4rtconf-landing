@@ -6,8 +6,10 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled(Container)`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding-top: 15rem;
   padding-bottom: 15rem;
+  z-index: 1;
 
   h3 {
     margin-top: 1.6rem;
@@ -29,6 +31,7 @@ export const Info = styled.div`
 export const HeartBox = styled.div`
   position: absolute;
   right: -30%;
+  z-index: -1;
   ${({ theme }) => css`
     ${theme.breakpoints.lessThan.md} {
       opacity: 0.5;
