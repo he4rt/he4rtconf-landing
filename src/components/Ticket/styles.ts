@@ -2,11 +2,11 @@ import styled, { css } from 'styled-components'
 
 export const WrapperTicket = styled.div`
   --size: 1;
-  width: 650px;
-  height: 320px;
   position: relative;
+  width: 520px;
+  height: 270px;
   transition: all 300ms cubic-bezier(0.03, 0.98, 0.53, 0.99) 0s;
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 5px;
   overflow: hidden;
 
@@ -17,10 +17,10 @@ export const WrapperTicket = styled.div`
       content: '';
       display: block;
       position: absolute;
-      top: 130px;
-      left: -30px;
-      width: 60px;
-      height: 60px;
+      top: 110px;
+      left: -25px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background: ${theme.colors.purple};
       z-index: 2;
@@ -30,10 +30,10 @@ export const WrapperTicket = styled.div`
       content: '';
       display: block;
       position: absolute;
-      top: 130px;
-      right: -30px;
-      width: 60px;
-      height: 60px;
+      top: 110px;
+      right: -25px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background: ${theme.colors.purple};
       z-index: 2;
@@ -53,10 +53,10 @@ export const ContentTicket = styled.div`
       content: '';
       display: block;
       position: absolute;
-      top: 130px;
-      left: -30px;
-      width: 50px;
-      height: 50px;
+      top: 110px;
+      left: -25px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: ${theme.colors.background};
       z-index: 3;
@@ -66,10 +66,10 @@ export const ContentTicket = styled.div`
       content: '';
       display: block;
       position: absolute;
-      top: 130px;
-      right: -30px;
-      width: 50px;
-      height: 50px;
+      top: 110px;
+      right: -25px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: ${theme.colors.background};
       z-index: 3;
@@ -78,8 +78,8 @@ export const ContentTicket = styled.div`
 `
 
 export const Profile = styled.div`
-  padding: calc(39px * var(--size)) calc(155px * var(--size))
-    calc(39px * var(--size)) calc(58px * var(--size));
+  padding: calc(30px * var(--size)) calc(100px * var(--size))
+    calc(30px * var(--size)) calc(45px * var(--size));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -92,35 +92,37 @@ export const Profile = styled.div`
   .content-profile {
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
 
   .profile-image {
-    width: calc(82px * 1);
-    height: calc(82px * 1);
+    width: calc(75px * 1);
+    height: calc(75px * 1);
     border-radius: 50%;
   }
 
   .profile-text {
     margin: 0;
+    margin-left: calc(15px * var(--size));
 
     .profile-name {
-      font-size: calc(32px * 1);
-      margin: 10px 0 5px 20px;
+      font-size: 24px;
       font-weight: 700;
     }
 
     .profile-username {
-      margin: 0 0 5px 20px;
       color: #8a8f98;
       display: flex;
-      font-size: 1.2rem;
+      font-size: 18px;
+      align-items: center;
     }
 
     .profile-githubIcon {
+      display: inline-flex;
       > svg {
-        width: 18px;
-        height: 18px;
-        margin-right: 5px;
+        width: 20px;
+        width: 20px;
+        margin-right: 8px;
       }
     }
   }
@@ -133,24 +135,24 @@ export const TicketEvent = styled.div`
   align-items: center;
 
   svg {
-    width: calc(200px * var(--size));
+    width: calc(160px * var(--size));
   }
 
   ${({ theme }) => css`
     .link {
       color: ${theme.colors.gray};
-      font-size: calc(${theme.font.sizes.xsmall} * var(--size));
+      font-size: calc(${theme.font.sizes.xxsmall} * var(--size));
     }
     .about {
       font-weight: ${theme.font.weight.light};
-      font-size: calc(${theme.font.sizes.xsmall} * var(--size));
+      font-size: calc(${theme.font.sizes.xxsmall} * var(--size));
       span {
         color: ${theme.colors.purple};
       }
     }
     .date {
       color: ${theme.colors.white};
-      font-size: calc(${theme.font.sizes.xsmall} * var(--size));
+      font-size: calc(${theme.font.sizes.xxsmall} * var(--size));
       font-weight: ${theme.font.weight.light};
       text-transform: uppercase;
     }
@@ -159,18 +161,18 @@ export const TicketEvent = styled.div`
 
 export const NumberWrapper = styled.div`
   position: absolute;
-  right: 35px;
+  right: 95px;
   bottom: 0;
 
   .number {
-    transform: rotate(90deg) translateY(calc(100px * 1));
+    transform: rotate(90deg);
     transform-origin: bottom right;
-    font-size: calc(40px * 1);
+    font-size: calc(${({ theme }) => theme.font.sizes.large} * 1);
     font-weight: 700;
     text-align: center;
-    padding-bottom: 35px;
-    width: calc(320px - 10px);
-    border-bottom: 2px dashed #333;
+    padding-bottom: 15px;
+    width: calc(270px - 10px);
+    border-bottom: 1px dashed #333;
     color: ${({ theme }) => theme.colors.white};
   }
 `

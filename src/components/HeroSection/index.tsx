@@ -1,9 +1,12 @@
 import { ReactNode } from 'react'
-import { AiFillGithub } from 'react-icons/ai'
+import { AiFillGithub, AiOutlineDownload } from 'react-icons/ai'
 
 import Button from 'components/Button'
 import Title from 'components/Title'
-import { Wrapper, Info, HeartBox, Error } from './styles'
+import { Wrapper, Info, HeartBox, Error, ShareWrapper } from './styles'
+import Ticket from 'components/Ticket'
+import { FaTwitter } from 'react-icons/fa'
+import { InfoProps } from 'common/User'
 
 type HeroProps = {
   title: string | ReactNode
@@ -11,6 +14,8 @@ type HeroProps = {
   haveButton?: boolean
   errorMessage?: string
   id?: string
+  hasTicket?: boolean
+  user: InfoProps
 }
 
 const HeroSection = ({
@@ -19,6 +24,8 @@ const HeroSection = ({
   haveButton,
   errorMessage,
   id,
+  hasTicket,
+  user,
   ...props
 }: HeroProps) => (
   <Wrapper id={id} {...props}>
@@ -119,6 +126,35 @@ const HeroSection = ({
         </defs>
       </svg>
     </HeartBox>
+    {hasTicket ? (
+      <ShareWrapper>
+        <Ticket
+          githubUsername={user.github_username}
+          username={user.name}
+          ticketNumber={user.id}
+          userImg={user.image}
+        />
+        <div className="ticket-buttons">
+          <a
+            href={`${process.env.NEXT_PUBLIC_TWEET_BUTTON_URL}${user.github_username}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Button>
+              <FaTwitter /> Compartilhe no Twitter
+            </Button>
+          </a>
+          <a
+            href={`${process.env.NEXT_PUBLIC_SITE_URL}/api/ticket-image/${user.github_username}`}
+            download={`ticket-${user.github_username}.png`}
+          >
+            <Button>
+              <AiOutlineDownload /> Download
+            </Button>
+          </a>
+        </div>
+      </ShareWrapper>
+    ) : null}
   </Wrapper>
 )
 
