@@ -31,10 +31,16 @@ const Home = ({
     <>
       <Head>
         {referral && (
-          <meta
-            property="og:image"
-            content={`${process.env.NEXT_PUBLIC_SITE_URL}/api/ticket-image/${referral}`}
-          ></meta>
+          <>
+            <meta
+              property="og:image"
+              content={`${process.env.NEXT_PUBLIC_SITE_URL}/api/ticket-image/${referral}`}
+            />
+            <meta
+              property="twitter:image"
+              content={`${process.env.NEXT_PUBLIC_SITE_URL}/api/ticket-image/${referral}`}
+            />
+          </>
         )}
       </Head>
       <Header />
