@@ -37,11 +37,11 @@ const tagModifiers = (
   { status }: Pick<TimelineItemProps, 'status'>,
   theme: DefaultTheme
 ) => {
-  if (status === 'Ao vivo agora') {
+  if (status.toLowerCase() === 'ao vivo agora') {
     return theme.colors.red
   }
 
-  if (status === 'Em breve') {
+  if (status.toLowerCase() === 'em breve') {
     return theme.colors.green
   }
 
