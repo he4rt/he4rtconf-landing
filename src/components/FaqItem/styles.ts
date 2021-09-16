@@ -32,6 +32,19 @@ export const Answer = styled(Text)<OpenedProps>`
     ${!opened && `display: none;`}
     margin-top: 2.4rem;
     color: ${theme.colors.white};
+
+    span {
+      color: ${theme.colors.purple};
+      font-weight: bold;
+    }
+
+    a {
+      color: ${theme.colors.purple};
+    }
+
+    ul {
+      padding-left: 30px;
+    }
   `}
 `
 

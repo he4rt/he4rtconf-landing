@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 import { WrapperFaq, Top, Question, Arrow, Answer } from './styles'
 
 export type FaqProps = {
   question: string
-  answer: string
+  answer: ReactNode
   opened?: boolean
 }
 
