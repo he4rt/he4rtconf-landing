@@ -12,5 +12,10 @@ export const WrapperText = styled.p`
     ${theme.breakpoints.lessThan.md} {
       font-size: ${theme.font.sizes.xsmall};
     }
+
+    a {
+      color: ${theme.colors.purple};
+      text-decoration: underline;
+    }
   `}
 `

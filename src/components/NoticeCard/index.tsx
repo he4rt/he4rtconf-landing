@@ -4,6 +4,7 @@ import { WrapperNoticeCard, Content } from './styles'
 import Title from 'components/Title'
 import Button from 'components/Button'
 import { AiFillGithub } from 'react-icons/ai'
+import Text from 'components/Text'
 
 type NoticeProps = {
   title: string | ReactNode
@@ -28,6 +29,11 @@ const NoticeCard = ({ title, subtitle, children, ...props }: NoticeProps) => (
         <AiFillGithub size={24} />
         Garantir vaga com GitHub
       </Button>
+      <Text>
+        <small>
+          Ao clicar no botão você concorda com os <a href="#">termos de uso</a>.
+        </small>
+      </Text>
       {children}
     </Content>
   </WrapperNoticeCard>
