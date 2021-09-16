@@ -7,7 +7,7 @@ import { HeaderProps, MobileHeaderProps } from '.'
 
 export const Logo = styled(Image)`
   ${({ theme }) => css`
-    ${theme.breakpoints.lessThan.md} {
+    ${theme.breakpoints.lessThan.lg} {
       margin-left: 3.2rem !important;
     }
   `}
@@ -20,7 +20,7 @@ export const WrapperLinks = styled.nav`
 
 export const WrapperMenu = styled.menu<Pick<MobileHeaderProps, 'isOpen'>>`
   ${({ theme, isOpen }) => css`
-    ${theme.breakpoints.greaterThan.md} {
+    ${theme.breakpoints.greaterThan.lg} {
       display: none;
     }
 
@@ -51,7 +51,7 @@ export const MobileWrapper = styled.div`
       color: ${theme.colors.white};
     }
     cursor: pointer;
-    ${theme.breakpoints.lessThan.md} {
+    ${theme.breakpoints.lessThan.lg} {
       margin-right: 3.2rem;
     }
   `}
@@ -66,7 +66,7 @@ export const WrapperHeader = styled(Container)<HeaderProps>`
   padding: 5rem 0;
 
   ${({ theme, accessToken }) => css`
-    ${theme.breakpoints.lessThan.md} {
+    ${theme.breakpoints.lessThan.lg} {
       padding: 2rem 0;
       margin-bottom: 4rem;
       justify-content: ${!accessToken ? 'space-between' : 'center'};
@@ -77,7 +77,7 @@ export const WrapperHeader = styled(Container)<HeaderProps>`
     }
 
     ${MobileWrapper} {
-      ${theme.breakpoints.greaterThan.md} {
+      ${theme.breakpoints.greaterThan.lg} {
         display: none;
       }
     }
@@ -93,6 +93,10 @@ export const Link = styled.a`
     &:hover {
       color: ${theme.colors.purple};
     }
+
+    svg {
+      display: block;
+    }
   `}
 
   line-height: 2.3rem;
@@ -102,6 +106,17 @@ export const Link = styled.a`
   text-decoration: none;
 
   &:last-child {
+    margin-right: 0;
+  }
+`
+
+export const IconsMobile = styled.div`
+  display: flex;
+
+  ${Link} {
+    margin-right: 2.5rem;
+  }
+  ${Link}:last-child {
     margin-right: 0;
   }
 `
@@ -121,7 +136,7 @@ export const MenuNav = styled.div`
   }
 
   ${({ theme }) => css`
-    ${theme.breakpoints.greaterThan.md} {
+    ${theme.breakpoints.greaterThan.lg} {
       margin-left: 2.4rem;
     }
   `}
