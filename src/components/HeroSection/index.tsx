@@ -15,7 +15,7 @@ type HeroProps = {
   errorMessage?: string
   id?: string
   hasTicket?: boolean
-  user: InfoProps
+  user?: InfoProps
 }
 
 const HeroSection = ({
@@ -126,17 +126,17 @@ const HeroSection = ({
         </defs>
       </svg>
     </HeartBox>
-    {hasTicket ? (
+    {hasTicket && user ? (
       <ShareWrapper>
         <Ticket
-          githubUsername={user.github_username}
-          username={user.name}
-          ticketNumber={user.id}
-          userImg={user.image}
+          githubUsername={user?.github_username}
+          username={user?.name}
+          ticketNumber={user?.id}
+          userImg={user?.image}
         />
         <div className="ticket-buttons">
           <a
-            href={`${process.env.NEXT_PUBLIC_TWEET_BUTTON_URL}${user.github_username}`}
+            href={`${process.env.NEXT_PUBLIC_TWEET_BUTTON_URL}${user?.github_username}`}
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -145,8 +145,8 @@ const HeroSection = ({
             </Button>
           </a>
           <a
-            href={`${process.env.NEXT_PUBLIC_SITE_URL}/api/ticket-image/${user.github_username}`}
-            download={`ticket-${user.github_username}.png`}
+            href={`${process.env.NEXT_PUBLIC_SITE_URL}/api/ticket-image/${user?.github_username}`}
+            download={`ticket-${user?.github_username}.png`}
           >
             <Button>
               <AiOutlineDownload /> Download
