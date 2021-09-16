@@ -10,10 +10,12 @@ import {
   WrapperLinks,
   WrapperMenu,
   MenuNav,
-  MobileWrapper
+  MobileWrapper,
+  IconsMobile
 } from './styles'
 
 import logo from 'assets/logo.svg'
+import { FaDiscord, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 export type MobileHeaderProps = {
   isOpen: boolean
@@ -47,6 +49,17 @@ const MobileHeader = ({ isOpen, setOpen }: MobileHeaderProps) => {
         <Link href="#faq" onClick={setOpen}>
           FAQ
         </Link>
+        <IconsMobile>
+          <Link href="https://twitter.com/He4rtDevs">
+            <FaTwitter size={35} />
+          </Link>
+          <Link href="https://instagram.com/HeartDevs">
+            <FaInstagram size={35} />
+          </Link>
+          <Link href="https://discord.gg/he4rt">
+            <FaDiscord size={35} />
+          </Link>
+        </IconsMobile>
       </MenuNav>
     </WrapperMenu>
   )
@@ -67,6 +80,15 @@ const Header = ({ accessToken }: HeaderProps) => {
             <Link href="#content">Conteúdos</Link>
             <Link href="#partners">Apoiadores</Link>
             <Link href="#faq">FAQ</Link>
+            <Link href="https://twitter.com/He4rtDevs" target="_blank">
+              <FaTwitter size={25} />
+            </Link>
+            <Link href="https://instagram.com/HeartDevs" target="_blank">
+              <FaInstagram size={25} />
+            </Link>
+            <Link href="https://discord.gg/he4rt" target="_blank">
+              <FaDiscord size={25} />
+            </Link>
           </>
         ) : null}
       </WrapperLinks>
