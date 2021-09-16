@@ -7,6 +7,7 @@ import { Wrapper, Info, HeartBox, Error, ShareWrapper } from './styles'
 import Ticket from 'components/Ticket'
 import { FaTwitter } from 'react-icons/fa'
 import { InfoProps } from 'common/User'
+import Text from 'components/Text'
 
 type HeroProps = {
   title: string | ReactNode
@@ -46,6 +47,12 @@ const HeroSection = ({
             <AiFillGithub size={24} />
             Garantir vaga com GitHub
           </Button>
+          <Text>
+            <small>
+              Ao clicar no botão você concorda com os{' '}
+              <a href="#">termos de uso</a>.
+            </small>
+          </Text>
           {errorMessage ? <Error>{errorMessage}</Error> : null}
         </>
       ) : null}

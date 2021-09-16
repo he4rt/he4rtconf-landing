@@ -19,7 +19,7 @@ export const Wrapper = styled(Container)`
     margin-top: 3.2rem;
   }
 
-  a {
+  button > a {
     text-decoration: none;
   }
 
