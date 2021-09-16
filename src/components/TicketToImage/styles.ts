@@ -43,39 +43,37 @@ export const WrapperTicket = styled.div`
 `
 
 export const ContentTicket = styled.div`
-  ${({ theme }) => css`
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background: linear-gradient(90deg, #050505 0%, #161616 100.01%);
-    border-radius: 40px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(90deg, #050505 0%, #161616 100.01%);
+  border-radius: 40px;
 
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: calc(130px * var(--size));
-      left: -90px;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: #020202;
-      z-index: 3;
-    }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(130px * var(--size));
+    left: -90px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #020202;
+    z-index: 3;
+  }
 
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: calc(130px * var(--size));
-      right: -90px;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: #020202;
-      z-index: 3;
-    }
-  `}
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(130px * var(--size));
+    right: -90px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #020202;
+    z-index: 3;
+  }
 `
 
 export const Profile = styled.div`

@@ -5,12 +5,10 @@ import HeroSection from 'components/HeroSection'
 import Highlight from 'components/Highlight'
 import ProfileCard from 'components/ProfileCard'
 import Footer from 'components/Footer'
-import Ticket from 'components/Ticket'
 
 import { parseCookies } from 'nookies'
 import { axiosClient } from 'services/axios'
 import { InfoProps } from 'common/User'
-import TicketToImage from 'components/TicketToImage'
 
 type MeProps = {
   user: InfoProps

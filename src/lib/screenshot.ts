@@ -8,5 +8,6 @@ export default async function screenshot(username: string) {
       responseType: 'arraybuffer'
     }
   )
+  console.log('Pediu screenshot e retornou...')
   return res.data
 }
