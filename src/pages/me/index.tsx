@@ -43,7 +43,12 @@ const SubTitlePage = () => (
 const Me = ({ user, access_token }: MeProps) => (
   <>
     <Header accessToken={access_token} />
-    <HeroSection title={<TitlePage />} subtitle={<SubTitlePage />} />
+    <HeroSection
+      title={<TitlePage />}
+      subtitle={<SubTitlePage />}
+      hasTicket
+      user={user}
+    />
     <ProfileCard
       github_username={user.github_username}
       email={user.email}
