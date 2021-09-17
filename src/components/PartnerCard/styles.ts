@@ -27,8 +27,8 @@ export const Logo = styled.a<Pick<PartnerProps, 'tier'>>`
   transition: filter 1s;
 
   ${({ tier }) => css`
-    height: ${tier !== 4 ? '6rem' : '9.6rem'};
-    width: ${tier !== 4 ? '6rem' : '9.6rem'};
+    height: ${tier !== 4 ? '12.2rem' : '12.6rem'};
+    width: ${tier !== 4 ? '12.2rem' : '20.6rem'};
   `}
 
   img {

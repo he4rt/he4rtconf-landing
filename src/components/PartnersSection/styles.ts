@@ -81,4 +81,10 @@ export const PartnerItem = styled.div`
   align-items: center;
   justify-content: center;
   gap: 3.2rem;
+
+  ${({ theme, tier }) => css`
+    ${theme.breakpoints.lessThan.md} {
+      flex-direction: column;
+    }
+  `}
 `
