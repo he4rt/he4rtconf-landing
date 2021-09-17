@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div`
-  ${({ theme }) => css`
+import { PartnerProps } from '.'
+
+export const Wrapper = styled.div<Pick<PartnerProps, 'tier'>>`
+  ${({ theme, tier }) => css`
     background-color: ${theme.colors.secondBlack};
+    padding: ${tier !== 4 ? '5rem' : '8rem'};
   `}
 
-  padding: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,22 +17,19 @@ export const Wrapper = styled.div`
     filter: grayscale(0);
     transition: filter 1s;
   }
-  &:last-child {
-    justify-self: center;
-    grid-column-start: span 5;
-    min-width: 25rem;
-  }
 `
 
-export const Logo = styled.a`
-  width: 100%;
-  height: 12.6rem;
-  width: 12.6rem;
+export const Logo = styled.a<Pick<PartnerProps, 'tier'>>`
   position: relative;
   background: transparent;
   border-radius: 999px;
   filter: grayscale(1);
   transition: filter 1s;
+
+  ${({ tier }) => css`
+    height: ${tier !== 4 ? '12.2rem' : '12.6rem'};
+    width: ${tier !== 4 ? '12.2rem' : '20.6rem'};
+  `}
 
   img {
     width: 100%;

@@ -31,7 +31,14 @@ const theme = {
     purpleLightGradient:
       'linear-gradient(356.91deg, #782CF0 -7.12%, #996CDF 133.4%)',
     purpleDarkGradient:
-      'linear-gradient(356.91deg, #3C157B -7.12%, #6E4EA0 133.4%)'
+      'linear-gradient(356.91deg, #3C157B -7.12%, #6E4EA0 133.4%)',
+    goldGradient:
+      'linear-gradient(90deg, #FFC737 0%, rgba(255, 199, 55, 0) 220.96%)',
+    grayGradient:
+      'linear-gradient(90deg, #464646 0%, #272727 126.92%, #121212 126.92%)',
+    blueGradient: 'linear-gradient(90deg, #10ACEE 0%, #010C10 193.71%)',
+    purpleGradient: 'linear-gradient(90deg, #5214D5 0%, #010C10 193.71%)',
+    whiteGradient: 'linear-gradient(90deg, #FCFCFC 0%, #010C10 193.71%)'
   },
   container: {
     sm: '640px',
