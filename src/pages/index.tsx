@@ -69,6 +69,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const partnersRes = await axios.get('/sponsors')
   const talksRes = await axios.get('/talks')
 
+  console.log('response', partnersRes)
+
   if (access_token) {
     return {
       redirect: {
