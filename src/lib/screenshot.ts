@@ -8,6 +8,8 @@ export default async function screenshot(username: string) {
       responseType: 'arraybuffer'
     }
   )
-  console.log('Pediu screenshot e retornou...')
+  console.log(
+    `[${new Date().toLocaleString('pt-BR')}] Request screenshot AWS function.`
+  )
   return res.data
 }
