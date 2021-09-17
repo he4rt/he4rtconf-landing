@@ -31,7 +31,7 @@ const NoticeCard = ({ title, subtitle, children, ...props }: NoticeProps) => (
       </Button>
       <Text>
         <small>
-          Ao clicar no botão você concorda com os <a href="#">termos de uso</a>.
+          Utilizaremos suas informações do GitHub para envio de e-mail.
         </small>
       </Text>
       {children}
