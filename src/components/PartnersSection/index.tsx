@@ -100,7 +100,7 @@ const PartnersSection = ({ partners, id, ...props }: PartnersSectionProps) => {
           {partnersTiers.map((partnersItem, index) => (
             <div className="wrapperItem" key={`key-${index}`}>
               <Tag tier={index + 1}>{tagTitle(index + 1)}</Tag>
-              <PartnerItem>
+              <PartnerItem key={`key-item-${index}`}>
                 {partnersItem.map((partner) => wrapperCards(partner))}
               </PartnerItem>
             </div>
