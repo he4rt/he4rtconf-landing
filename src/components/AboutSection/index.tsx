@@ -24,11 +24,6 @@ const AboutSection = ({ ...props }) => (
         materiais produzidos para a conf através do Github e redes sociais da
         He4rt Developers.
       </Text>
-      <Text>
-        Muito mais que um evento, a He4rt Conf é uma iniciativa que visa
-        democratizar e facilitar o acesso a conteúdos de alta qualidade
-        produzidos pela comunidade, para a comunidade.
-      </Text>
     </Info>
   </Wrapper>
 )
