@@ -12,7 +12,6 @@ import Text from 'components/Text'
 type HeroProps = {
   title: string | ReactNode
   subtitle: string | ReactNode
-  description?: string | ReactNode
   haveButton?: boolean
   errorMessage?: string
   id?: string
@@ -28,7 +27,6 @@ const HeroSection = ({
   id,
   hasTicket,
   user,
-  description,
   ...props
 }: HeroProps) => {
   const [copied, setCopied] = useState<boolean>(false)
@@ -48,9 +46,6 @@ const HeroSection = ({
         </Title>
         <Title color="gray" fontWeight="light" level={3} size="small">
           {subtitle}
-        </Title>
-        <Title color="gray" fontWeight="light" level={3} size="small">
-          {description}
         </Title>
         {haveButton ? (
           <>
