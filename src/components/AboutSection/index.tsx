@@ -20,9 +20,14 @@ const AboutSection = ({ ...props }) => (
         produzidos pela comunidade, para a comunidade.
       </Text>
       <Text>
-        O evento será 100% gratuito e disponibilizara de forma pública todos os
+        O evento será 100% gratu ito e disponibilizara de forma pública todos os
         materiais produzidos para a conf através do Github e redes sociais da
         He4rt Developers.
+      </Text>
+      <Text>
+        Contaremos com um sistema de gameficação onde todos que participarem
+        terão chances de resgatar brindes que serão disponibilizados pelo evento
+        e seus patrocinadores.
       </Text>
     </Info>
   </Wrapper>
