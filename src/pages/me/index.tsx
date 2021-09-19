@@ -26,7 +26,7 @@ const TitlePage = () => (
 
 const SubTitlePage = () => (
   <>
-    Continue indo além, participe da gamificação, basta apenas entrar com a{' '}
+    Continue indo além, participe da gamificação, apenas entrando com a{' '}
     <Highlight size="small" fontWeight="light">
       Twitch
     </Highlight>{' '}

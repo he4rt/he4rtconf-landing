@@ -25,9 +25,9 @@ const AboutSection = ({ ...props }) => (
         He4rt Developers.
       </Text>
       <Text>
-        Muito mais que um evento, a He4rt Conf é uma iniciativa que visa
-        democratizar e facilitar o acesso a conteúdos de alta qualidade
-        produzidos pela comunidade, para a comunidade.
+        Contaremos com um sistema de gameficação onde todos que participarem
+        terão chances de resgatar brindes que serão disponibilizados pelo evento
+        e seus patrocinadores.
       </Text>
     </Info>
   </Wrapper>

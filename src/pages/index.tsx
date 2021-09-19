@@ -10,6 +10,7 @@ import SpeakersSection, { SpeakersProps } from 'components/SpeakersSection'
 import PartnersSection, { PartnersProps } from 'components/PartnersSection'
 import FaqSection from 'components/FaqSection'
 import Timeline, { ScheduleProps } from 'components/Timeline'
+import Highlight from 'components/Highlight'
 import { axiosClient } from 'services/axios'
 
 type HomeProps = {
@@ -46,7 +47,28 @@ const Home = ({
       <Header />
       <HeroSection
         title="Participe do maior evento de tecnologia"
-        subtitle="Um evento pensado para iniciantes, com palestras, desafios e muito mais!"
+        subtitle={
+          <>
+            Um evento pensado para iniciantes, com palestras, desafios e muito
+            mais! O evento ocorrerá nos dias{' '}
+            <Highlight size="small" fontWeight="light">
+              01
+            </Highlight>
+            ,{' '}
+            <Highlight size="small" fontWeight="light">
+              02
+            </Highlight>{' '}
+            e{' '}
+            <Highlight size="small" fontWeight="light">
+              03{' '}
+            </Highlight>{' '}
+            de{' '}
+            <Highlight size="small" fontWeight="light">
+              Outubro
+            </Highlight>
+            .
+          </>
+        }
         haveButton
         errorMessage={errorMessage}
         id="initial"
