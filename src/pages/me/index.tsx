@@ -87,7 +87,7 @@ export const getServerSideProps: GetServerSideProps = async (
       // TODO: Arrumar type ^
       return {
         redirect: {
-          destination: `/?error=${err.response.data.message}`,
+          destination: `/?error=${err.response.data.type}`,
           permanent: false
         }
       }

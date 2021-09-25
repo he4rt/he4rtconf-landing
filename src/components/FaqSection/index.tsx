@@ -104,7 +104,9 @@ const FaqSection = ({ id }: FaqProps) => {
         }
       />
       <FaqItem
+        id="faq-github"
         question="Como habilitar o e-mail no GitHub?"
+        opened
         answer={
           <>
             Para habilitar um e-mail público você precisa seguir alguns passos:
@@ -116,13 +118,16 @@ const FaqSection = ({ id }: FaqProps) => {
                 </a>
                 ;
               </li>
-              <li>Adicione seu e-mail em "add email address";</li>
+              <li>
+                Desabilite a opção &quot;Keep my email addresses private&quot;;
+              </li>
+              <li>Adicione seu e-mail em &quot;add email address&quot;;</li>
               <li>
                 Após adicionado, volte para{' '}
                 <a href="https://github.com/settings/profile">
                   https://github.com/settings/profile
                 </a>{' '}
-                e escolha um "Public email".
+                e escolha um &quot;Public email&quot;.
               </li>
             </ul>
           </>
