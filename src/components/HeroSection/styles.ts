@@ -48,6 +48,10 @@ export const HeartBox = styled.div`
 export const Error = styled(Text)`
   margin-top: 1.5rem;
   color: red;
+  a {
+    color: red;
+    font-weight: bold;
+  }
 `
 
 export const ShareWrapper = styled.div`

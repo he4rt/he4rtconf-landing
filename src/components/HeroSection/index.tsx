@@ -62,7 +62,12 @@ const HeroSection = ({
                 Utilizaremos suas informações do GitHub para envio de e-mail.
               </small>
             </Text>
-            {errorMessage ? <Error>{errorMessage}</Error> : null}
+            {errorMessage === 'provider' ? (
+              <Error>
+                Habilite a visibilidade do e-mail, qualquer dúvida{' '}
+                <a href="#faq-github">CLIQUE AQUI</a>.
+              </Error>
+            ) : null}
           </>
         ) : null}
       </Info>
