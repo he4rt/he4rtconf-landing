@@ -16,10 +16,13 @@ import {
   RevokeLinks,
   DeleteAccount,
   GamificationWrapperText,
-  ButtonLink
+  ButtonLink,
+  UserStatus,
+  UserName
 } from './styles'
 import Router from 'next/router'
 import Container from 'components/Container'
+import ProgressBar from 'components/ProgressBar'
 
 type ProfileCardProps = Pick<
   InfoProps,
@@ -30,10 +33,11 @@ type ProfileCardProps = Pick<
   | 'messages'
   | 'twitch_id'
   | 'discord_id'
+  | 'name'
 >
 
 const ProfileCard = ({
-  email,
+  name,
   image,
   github_username,
   character,
@@ -55,12 +59,21 @@ const ProfileCard = ({
           />
         </ImageBox>
 
-        <div>
-          <Title level={5} color="white" fontWeight="bold" size="xsmall">
-            {github_username}
-          </Title>
-          <Text>{email}</Text>
-        </div>
+        <UserStatus>
+          <UserName>
+            <Title level={3} color="white" fontWeight="bold" size="small">
+              {name}
+            </Title>
+            <Title level={3} color="gray" fontWeight="light" size="small">
+              Nível {character.level}
+            </Title>
+          </UserName>
+          <ProgressBar
+            current={character.current_exp}
+            levelup={character.levelup_exp.required}
+            percentage={character.levelup_percentage}
+          />
+        </UserStatus>
       </User>
 
       <Gamification>
