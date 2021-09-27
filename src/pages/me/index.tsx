@@ -48,6 +48,7 @@ const Me = ({ user, access_token }: MeProps) => (
       user={user}
     />
     <ProfileCard
+      name={user.name}
       github_username={user.github_username}
       email={user.email}
       image={
@@ -104,7 +105,6 @@ export const getServerSideProps: GetServerSideProps = async (
 
   try {
     const response = await axios.get('users/me')
-
     return {
       props: {
         user: response.data,
