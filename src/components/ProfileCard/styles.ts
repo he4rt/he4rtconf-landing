@@ -25,6 +25,7 @@ export const ContentProfile = styled(Content)`
     padding: 3rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 5rem;
 
     ${theme.breakpoints.lessThan.md} {
       border: none;
@@ -37,16 +38,7 @@ export const User = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
-  div:last-child {
-    display: flex;
-    flex-direction: column;
-    margin-left: 4.5rem;
-
-    > p {
-      margin: 0.8rem 0%;
-    }
-  }
+  width: 100%;
 
   ${({ theme }) => css`
     ${theme.breakpoints.lessThan.md} {
@@ -62,7 +54,7 @@ export const User = styled.div`
     ${theme.breakpoints.greaterThan.md} {
       &:after {
         content: '';
-        left: 45%;
+        left: 50%;
         position: absolute;
         display: block;
         height: 100%;
@@ -182,4 +174,21 @@ export const ButtonLink = styled(Button)`
       margin-bottom: 3rem;
     }
   `}
+`
+
+export const UserStatus = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
+
+  > p {
+    margin: 0.8rem 0%;
+  }
+`
+
+export const UserName = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
 `
