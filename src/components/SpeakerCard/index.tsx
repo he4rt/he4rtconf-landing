@@ -1,9 +1,11 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { FiTwitter, FiInstagram, FiLinkedin, FiGithub } from 'react-icons/fi'
 
-import { Wrapper, Avatar, Name, Stack, WrapperIcons } from './styles'
+import { Wrapper, Avatar, Name, Stack, WrapperIcons, Button } from './styles'
 
 import { SpeakersProps } from 'components/SpeakersSection'
+import { BsArrowRight } from 'react-icons/bs'
 import { ReactNode } from 'react'
 
 type SpeakerCardProps = Pick<
@@ -16,9 +18,10 @@ type SpeakerCardProps = Pick<
   | 'linkedin_url'
   | 'github_url'
   | 'active'
+  | 'slug'
 >
 
-const verifySocialLink = (icon: ReactNode, link: string | null) => {
+export const verifySocialLink = (icon: ReactNode, link: string | null) => {
   if (!link) {
     return null
   }
@@ -39,6 +42,7 @@ const SpeakerCard = ({
   linkedin_url,
   github_url,
   active,
+  slug,
   ...props
 }: SpeakerCardProps) => (
   <Wrapper {...props}>
@@ -66,6 +70,11 @@ const SpeakerCard = ({
         {verifySocialLink(<FiGithub />, github_url)}
       </WrapperIcons>
     ) : null}
+    <Link href={`/palestrante/${slug}`} passHref>
+      <Button>
+        Ver palestrante <BsArrowRight size={24} />
+      </Button>
+    </Link>
 
     {/*<Description>
       Front-End Developer há alguns anos, meio metido a designer e conhecido

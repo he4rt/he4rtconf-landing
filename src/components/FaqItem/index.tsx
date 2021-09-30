@@ -5,6 +5,7 @@ export type FaqProps = {
   question: string
   answer: ReactNode
   opened?: boolean
+  id?: string
 }
 
 export type OpenedProps = {
