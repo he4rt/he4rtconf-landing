@@ -33,6 +33,15 @@ export const ValueWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    h5 {
+      margin-left: 2rem;
+    }
+  }
 `
 
 export const IconWrapper = styled.a`
@@ -43,6 +52,7 @@ export const IconWrapper = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   > svg {
     height: 2rem;
