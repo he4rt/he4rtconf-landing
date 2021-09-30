@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 
 import Title from 'components/Title'
+import Link from 'next/link'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
@@ -18,6 +19,7 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
+  padding-bottom: 10rem;
 
   &:after {
     position: absolute;
@@ -90,4 +92,34 @@ export const WrapperIcons = styled.div`
       }
     `}
   }
+`
+
+export const Button = styled.button`
+  background: none;
+  border: none;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  padding: 2rem 0;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  svg {
+    margin-left: 2rem;
+  }
+
+  ${({ theme }) => css`
+    border-top: 1px solid #181818;
+    color: ${theme.colors.white};
+    font-size: ${theme.font.sizes.small};
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: ${theme.colors.purple};
+    }
+  `}
 `
