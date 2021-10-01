@@ -31,22 +31,22 @@ const MobileHeader = ({ isOpen, setOpen }: MobileHeaderProps) => {
     <WrapperMenu isOpen={isOpen}>
       <IoMdClose size={36} aria-label="Close Menu" onClick={setOpen} />
       <MenuNav>
-        <Link href="#initial" onClick={setOpen}>
+        <Link href="/#initial" onClick={setOpen} passHref>
           Início
         </Link>
-        <Link href="#about" onClick={setOpen}>
+        <Link href="/#about" onClick={setOpen} passHref>
           O evento
         </Link>
-        <Link href="#speakers" onClick={setOpen}>
+        <Link href="/#speakers" onClick={setOpen} passHref>
           Palestrantes
         </Link>
-        <Link href="#content" onClick={setOpen}>
+        <Link href="/#content" onClick={setOpen} passHref>
           Conteúdos
         </Link>
-        <Link href="#partners" onClick={setOpen}>
+        <Link href="/#partners" onClick={setOpen} passHref>
           Apoiadores
         </Link>
-        <Link href="#faq" onClick={setOpen}>
+        <Link href="/#faq" onClick={setOpen} passHref>
           FAQ
         </Link>
         <IconsMobile>
@@ -69,39 +69,49 @@ const Header = ({ accessToken }: HeaderProps) => {
   const [open, setOpen] = useState<boolean>(false)
 
   return (
-    <WrapperHeader as="header" accessToken={accessToken}>
-      <Logo width={260} height={56} src={logo} alt="Logo he4rt" />
+    <WrapperHeader as="header">
+      <Link href="/" passHref>
+        <Logo width={260} height={56} src={logo} alt="Logo he4rt" />
+      </Link>
       <WrapperLinks>
-        {!accessToken ? (
-          <>
-            <Link href="#initial">Início</Link>
-            <Link href="#about">O evento</Link>
-            <Link href="#speakers">Palestrantes</Link>
-            <Link href="#content">Conteúdos</Link>
-            <Link href="#partners">Apoiadores</Link>
-            <Link href="#faq">FAQ</Link>
-            <Link href="https://twitter.com/He4rtDevs" target="_blank">
-              <FaTwitter size={25} />
-            </Link>
-            <Link href="https://instagram.com/HeartDevs" target="_blank">
-              <FaInstagram size={25} />
-            </Link>
-            <Link href="https://discord.gg/he4rt" target="_blank">
-              <FaDiscord size={25} />
-            </Link>
-          </>
-        ) : null}
+        <>
+          <Link href="/#initial" passHref>
+            Início
+          </Link>
+          <Link href="/#about" passHref>
+            O evento
+          </Link>
+          <Link href="/#speakers" passHref>
+            Palestrantes
+          </Link>
+          <Link href="/#content" passHref>
+            Conteúdos
+          </Link>
+          <Link href="/#partners" passHref>
+            Apoiadores
+          </Link>
+          <Link href="/#faq" passHref>
+            FAQ
+          </Link>
+          <Link href="https://twitter.com/He4rtDevs" target="_blank">
+            <FaTwitter size={25} />
+          </Link>
+          <Link href="https://instagram.com/HeartDevs" target="_blank">
+            <FaInstagram size={25} />
+          </Link>
+          <Link href="https://discord.gg/he4rt" target="_blank">
+            <FaDiscord size={25} />
+          </Link>
+        </>
       </WrapperLinks>
 
-      {!accessToken ? (
-        <MobileWrapper>
-          <AiOutlineMenu
-            size={36}
-            aria-label="Open Menu"
-            onClick={() => setOpen(true)}
-          />
-        </MobileWrapper>
-      ) : null}
+      <MobileWrapper>
+        <AiOutlineMenu
+          size={36}
+          aria-label="Open Menu"
+          onClick={() => setOpen(true)}
+        />
+      </MobileWrapper>
 
       <MobileHeader isOpen={open} setOpen={() => setOpen((prev) => !prev)} />
     </WrapperHeader>

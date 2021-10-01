@@ -1,13 +1,16 @@
 import { ReactNode } from 'react'
 import { WrapperText } from './styles'
 
-type TextProps = {
+export type TextProps = {
   children: ReactNode
   onClick?: () => void
+  center?: boolean
 }
 
-const Text = ({ children, ...props }: TextProps) => (
-  <WrapperText {...props}>{children}</WrapperText>
+const Text = ({ children, center, ...props }: TextProps) => (
+  <WrapperText center={center} {...props}>
+    {children}
+  </WrapperText>
 )
 
 export default Text

@@ -29,6 +29,7 @@ const wrapperCards = (partner: PartnersProps) => {
   if (partner.tier === 1) {
     return (
       <PartnerCard
+        key={`key-item-${partner.url}`}
         url={partner.url}
         image={partner.logo_path}
         tier={partner.tier}
@@ -39,6 +40,7 @@ const wrapperCards = (partner: PartnersProps) => {
   if (partner.tier === 2) {
     return (
       <PartnerCard
+        key={`key-item-${partner.url}`}
         url={partner.url}
         image={partner.logo_path}
         tier={partner.tier}
@@ -49,6 +51,7 @@ const wrapperCards = (partner: PartnersProps) => {
   if (partner.tier === 3) {
     return (
       <PartnerCard
+        key={`key-item-${partner.url}`}
         url={partner.url}
         image={partner.logo_path}
         tier={partner.tier}
@@ -58,6 +61,7 @@ const wrapperCards = (partner: PartnersProps) => {
 
   return (
     <PartnerCard
+      key={`key-item-${partner.url}`}
       url={partner.url}
       image={partner.logo_path}
       tier={partner.tier}
@@ -97,10 +101,10 @@ const PartnersSection = ({ partners, id, ...props }: PartnersSectionProps) => {
       </Title>
       <PartnersList>
         <WrapperPartner>
-          {partnersTiers.map((partnersItem, index) => (
+          {partnersTiers.map((partnersItem, index): any => (
             <div className="wrapperItem" key={`key-${index}`}>
               <Tag tier={index + 1}>{tagTitle(index + 1)}</Tag>
-              <PartnerItem key={`key-item-${index}`}>
+              <PartnerItem>
                 {partnersItem.map((partner) => wrapperCards(partner))}
               </PartnerItem>
             </div>

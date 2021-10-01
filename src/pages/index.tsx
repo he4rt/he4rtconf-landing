@@ -1,6 +1,5 @@
 import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import { parseCookies } from 'nookies'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
@@ -85,20 +84,11 @@ const Home = ({
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { access_token } = parseCookies(ctx)
   const axios = await axiosClient(ctx)
   const speakersRes = await axios.get('/speakers')
   const partnersRes = await axios.get('/sponsors')
   const talksRes = await axios.get('/talks')
 
-  if (access_token) {
-    return {
-      redirect: {
-        destination: '/me',
-        permanent: false
-      }
-    }
-  }
   if (ctx.query.error) {
     return {
       props: {

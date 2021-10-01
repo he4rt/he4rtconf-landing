@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components'
+import { TextProps } from '.'
 
-export const WrapperText = styled.p`
+export const WrapperText = styled.p<TextProps>`
   line-height: 2.8rem;
   letter-spacing: -0.02em;
 
-  ${({ theme }) => css`
+  ${({ theme, center }) => css`
     font-weight: ${theme.font.weight.light};
     font-size: ${theme.font.sizes.small};
     color: ${theme.colors.gray};
@@ -17,5 +18,7 @@ export const WrapperText = styled.p`
       color: ${theme.colors.purple};
       text-decoration: underline;
     }
+
+    ${center && 'text-align: center;'}
   `}
 `
