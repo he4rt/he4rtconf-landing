@@ -22,11 +22,11 @@ export const ListenerInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 `
 
 export const Listeners = styled.div`
   display: flex;
   gap: 3rem;
   margin-top: 4rem;
+  flex-wrap: wrap;
 `
