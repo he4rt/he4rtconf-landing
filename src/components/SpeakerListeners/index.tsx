@@ -1,7 +1,13 @@
 import Text from 'components/Text'
 import Title from 'components/Title'
 import Image from 'next/image'
-import { Wrapper, ListenerImage, Listeners, ListenerInfo } from './styles'
+import {
+  Wrapper,
+  ListenerImage,
+  Listeners,
+  ListenerInfo,
+  ListenerUser
+} from './styles'
 
 const SpeakerListeners = ({ speaker }: any) => (
   <Wrapper>
@@ -20,22 +26,23 @@ const SpeakerListeners = ({ speaker }: any) => (
       {speaker.badges
         .sort(() => 0.5 - Math.random())
         .map(({ image, id, name, github_username }: any) => (
-          <ListenerImage
+          <ListenerUser
             href={`https://github.com/${github_username}`}
+            title={github_username}
             rel="noopener noreferrer"
             target="_blank"
             key={id}
           >
-            <Image
+            <ListenerImage
               src={image}
               alt={`Avatar de ${name}`}
-              width="8rem"
-              height="8rem"
-              layout="responsive"
+              width="80px"
+              height="80px"
+              layout="fixed"
               objectFit="cover"
               loading="lazy"
             />
-          </ListenerImage>
+          </ListenerUser>
         ))}
     </Listeners>
   </Wrapper>
