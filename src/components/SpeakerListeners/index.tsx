@@ -33,6 +33,7 @@ const SpeakerListeners = ({ speaker }: any) => (
               height="8rem"
               layout="responsive"
               objectFit="cover"
+              loading="lazy"
             />
           </ListenerImage>
         ))}
