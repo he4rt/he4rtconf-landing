@@ -35,7 +35,9 @@ const TimelineItem = ({
           fontWeight="light"
           size="xsmall"
         >
-          {speakerName}
+          {speakerName.includes('Helen Dias')
+            ? 'Danny Farias, Helen Dias, Felipe Fialho, Daiune Fujii, Alexandre Xavier, Leila Almeida'
+            : speakerName}
         </Title>
       ) : null}
     </Content>
