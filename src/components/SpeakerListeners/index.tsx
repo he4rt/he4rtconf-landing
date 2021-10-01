@@ -23,27 +23,25 @@ const SpeakerListeners = ({ speaker }: any) => (
           Nenhum usuário encontrado
         </Text>
       ) : null}
-      {speaker.badges
-        .sort(() => 0.5 - Math.random())
-        .map(({ image, id, name, github_username }: any) => (
-          <ListenerUser
-            href={`https://github.com/${github_username}`}
-            title={github_username}
-            rel="noopener noreferrer"
-            target="_blank"
-            key={id}
-          >
-            <ListenerImage
-              src={image}
-              alt={`Avatar de ${name}`}
-              width="80px"
-              height="80px"
-              layout="fixed"
-              objectFit="cover"
-              loading="lazy"
-            />
-          </ListenerUser>
-        ))}
+      {speaker.badges.map(({ image, id, name, github_username }: any) => (
+        <ListenerUser
+          href={`https://github.com/${github_username}`}
+          title={github_username}
+          rel="noopener noreferrer"
+          target="_blank"
+          key={`${id}-${github_username}`}
+        >
+          <ListenerImage
+            src={image}
+            alt={`Avatar de ${name}`}
+            width="80px"
+            height="80px"
+            layout="fixed"
+            objectFit="cover"
+            loading="lazy"
+          />
+        </ListenerUser>
+      ))}
     </Listeners>
   </Wrapper>
 )

@@ -20,14 +20,17 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   try {
     const { data } = await axios.get(`/speakers/${slug}?badges&talk`)
+
     return {
       props: {
-        speaker: data
+        speaker: {
+          ...data,
+          badges: data.badges.sort(() => 0.5 - Math.random())
+        }
       }
     }
   } catch (e) {
     console.log(e.response)
-    console.log(e.response.data)
     return {
       notFound: true
     }
