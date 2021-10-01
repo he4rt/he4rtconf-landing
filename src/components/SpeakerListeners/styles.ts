@@ -1,4 +1,5 @@
 import Container from 'components/Container'
+import Image from 'next/image'
 import styled from 'styled-components'
 
 export const Wrapper = styled(Container)`
@@ -7,15 +8,14 @@ export const Wrapper = styled(Container)`
   margin-bottom: 4rem;
 `
 
-export const ListenerImage = styled.a`
+export const ListenerUser = styled.a`
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
+`
 
-  img {
-    width: 100%;
-    border-radius: 50%;
-  }
+export const ListenerImage = styled(Image)`
+  border-radius: 50%;
 `
 
 export const ListenerInfo = styled.div`
