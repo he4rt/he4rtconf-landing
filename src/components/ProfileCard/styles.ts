@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 import { Content } from 'components/NoticeCard/styles'
 import Text from 'components/Text'
+import Link from 'next/link'
 import Button from 'components/Button'
 
 export const WrapperProfile = styled.div`
@@ -191,4 +192,23 @@ export const UserName = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.6rem;
+`
+
+export const Badges = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+`
+
+export const Badge = styled(Link)`
+  background: #151515;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  img {
+    border-radius: 50%;
+  }
 `
