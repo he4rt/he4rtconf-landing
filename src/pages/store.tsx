@@ -25,7 +25,7 @@ const items: ItemKitProps[] = [
     stock: 'Disponível',
     value: 70,
     bottons: [
-      '/assets/products/bottons/c#.png',
+      '/assets/products/bottons/csharp.png',
       '/assets/products/bottons/java.png',
       '/assets/products/bottons/javascript.png',
       '/assets/products/bottons/php.png',

@@ -9,7 +9,9 @@ import {
   ImageWrapper,
   ItemsWrapper,
   ValueWrapper,
-  IconWrapper
+  IconWrapper,
+  Box,
+  SubItem
 } from './styles'
 
 export type ItemKitProps = {
@@ -42,37 +44,47 @@ const ItemKit = ({
       {name}
     </Title>
     <Tag>{tag}</Tag>
-    <ImageWrapper>
-      {tshirts.map((tshirt) => (
-        <img key={`key-tshirt-${tshirt}`} src={tshirt} />
-      ))}
-    </ImageWrapper>
-    <ImageWrapper>
-      <div>
+    <Box>
+      <ImageWrapper>
+        {tshirts.map((tshirt) => (
+          <img key={`key-tshirt-${tshirt}`} src={tshirt} />
+        ))}
+      </ImageWrapper>
+    </Box>
+    <Box>
+      <SubItem>
         <Text>Bottons</Text>
-        {bottons.map((botton) => (
-          <img src={botton} key={`key-bottom-${botton}`} />
-        ))}
-      </div>
-      <div>
+        <div>
+          {bottons.map((botton) => (
+            <img src={botton} key={`key-bottom-${botton}`} />
+          ))}
+        </div>
+      </SubItem>
+      <SubItem>
         <Text>Chaveiros</Text>
-        {keychains.map((keychain) => (
-          <img src={keychain} key={`key-keychain-${keychain}`} />
-        ))}
-      </div>
-      <div>
+        <div>
+          {keychains.map((keychain) => (
+            <img src={keychain} key={`key-keychain-${keychain}`} />
+          ))}
+        </div>
+      </SubItem>
+      <SubItem>
         <Text>Adesivos</Text>
-        {stickers.map((sticker) => (
-          <img src={sticker} key={`key-sticker-${sticker}`} />
-        ))}
-      </div>
-      <div>
+        <div>
+          {stickers.map((sticker) => (
+            <img src={sticker} key={`key-sticker-${sticker}`} />
+          ))}
+        </div>
+      </SubItem>
+      <SubItem>
         <Text>Canecas</Text>
-        {mugs.map((mug) => (
-          <img src={mug} key={`key-mug-${mug}`} />
-        ))}
-      </div>
-    </ImageWrapper>
+        <div>
+          {mugs.map((mug) => (
+            <img src={mug} key={`key-mug-${mug}`} />
+          ))}
+        </div>
+      </SubItem>
+    </Box>
     <ItemsWrapper>
       <Title level={4} color="white" fontWeight="light" size="xsmall">
         {name}
