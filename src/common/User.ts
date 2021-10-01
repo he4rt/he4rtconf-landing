@@ -29,4 +29,5 @@ export type InfoProps = {
     }
     levelup_percentage: string
   }
+  badges: []
 }

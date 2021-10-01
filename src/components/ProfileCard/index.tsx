@@ -18,7 +18,9 @@ import {
   GamificationWrapperText,
   ButtonLink,
   UserStatus,
-  UserName
+  UserName,
+  Badges,
+  Badge
 } from './styles'
 import Router from 'next/router'
 import Container from 'components/Container'
@@ -34,6 +36,7 @@ type ProfileCardProps = Pick<
   | 'twitch_id'
   | 'discord_id'
   | 'name'
+  | 'badges'
 >
 
 const ProfileCard = ({
@@ -43,7 +46,8 @@ const ProfileCard = ({
   character,
   messages,
   twitch_id,
-  discord_id
+  discord_id,
+  badges
 }: ProfileCardProps) => (
   <WrapperProfile>
     <ContentProfile>
@@ -73,13 +77,44 @@ const ProfileCard = ({
             levelup={character.levelup_exp.required}
             percentage={character.levelup_percentage}
           />
+          {badges.length > 0 ? (
+            <>
+              <Title
+                level={5}
+                color="white"
+                fontWeight="bold"
+                size="xsmall"
+                style={{ marginTop: '2rem' }}
+              >
+                Presenças confirmadas:
+              </Title>
+              <Badges>
+                {badges.map((badge) => (
+                  <Badge
+                    href={`/palestrante/${badge.slug}`}
+                    title={badge.name}
+                    key={badge.id}
+                    passHref
+                    as="a"
+                  >
+                    <Image
+                      layout="fixed"
+                      width={30}
+                      height={30}
+                      src={badge.badge_path}
+                    />
+                  </Badge>
+                ))}
+              </Badges>
+            </>
+          ) : null}
         </UserStatus>
       </User>
 
       <Gamification>
         <div>
           <Title level={5} color="white" fontWeight="bold" size="xsmall">
-            Gamificação
+            Gameficação
           </Title>
           <Text>
             Última atualização -{' '}

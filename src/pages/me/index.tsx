@@ -59,6 +59,7 @@ const Me = ({ user, access_token }: MeProps) => (
       character={user.character}
       twitch_id={user.twitch_id}
       discord_id={user.discord_id}
+      badges={user.badges}
     />
 
     <Footer />
@@ -105,6 +106,7 @@ export const getServerSideProps: GetServerSideProps = async (
 
   try {
     const response = await axios.get('users/me')
+    console.log(response.data)
     return {
       props: {
         user: response.data,
