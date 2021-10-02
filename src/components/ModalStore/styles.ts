@@ -8,6 +8,7 @@ export const Wrapper = styled(Modal)`
   right: auto;
   bottom: auto;
   transform: translate(-50%, -50%);
+  overflow-y: auto; // TODO tirar e mover para pagina
 `
 
 export const Card = styled.div`
