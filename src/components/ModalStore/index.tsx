@@ -184,7 +184,7 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               Selecione {itemSelected.limits.bottons} bottons:
             </Title>
             <div>
-              <div style={{ display: 'flex', gap: '3rem' }}>
+              <div style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap' }}>
                 {item.bottons.map(({ name, image }) => (
                   <ImageBox key={`key-botton-${name}`}>
                     <Image
