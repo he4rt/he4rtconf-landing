@@ -51,13 +51,19 @@ const ModalStore = ({ children, item, ...props }: ModalProps) => {
               Selecione a estampa:
             </Title>
             <ImageOptions>
-              {item.tshirts.map((shirt) => (
-                <Image src={shirt} width={200} height={200} layout="fixed" />
+              {item.shirts.map((shirt) => (
+                <Image
+                  key={`key-shirt-${shirt}`}
+                  src={shirt}
+                  width={200}
+                  height={200}
+                  layout="fixed"
+                />
               ))}
             </ImageOptions>
             <Select
               name="Camisa"
-              options={item.tshirts.map((_, index) => index)}
+              options={item.shirts.map((_, index) => index)}
             />
           </div>
           <div>
