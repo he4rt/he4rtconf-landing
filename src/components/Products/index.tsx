@@ -2,12 +2,17 @@ import Text from 'components/Text'
 
 import { Box, ImageWrapper, SubItem, OthersProducts } from './styles'
 
+type ProductItemProps = {
+  name: string
+  image: string
+}
+
 export type ProductProps = {
-  shirts: string[]
-  bottons: string[]
-  keychains: string[]
-  stickers: string[]
-  mugs: string[]
+  shirts: ProductItemProps[]
+  bottons: ProductItemProps[]
+  keychains: ProductItemProps[]
+  stickers: ProductItemProps[]
+  mugs: ProductItemProps[]
 }
 
 const Products = ({
@@ -19,40 +24,40 @@ const Products = ({
 }: ProductProps) => (
   <Box>
     <ImageWrapper>
-      {shirts.map((shirt) => (
-        <img key={`key-shirt-${shirt}`} src={shirt} />
+      {shirts.map(({ name, image }) => (
+        <img key={`key-shirt-${name}`} src={image} />
       ))}
     </ImageWrapper>
     <OthersProducts>
       <SubItem>
         <Text>Bottons</Text>
         <div>
-          {bottons.map((botton) => (
-            <img key={`key-shirt-${botton}`} src={botton} />
+          {bottons.map(({ name, image }) => (
+            <img key={`key-shirt-${name}`} src={image} />
           ))}
         </div>
       </SubItem>
       <SubItem>
         <Text>Chaveiros</Text>
         <div>
-          {keychains.map((keychain) => (
-            <img key={`key-shirt-${keychain}`} src={keychain} />
+          {keychains.map(({ name, image }) => (
+            <img key={`key-shirt-${name}`} src={image} />
           ))}
         </div>
       </SubItem>
       <SubItem>
         <Text>Adesivos</Text>
         <div>
-          {stickers.map((sticker) => (
-            <img key={`key-shirt-${sticker}`} src={sticker} />
+          {stickers.map(({ name, image }) => (
+            <img key={`key-shirt-${name}`} src={image} />
           ))}
         </div>
       </SubItem>
       <SubItem>
         <Text>Canecas</Text>
         <div>
-          {mugs.map((mug) => (
-            <img className="mug" key={`key-shirt-${mug}`} src={mug} />
+          {mugs.map(({ name, image }) => (
+            <img className="mug" key={`key-shirt-${name}`} src={image} />
           ))}
         </div>
       </SubItem>

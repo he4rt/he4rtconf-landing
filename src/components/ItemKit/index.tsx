@@ -11,11 +11,7 @@ export type ItemKitProps = {
   items: string[]
   value: number
   stock: string
-  bottons: string[]
-  keychains: string[]
-  stickers: string[]
-  mugs: string[]
-  shirts: string[]
+  shirts: number[]
 }
 
 const ItemKit = ({
@@ -24,7 +20,7 @@ const ItemKit = ({
   items,
   value,
   stock
-}: Pick<ItemKitProps, 'name' | 'tag' | 'items' | 'value' | 'stock'>) => (
+}: Omit<ItemKitProps, 'shirts'>) => (
   <div>
     <Title level={2} color="white" fontWeight="bold" size="medium">
       {name}
