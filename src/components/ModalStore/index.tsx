@@ -1,11 +1,11 @@
 import Title from 'components/Title'
-import { CSSProperties, ReactNode } from 'react'
-import { useForm } from 'react-hook-form'
 import Image from 'next/image'
 import { Card, ImageOptions, Wrapper } from './styles'
 import { ProductProps } from 'components/Products'
 import { ItemKitProps } from 'components/ItemKit'
+import { useForm, Controller } from 'react-hook-form'
 import Select from 'react-select'
+import CreatableSelect from 'react-select/creatable'
 
 type ModalProps = {
   children: ReactNode
@@ -13,9 +13,10 @@ type ModalProps = {
   item: ProductProps
   itemSelected: ItemKitProps
 }
+const isValidNewOption = (inputValue, selectValue) => true
 
 const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
-  const { register, handleSubmit, setValue } = useForm()
+  const { control, handleSubmit, setValue } = useForm()
   const onSubmit = (data) => console.log(data)
   return (
     <Wrapper {...props}>
@@ -67,12 +68,31 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
                   layout="fixed"
                 />
               ))}
-              <Select
-                isMulti
-                options={item.bottons.map((botton) => ({
-                  value: botton.name,
-                  label: botton.name
-                }))}
+              <Controller
+                control={control}
+                name="bottons"
+                render={({ field: { onChange, value, ref } }) => (
+                  <CreatableSelect
+                    inputRef={ref}
+                    isMulti
+                    options={
+                      value?.length >= 3
+                        ? undefined
+                        : item.bottons.map((botton) => ({
+                            value: botton.name,
+                            label: botton.name
+                          }))
+                    }
+                    formatCreateLabel={() => undefined}
+                    value={item.bottons
+                      .map((botton) => ({
+                        value: botton.name,
+                        label: botton.name
+                      }))
+                      .find((c) => c.value === value)}
+                    onChange={(val) => onChange(val.map((c) => c.value))}
+                  />
+                )}
               />
             </div>
           </div>
