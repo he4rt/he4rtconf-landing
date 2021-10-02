@@ -50,3 +50,14 @@ export const Input = styled.input`
   font-weight: 800;
   color: white;
 `
+
+export const ImageBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    display: block;
+  }
+`

@@ -12,7 +12,7 @@ export default async function ticketImages(
   }
   const orderData = {
     itemId,
-    id: `#${new Date().getTime().toString(36)}`,
+    id: `${new Date().getTime().toString(36)}`,
     ...req.body
   }
   try {
@@ -24,7 +24,7 @@ export default async function ticketImages(
       )}\`\`\``
     })
     return res.status(200).send({
-      messageText: `Olá, queria finalizar meu pedido com o ID *${orderData.id}*! Quais são as formas de pagamento e frete?`
+      messageText: `Olá, queria finalizar meu pedido com o ID ${orderData.id}! Quais são as formas de pagamento e frete?`
     })
   } catch (e) {
     console.log(e.response.data.content, 'error')

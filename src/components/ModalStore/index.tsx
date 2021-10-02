@@ -1,6 +1,14 @@
 import Title from 'components/Title'
 import Image from 'next/image'
-import { Card, ImageOptions, Wrapper, Error, Button, Input } from './styles'
+import {
+  Card,
+  ImageOptions,
+  Wrapper,
+  Error,
+  Button,
+  Input,
+  ImageBox
+} from './styles'
 import { ProductProps } from 'components/Products'
 import { ItemKitProps } from 'components/ItemKit'
 import { useForm, Controller } from 'react-hook-form'
@@ -115,13 +123,22 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
             </Title>
             <ImageOptions>
               {itemSelected.shirts.map((shirtId) => (
-                <Image
-                  key={`key-shirt-${item.shirts[shirtId].name}`}
-                  src={item.shirts[shirtId].image}
-                  width={200}
-                  height={200}
-                  layout="fixed"
-                />
+                <ImageBox key={`key-shirt-${item.shirts[shirtId].name}`}>
+                  <Image
+                    src={item.shirts[shirtId].image}
+                    width={250}
+                    height={250}
+                    layout="fixed"
+                  />
+                  <Title
+                    fontWeight="light"
+                    color="white"
+                    size="xsmall"
+                    level={3}
+                  >
+                    {item.shirts[shirtId].name}
+                  </Title>
+                </ImageBox>
               ))}
             </ImageOptions>
             <Controller
@@ -164,15 +181,26 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               Selecione {itemSelected.limits.bottons} bottons:
             </Title>
             <div>
-              {item.bottons.map(({ name, image }) => (
-                <Image
-                  src={image}
-                  key={`key-botton-${name}`}
-                  width={60}
-                  height={60}
-                  layout="fixed"
-                />
-              ))}
+              <div style={{ display: 'flex', gap: '3rem' }}>
+                {item.bottons.map(({ name, image }) => (
+                  <ImageBox key={`key-botton-${name}`}>
+                    <Image
+                      src={image}
+                      width={80}
+                      height={80}
+                      layout="intrinsic"
+                    />
+                    <Title
+                      fontWeight="light"
+                      color="white"
+                      size="xsmall"
+                      level={3}
+                    >
+                      {name}
+                    </Title>
+                  </ImageBox>
+                ))}
+              </div>
               <Controller
                 control={control}
                 name="bottons"
@@ -219,15 +247,26 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               Selecione {itemSelected.limits.keychains} chaveiros:
             </Title>
             <div>
-              {item.keychains.map(({ name, image }) => (
-                <Image
-                  src={image}
-                  key={`key-keychains-${name}`}
-                  width={60}
-                  height={60}
-                  layout="fixed"
-                />
-              ))}
+              <div style={{ display: 'flex', gap: '3rem' }}>
+                {item.keychains.map(({ name, image }) => (
+                  <ImageBox key={`key-keychains-${name}`}>
+                    <Image
+                      src={image}
+                      width={80}
+                      height={80}
+                      layout="intrinsic"
+                    />
+                    <Title
+                      fontWeight="light"
+                      color="white"
+                      size="xsmall"
+                      level={3}
+                    >
+                      {name}
+                    </Title>
+                  </ImageBox>
+                ))}
+              </div>
               <Controller
                 control={control}
                 name="keychains"
@@ -274,15 +313,26 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               Selecione {itemSelected.limits.stickers} adesivos:
             </Title>
             <div>
-              {item.stickers.map(({ name, image }) => (
-                <Image
-                  src={image}
-                  key={`key-sticker-${name}`}
-                  width={60}
-                  height={60}
-                  layout="fixed"
-                />
-              ))}
+              <div style={{ display: 'flex', gap: '3rem' }}>
+                {item.stickers.map(({ name, image }) => (
+                  <ImageBox key={`key-sticker-${name}`}>
+                    <Image
+                      src={image}
+                      width={120}
+                      height={120}
+                      layout="intrinsic"
+                    />
+                    <Title
+                      fontWeight="light"
+                      color="white"
+                      size="xsmall"
+                      level={3}
+                    >
+                      {name}
+                    </Title>
+                  </ImageBox>
+                ))}
+              </div>
               <Controller
                 control={control}
                 name="stickers"
@@ -329,15 +379,27 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               Selecione {itemSelected.limits.mugs} caneca:
             </Title>
             <div>
-              {item.mugs.map(({ name, image }) => (
-                <Image
-                  src={image}
-                  key={`key-mug-${name}`}
-                  width={60}
-                  height={60}
-                  layout="fixed"
-                />
-              ))}
+              <div style={{ display: 'flex', gap: '3rem' }}>
+                {item.mugs.map(({ name, image }) => (
+                  <ImageBox key={`key-mug-${name}`}>
+                    <Image
+                      src={image}
+                      width={190}
+                      height={150}
+                      layout="intrinsic"
+                      objectFit="cover"
+                    />
+                    <Title
+                      fontWeight="light"
+                      color="white"
+                      size="xsmall"
+                      level={3}
+                    >
+                      {name}
+                    </Title>
+                  </ImageBox>
+                ))}
+              </div>
               <Controller
                 control={control}
                 name="mugs"
