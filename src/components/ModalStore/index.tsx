@@ -73,7 +73,11 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
         `${process.env.NEXT_PUBLIC_SITE_URL}/api/buy?itemId=${itemSelected.id}`,
         { ...data, itemSelected }
       )
-      window.location.href = `https://api.whatsapp.com/send?phone=558597084621&text=${res.data.messageText}`
+      if (itemSelected.id === 0) {
+        return (window.location.href = `https://api.whatsapp.com/send?phone=5585996814479&text=${res.data.messageText}`)
+      } else {
+        return (window.location.href = `https://api.whatsapp.com/send?phone=558597084621&text=${res.data.messageText}`)
+      }
     } catch (e) {
       alert('Ocorreu um erro ao realizar a compra.')
     }
