@@ -35,10 +35,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="og:type" content="website" />
       </Head>
-      <AuthProvider>
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </AuthProvider>
+      <GlobalStyles />
+      <Component {...pageProps} />
     </ThemeProvider>
   )
 }
