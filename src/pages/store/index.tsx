@@ -219,8 +219,6 @@ const Store = () => {
         </Warning>
       </Container>
 
-      <ModalStore isOpen item={products} itemSelected={items[0]} />
-
       <Footer notice />
     </>
   )
