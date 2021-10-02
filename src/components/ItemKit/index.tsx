@@ -3,16 +3,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import Title from 'components/Title'
 import Text from 'components/Text'
 
-import {
-  Tag,
-  Stock,
-  ImageWrapper,
-  ItemsWrapper,
-  ValueWrapper,
-  IconWrapper,
-  Box,
-  SubItem
-} from './styles'
+import { Tag, Stock, ItemsWrapper, ValueWrapper, IconWrapper } from './styles'
 
 export type ItemKitProps = {
   name: string
@@ -24,7 +15,7 @@ export type ItemKitProps = {
   keychains: string[]
   stickers: string[]
   mugs: string[]
-  tshirts: string[]
+  shirts: string[]
 }
 
 const ItemKit = ({
@@ -32,59 +23,13 @@ const ItemKit = ({
   tag,
   items,
   value,
-  stock,
-  tshirts,
-  bottons,
-  keychains,
-  stickers,
-  mugs
-}: ItemKitProps) => (
+  stock
+}: Pick<ItemKitProps, 'name' | 'tag' | 'items' | 'value' | 'stock'>) => (
   <div>
     <Title level={2} color="white" fontWeight="bold" size="medium">
       {name}
     </Title>
     <Tag>{tag}</Tag>
-    <Box>
-      <ImageWrapper>
-        {tshirts.map((tshirt) => (
-          <img key={`key-tshirt-${tshirt}`} src={tshirt} />
-        ))}
-      </ImageWrapper>
-    </Box>
-    <Box>
-      <SubItem>
-        <Text>Bottons</Text>
-        <div>
-          {bottons.map((botton) => (
-            <img src={botton} key={`key-bottom-${botton}`} />
-          ))}
-        </div>
-      </SubItem>
-      <SubItem>
-        <Text>Chaveiros</Text>
-        <div>
-          {keychains.map((keychain) => (
-            <img src={keychain} key={`key-keychain-${keychain}`} />
-          ))}
-        </div>
-      </SubItem>
-      <SubItem>
-        <Text>Adesivos</Text>
-        <div>
-          {stickers.map((sticker) => (
-            <img src={sticker} key={`key-sticker-${sticker}`} />
-          ))}
-        </div>
-      </SubItem>
-      <SubItem>
-        <Text>Canecas</Text>
-        <div>
-          {mugs.map((mug) => (
-            <img src={mug} key={`key-mug-${mug}`} />
-          ))}
-        </div>
-      </SubItem>
-    </Box>
     <ItemsWrapper>
       <Title level={4} color="white" fontWeight="light" size="xsmall">
         {name}

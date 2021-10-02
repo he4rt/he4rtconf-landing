@@ -4,8 +4,7 @@ import Text from 'components/Text'
 
 export const Tag = styled(Text)`
   ${({ theme }) => css`
-    margin-top: 1.6rem;
-    margin-bottom: 3.2rem;
+    margin-top: 1rem;
     color: ${theme.colors.purple};
   `}
 `
@@ -16,49 +15,10 @@ export const Stock = styled(Text)`
   `}
 `
 
-export const ImageWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-
-  > img {
-    width: 20rem;
-  }
-`
-
-export const Box = styled.div`
-  ${({ theme }) => css`
-    border: 1px solid ${theme.colors.border};
-    padding: 3rem;
-    gap: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-  `}
-`
-
-export const SubItem = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  img {
-    width: 4rem;
-    margin-right: 1rem;
-  }
-
-  ${({ theme }) => css`
-    div {
-      &::last-child {
-        border-right: none;
-      }
-    }
-  `}
-`
-
 export const ItemsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 5rem 0;
+  margin: 2rem 0;
 `
 
 export const ValueWrapper = styled.div`
@@ -85,6 +45,11 @@ export const IconWrapper = styled.a`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: ${({ theme }) => theme.colors.white};
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.white};
+  }
 
   > svg {
     height: 3rem;
