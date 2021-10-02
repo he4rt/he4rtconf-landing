@@ -192,7 +192,7 @@ const Store = () => {
         </Warning>
       </Container>
 
-      {/* <ModalStore isOpen item={items[0]}></ModalStore> */}
+      <ModalStore isOpen item={items[0]}></ModalStore>
 
       <Footer notice />
     </>
