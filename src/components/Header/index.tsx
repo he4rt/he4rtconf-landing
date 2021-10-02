@@ -16,6 +16,7 @@ import {
 
 import logo from 'assets/logo.svg'
 import { FaDiscord, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { AiFillStar } from 'react-icons/ai'
 
 export type MobileHeaderProps = {
   isOpen: boolean
@@ -48,6 +49,9 @@ const MobileHeader = ({ isOpen, setOpen }: MobileHeaderProps) => {
         </Link>
         <Link href="/#faq" onClick={setOpen} passHref>
           FAQ
+        </Link>
+        <Link href="/loja" onClick={setOpen} passHref>
+          Loja <AiFillStar size={35} />
         </Link>
         <IconsMobile>
           <Link href="https://twitter.com/He4rtDevs">
@@ -92,6 +96,19 @@ const Header = ({ accessToken }: HeaderProps) => {
           </Link>
           <Link href="/#faq" passHref>
             FAQ
+          </Link>
+          <Link
+            href="/loja"
+            style={{
+              display: 'flex',
+              gap: '1rem',
+              alignItems: 'center',
+              color: '#FBBF24'
+            }}
+            onClick={setOpen}
+            passHref
+          >
+            Loja <AiFillStar size={25} />
           </Link>
           <Link href="https://twitter.com/He4rtDevs" target="_blank">
             <FaTwitter size={25} />

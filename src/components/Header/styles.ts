@@ -102,7 +102,7 @@ export const Link = styled.a`
   line-height: 2.3rem;
   letter-spacing: -0.02em;
   cursor: pointer;
-  margin-right: 3.2rem;
+  margin-right: 2.2rem;
   text-decoration: none;
 
   &:last-child {

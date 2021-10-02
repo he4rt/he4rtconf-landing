@@ -52,7 +52,7 @@ const ItemKit = ({
           + Frete
         </Title>
       </div>
-      <IconWrapper href={`/store/${id}`}>
+      <IconWrapper href={`/loja/${id}`}>
         <AiOutlineShoppingCart />
       </IconWrapper>
     </ValueWrapper>

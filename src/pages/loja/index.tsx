@@ -215,6 +215,9 @@ const Store = () => {
         <Warning>
           * Encomendas com início de fabricação ao fim da pré-venda.
         </Warning>
+        <Warning>
+          * Não temos nenhuma % de lucro nos pedidos, apenas custo de produção.
+        </Warning>
       </Container>
 
       <Footer notice />
