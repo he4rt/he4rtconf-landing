@@ -33,6 +33,12 @@ const GlobalStyles = createGlobalStyle`
   html, body, #__next {
     overflow-x: hidden;
   }
+
+  #select {
+    font-size: 2rem !important;
+  }
+}
+
 `
 
 export default GlobalStyles
