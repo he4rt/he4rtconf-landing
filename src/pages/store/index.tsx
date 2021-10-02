@@ -211,9 +211,7 @@ const Store = () => {
           * Só é possível escolher as opções informadas na descrição.
         </Warning>
         <Warning>* O frete é definido apenas na etapa de compra.</Warning>
-        <Warning>
-          * A etapa final de compra será finalizada no Whatsapp.
-        </Warning>
+        <Warning>* A etapa final de compra será realizada no Whatsapp.</Warning>
         <Warning>
           * Encomendas com início de fabricação ao fim da pré-venda.
         </Warning>
