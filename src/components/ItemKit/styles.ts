@@ -19,21 +19,20 @@ export const Stock = styled(Text)`
 export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 
   > img {
     width: 20rem;
-    height: 20rem;
   }
 `
 
 export const Box = styled.div`
   ${({ theme }) => css`
     border: 1px solid ${theme.colors.border};
-    padding: 10rem;
+    padding: 3rem;
+    gap: 1.5rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
   `}
 `
@@ -43,15 +42,12 @@ export const SubItem = styled.div`
   flex-direction: column;
 
   img {
-    height: 4rem;
     width: 4rem;
     margin-right: 1rem;
   }
 
   ${({ theme }) => css`
     div {
-      border-right: 1px solid ${theme.colors.border};
-
       &::last-child {
         border-right: none;
       }
@@ -91,7 +87,7 @@ export const IconWrapper = styled.a`
   cursor: pointer;
 
   > svg {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
   }
 `
