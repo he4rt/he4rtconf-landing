@@ -70,7 +70,14 @@ const SpeakerCard = ({
         {verifySocialLink(<FiGithub />, github_url)}
       </WrapperIcons>
     ) : null}
-    <Link href={`/palestrante/${slug}`} passHref>
+    <Link
+      href={
+        !slug.includes('marcos-oliveira')
+          ? `/palestrante/${slug}`
+          : '/palestrante/fakenickels'
+      }
+      passHref
+    >
       <Button>
         Ver palestrante <BsArrowRight size={24} />
       </Button>
