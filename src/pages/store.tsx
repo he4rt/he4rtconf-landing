@@ -21,6 +21,12 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(45rem, 2fr));
   gap: 12.2rem;
   justify-content: center;
+
+  ${({ theme }) => css`
+    ${theme.breakpoints.lessThan.md} {
+      grid-template-columns: none;
+    }
+  `}
 `
 
 const TitleWithMargin = styled(Title)`
@@ -192,7 +198,7 @@ const Store = () => {
         </Warning>
       </Container>
 
-      <ModalStore isOpen item={items[0]}></ModalStore>
+      {/* <ModalStore isOpen item={items[0]}></ModalStore> */}
 
       <Footer notice />
     </>

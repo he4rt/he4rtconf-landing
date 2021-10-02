@@ -19,6 +19,12 @@ export const Box = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10rem;
+
+    ${theme.breakpoints.lessThan.md} {
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: none;
+    }
   `}
 `
 
