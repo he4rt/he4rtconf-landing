@@ -39,7 +39,7 @@ const ItemKit = ({
   stickers,
   mugs
 }: ItemKitProps) => (
-  <div style={{ padding: '15rem' }}>
+  <div>
     <Title level={2} color="white" fontWeight="bold" size="medium">
       {name}
     </Title>

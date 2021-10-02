@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'styles/global'
-
+import 'bulma/css/bulma.min.css'
 import theme from 'styles/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
