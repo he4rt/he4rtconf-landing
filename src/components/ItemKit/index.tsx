@@ -12,6 +12,14 @@ export type ItemKitProps = {
   value: number
   stock: string
   shirts: number[]
+  limits: {
+    shirt: number
+    bottons: number
+    keychains: number
+    stickers: number
+    mugs: number
+  }
+  id: number
 }
 
 const ItemKit = ({
