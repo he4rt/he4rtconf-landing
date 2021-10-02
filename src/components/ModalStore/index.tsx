@@ -475,6 +475,9 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
       <Error>* O frete é definido apenas na etapa de compra.</Error>
       <Error>* A etapa final de compra será finalizada no Whatsapp.</Error>
       <Error>* Encomendas com início de fabricação ao fim da pré-venda.</Error>
+      <Error>
+        * Não temos nenhuma % de lucro nos pedidos, apenas custo de produção.
+      </Error>
     </Wrapper>
   )
 }
