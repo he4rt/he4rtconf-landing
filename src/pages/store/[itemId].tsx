@@ -174,15 +174,14 @@ const items: ItemKitProps[] = [
   }
 ]
 
-const ItemBuy = (itemId: number) => {
-  console.log('params', itemId)
-  console.log(items[itemId])
+const ItemBuy = ({ itemId }) => {
+  const itemSelected = items[itemId]
 
   return (
     <>
       <Header />
 
-      <ModalStore isOpen item={products} itemSelected={items[0]} />
+      <ModalStore isOpen item={products} itemSelected={itemSelected} />
 
       <Footer notice />
     </>

@@ -53,6 +53,8 @@ type ModalProps = {
 }
 
 const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
+  console.log(itemSelected)
+  if (!itemSelected) return null
   const {
     control,
     handleSubmit,
@@ -127,6 +129,7 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
             <ImageOptions style={{ marginTop: '1.5rem' }}>
               {itemSelected.shirts.map((shirtId) => (
                 <ImageBox key={`key-shirt-${item.shirts[shirtId].name}`}>
+                  {console.log(shirtId)}
                   <Image
                     src={item.shirts[shirtId].image}
                     width={250}
