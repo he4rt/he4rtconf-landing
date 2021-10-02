@@ -27,7 +27,7 @@ const theme = {
     purple: '#782BF1',
     white: '#F7F7F7',
     green: '#0CCA4A',
-    red: '#FF5252',
+    red: '#EF4444',
     purpleLightGradient:
       'linear-gradient(356.91deg, #782CF0 -7.12%, #996CDF 133.4%)',
     purpleDarkGradient:

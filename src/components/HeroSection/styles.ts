@@ -47,9 +47,9 @@ export const HeartBox = styled.div`
 `
 export const Error = styled(Text)`
   margin-top: 1.5rem;
-  color: red;
+  color: #ef4444;
   a {
-    color: red;
+    color: #ef4444;
     font-weight: bold;
   }
 `
