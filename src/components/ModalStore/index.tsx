@@ -1,35 +1,20 @@
 import Title from 'components/Title'
-import { ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 import { useForm } from 'react-hook-form'
 import Image from 'next/image'
 import { Card, ImageOptions, Wrapper } from './styles'
+import { ProductProps } from 'components/Products'
+import { ItemKitProps } from 'components/ItemKit'
+import Select from 'react-select'
 
 type ModalProps = {
   children: ReactNode
   onClick?: () => void
+  item: ProductProps
+  itemSelected: ItemKitProps
 }
 
-export function Select({ register, options, name, multiple, ...rest }) {
-  return (
-    <div className="select is-medium" style={{ width: '100%' }}>
-      <select
-        style={{ width: '100%' }}
-        name={name}
-        ref={register}
-        multiple={multiple}
-        {...rest}
-      >
-        {options.map((value) => (
-          <option key={value} value={value}>
-            {name} {value}
-          </option>
-        ))}
-      </select>
-    </div>
-  )
-}
-
-const ModalStore = ({ children, item, ...props }: ModalProps) => {
+const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
   const { register, handleSubmit, setValue } = useForm()
   const onSubmit = (data) => console.log(data)
   return (
@@ -51,10 +36,10 @@ const ModalStore = ({ children, item, ...props }: ModalProps) => {
               Selecione a estampa:
             </Title>
             <ImageOptions>
-              {item.shirts.map((shirt) => (
+              {itemSelected.shirts.map((shirtId) => (
                 <Image
-                  key={`key-shirt-${shirt}`}
-                  src={shirt}
+                  key={`key-shirt-${item.shirts[shirtId].name}`}
+                  src={item.shirts[shirtId].image}
                   width={200}
                   height={200}
                   layout="fixed"
@@ -62,62 +47,105 @@ const ModalStore = ({ children, item, ...props }: ModalProps) => {
               ))}
             </ImageOptions>
             <Select
-              name="Camisa"
-              options={item.shirts.map((_, index) => index)}
+              options={itemSelected.shirts.map((shirtId) => ({
+                value: item.shirts[shirtId].name,
+                label: item.shirts[shirtId].name
+              }))}
             />
           </div>
           <div>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Selecione 4 bottons:
             </Title>
-            <label className="checkbox">
-              {item.bottons.map((botton) => (
-                <>
-                  <input type="checkbox" />
-                  <Image src={botton} width={60} height={60} layout="fixed" />
-                </>
+            <div>
+              {item.bottons.map(({ name, image }) => (
+                <Image
+                  src={image}
+                  key={`key-botton-${name}`}
+                  width={60}
+                  height={60}
+                  layout="fixed"
+                />
               ))}
-            </label>
+              <Select
+                isMulti
+                options={item.bottons.map((botton) => ({
+                  value: botton.name,
+                  label: botton.name
+                }))}
+              />
+            </div>
           </div>
           <div>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Selecione 2 caveiros:
             </Title>
-            <label className="checkbox">
-              {item.keychains.map((botton) => (
-                <>
-                  <input type="checkbox" />
-                  <Image src={botton} width={60} height={60} layout="fixed" />
-                </>
+            <div>
+              {item.keychains.map(({ name, image }) => (
+                <Image
+                  src={image}
+                  key={`key-keychains-${name}`}
+                  width={60}
+                  height={60}
+                  layout="fixed"
+                />
               ))}
-            </label>
+              <Select
+                isMulti
+                options={item.keychains.map((keychain) => ({
+                  value: keychain.name,
+                  label: keychain.name
+                }))}
+              />
+            </div>
           </div>
           <div>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Selecione 2 adesivos:
             </Title>
-            <label className="checkbox">
-              {item.stickers.map((botton) => (
-                <>
-                  <input type="checkbox" />
-                  <Image src={botton} width={60} height={60} layout="fixed" />
-                </>
+            <div>
+              {item.stickers.map(({ name, image }) => (
+                <Image
+                  src={image}
+                  key={`key-sticker-${name}`}
+                  width={60}
+                  height={60}
+                  layout="fixed"
+                />
               ))}
-            </label>
+              <Select
+                isMulti
+                options={item.stickers.map((sticker) => ({
+                  value: sticker.name,
+                  label: sticker.name
+                }))}
+              />
+            </div>
           </div>
           <div>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Selecione 1 caneca:
             </Title>
-            <label className="checkbox">
-              {item.mugs.map((botton) => (
-                <>
-                  <input type="checkbox" />
-                  <Image src={botton} width={60} height={60} layout="fixed" />
-                </>
+            <div>
+              {item.mugs.map(({ name, image }) => (
+                <Image
+                  src={image}
+                  key={`key-mug-${name}`}
+                  width={60}
+                  height={60}
+                  layout="fixed"
+                />
               ))}
-            </label>
+              <Select
+                isMulti
+                options={item.mugs.map((mug) => ({
+                  value: mug.name,
+                  label: mug.name
+                }))}
+              />
+            </div>
           </div>
+          <button type="submit">compra ai filho</button>
         </form>
       </Card>
     </Wrapper>

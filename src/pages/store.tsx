@@ -42,32 +42,86 @@ const Divider = styled.div`
 
 const products: ProductProps = {
   shirts: [
-    '/assets/products/tshirt/one-heartlogo.png',
-    '/assets/products/tshirt/four-hearts.png',
-    '/assets/products/tshirt/he4rtwritten.png',
-    '/assets/products/tshirt/he4rtconf.png'
+    {
+      name: '1B',
+      image: '/assets/products/tshirt/one-heartlogo.png'
+    },
+    {
+      name: '2B',
+      image: '/assets/products/tshirt/four-hearts.png'
+    },
+    {
+      name: '1S',
+      image: '/assets/products/tshirt/he4rtwritten.png'
+    },
+    {
+      name: '2S',
+      image: '/assets/products/tshirt/he4rtconf.png'
+    }
   ],
   bottons: [
-    '/assets/products/bottons/csharp.png',
-    '/assets/products/bottons/java.png',
-    '/assets/products/bottons/javascript.png',
-    '/assets/products/bottons/php.png',
-    '/assets/products/bottons/python.png',
-    '/assets/products/bottons/react.png',
-    '/assets/products/keychain/he4rt.png',
-    '/assets/products/keychain/He4rtConf2021.png'
+    {
+      name: 'C#',
+      image: '/assets/products/bottons/csharp.png'
+    },
+    {
+      name: 'Java',
+      image: '/assets/products/bottons/java.png'
+    },
+    {
+      name: 'Javascript',
+      image: '/assets/products/bottons/javascript.png'
+    },
+    {
+      name: 'PHP',
+      image: '/assets/products/bottons/php.png'
+    },
+    {
+      name: 'Python',
+      image: '/assets/products/bottons/python.png'
+    },
+    {
+      name: 'React',
+      image: '/assets/products/bottons/react.png'
+    },
+    {
+      name: 'He4rt',
+      image: '/assets/products/keychain/he4rt.png'
+    },
+    {
+      name: 'He4rtConf',
+      image: '/assets/products/keychain/He4rtConf2021.png'
+    }
   ],
   keychains: [
-    '/assets/products/keychain/he4rt.png',
-    '/assets/products/keychain/He4rtConf2021.png'
+    {
+      name: 'He4rt',
+      image: '/assets/products/keychain/he4rt.png'
+    },
+    {
+      name: 'He4rtConf',
+      image: '/assets/products/keychain/He4rtConf2021.png'
+    }
   ],
   stickers: [
-    '/assets/products/stickers/logo.png',
-    '/assets/products/stickers/written-logo.png'
+    {
+      name: 'He4rt',
+      image: '/assets/products/stickers/logo.png'
+    },
+    {
+      name: 'He4rt Devs',
+      image: '/assets/products/stickers/written-logo.png'
+    }
   ],
   mugs: [
-    '/assets/products/mug/caneca-1.png',
-    '/assets/products/mug/caneca-2.png'
+    {
+      name: 'Caneca He4rt',
+      image: '/assets/products/mug/caneca-1.png'
+    },
+    {
+      name: 'Caneca Dev',
+      image: '/assets/products/mug/caneca-2.png'
+    }
   ]
 }
 
@@ -84,33 +138,7 @@ const items: ItemKitProps[] = [
     ],
     stock: 'Disponível',
     value: 105,
-    bottons: [
-      '/assets/products/bottons/csharp.png',
-      '/assets/products/bottons/java.png',
-      '/assets/products/bottons/javascript.png',
-      '/assets/products/bottons/php.png',
-      '/assets/products/bottons/python.png',
-      '/assets/products/bottons/react.png',
-      '/assets/products/keychain/he4rt.png',
-      '/assets/products/keychain/He4rtConf2021.png'
-    ],
-    keychains: [
-      '/assets/products/keychain/he4rt.png',
-      '/assets/products/keychain/He4rtConf2021.png'
-    ],
-    stickers: [
-      '/assets/products/stickers/logo.png',
-      '/assets/products/stickers/written-logo.png'
-    ],
-    mugs: [
-      '/assets/products/mug/caneca-branca.png',
-      '/assets/products/mug/caneca-logo.png',
-      '/assets/products/mug/caneca-logo-written.png'
-    ],
-    shirts: [
-      '/assets/products/tshirt/one-heartlogo.png',
-      '/assets/products/tshirt/four-hearts.png'
-    ]
+    shirts: [0, 1]
   },
   {
     name: 'Kit 2 - Serigrafia',
@@ -124,33 +152,7 @@ const items: ItemKitProps[] = [
     ],
     stock: 'Disponível',
     value: 90,
-    bottons: [
-      '/assets/products/bottons/csharp.png',
-      '/assets/products/bottons/java.png',
-      '/assets/products/bottons/javascript.png',
-      '/assets/products/bottons/php.png',
-      '/assets/products/bottons/python.png',
-      '/assets/products/bottons/react.png',
-      '/assets/products/keychain/he4rt.png',
-      '/assets/products/keychain/He4rtConf2021.png'
-    ],
-    keychains: [
-      '/assets/products/keychain/he4rt.png',
-      '/assets/products/keychain/He4rtConf2021.png'
-    ],
-    stickers: [
-      '/assets/products/stickers/logo.png',
-      '/assets/products/stickers/written-logo.png'
-    ],
-    mugs: [
-      '/assets/products/mug/caneca-branca.png',
-      '/assets/products/mug/caneca-logo.png',
-      '/assets/products/mug/caneca-logo-written.png'
-    ],
-    shirts: [
-      '/assets/products/tshirt/he4rtwritten.png',
-      '/assets/products/tshirt/he4rtconf.png'
-    ]
+    shirts: [2, 3]
   }
 ]
 
@@ -196,9 +198,12 @@ const Store = () => {
         <Warning>
           * A etapa final de compra será finalizada no Whatsapp.
         </Warning>
+        <Warning>
+          * Encomendas com início de fabricação ao fim da pré-venda.
+        </Warning>
       </Container>
 
-      {/* <ModalStore isOpen item={items[0]}></ModalStore> */}
+      <ModalStore isOpen item={products} itemSelected={items[0]} />
 
       <Footer notice />
     </>
