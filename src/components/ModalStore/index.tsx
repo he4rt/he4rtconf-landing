@@ -124,7 +124,7 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
             <Title fontWeight="light" color="white" size="small" level={3}>
               Selecione a estampa:
             </Title>
-            <ImageOptions>
+            <ImageOptions style={{ marginTop: '1.5rem' }}>
               {itemSelected.shirts.map((shirtId) => (
                 <ImageBox key={`key-shirt-${item.shirts[shirtId].name}`}>
                   <Image
@@ -184,7 +184,14 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               Selecione {itemSelected.limits.bottons} bottons:
             </Title>
             <div>
-              <div style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  gap: '3rem',
+                  flexWrap: 'wrap',
+                  marginTop: '1.5rem'
+                }}
+              >
                 {item.bottons.map(({ name, image }) => (
                   <ImageBox key={`key-botton-${name}`}>
                     <Image
@@ -250,7 +257,9 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               Selecione {itemSelected.limits.keychains} chaveiros:
             </Title>
             <div>
-              <div style={{ display: 'flex', gap: '3rem' }}>
+              <div
+                style={{ display: 'flex', gap: '3rem', marginTop: '1.5rem' }}
+              >
                 {item.keychains.map(({ name, image }) => (
                   <ImageBox key={`key-keychains-${name}`}>
                     <Image
@@ -316,7 +325,9 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               Selecione {itemSelected.limits.stickers} adesivos:
             </Title>
             <div>
-              <div style={{ display: 'flex', gap: '3rem' }}>
+              <div
+                style={{ display: 'flex', gap: '3rem', marginTop: '1.5rem' }}
+              >
                 {item.stickers.map(({ name, image }) => (
                   <ImageBox key={`key-sticker-${name}`}>
                     <Image
@@ -382,7 +393,9 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               Selecione {itemSelected.limits.mugs} caneca:
             </Title>
             <div>
-              <div style={{ display: 'flex', gap: '3rem' }}>
+              <div
+                style={{ display: 'flex', gap: '3rem', marginTop: '1.5rem' }}
+              >
                 {item.mugs.map(({ name, image }) => (
                   <ImageBox key={`key-mug-${name}`}>
                     <Image
