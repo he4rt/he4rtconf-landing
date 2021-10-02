@@ -27,7 +27,8 @@ const ItemKit = ({
   tag,
   items,
   value,
-  stock
+  stock,
+  id
 }: Omit<ItemKitProps, 'shirts'>) => (
   <div>
     <Title level={2} color="white" fontWeight="bold" size="medium">
@@ -51,7 +52,7 @@ const ItemKit = ({
           + Frete
         </Title>
       </div>
-      <IconWrapper>
+      <IconWrapper href={`/store/${id}`}>
         <AiOutlineShoppingCart />
       </IconWrapper>
     </ValueWrapper>
