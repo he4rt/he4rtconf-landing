@@ -89,6 +89,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const partnersRes = await axios.get('/sponsors')
   const talksRes = await axios.get('/talks')
 
+  console.log(talksRes.data)
+
   if (ctx.query.error) {
     return {
       props: {
