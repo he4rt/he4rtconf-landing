@@ -9,6 +9,8 @@ import Text from 'components/Text'
 import ItemKit, { ItemKitProps } from 'components/ItemKit'
 import Products, { ProductProps } from 'components/Products'
 import Container from 'components/Container'
+import { useRouter } from 'next/router'
+import { GetServerSideProps } from 'next'
 
 const Warning = styled(Text)`
   ${({ theme }) => css`
@@ -136,9 +138,17 @@ const items: ItemKitProps[] = [
       '2 Adesivos',
       '1 Caneca'
     ],
+    limits: {
+      shirt: 1,
+      bottons: 4,
+      keychains: 2,
+      stickers: 2,
+      mugs: 1
+    },
     stock: 'Disponível',
     value: 105,
-    shirts: [0, 1]
+    shirts: [0, 1],
+    id: 0
   },
   {
     name: 'Kit 2 - Serigrafia',
@@ -150,58 +160,27 @@ const items: ItemKitProps[] = [
       '2 Adesivos',
       '1 Caneca'
     ],
+    limits: {
+      shirt: 1,
+      bottons: 2,
+      keychains: 1,
+      stickers: 2,
+      mugs: 1
+    },
     stock: 'Disponível',
     value: 90,
-    shirts: [2, 3]
+    shirts: [2, 3],
+    id: 1
   }
 ]
 
-const Store = () => {
+const ItemBuy = (itemId: number) => {
+  console.log('params', itemId)
+  console.log(items[itemId])
+
   return (
     <>
       <Header />
-      <Container>
-        <TitleWithMargin
-          fontWeight="semibold"
-          color="white"
-          size="huge"
-          level={1}
-        >
-          Loja
-        </TitleWithMargin>
-        <Grid>
-          {items.map((item) => (
-            <ItemKit key={`item-kit-${item.name}`} {...item} />
-          ))}
-        </Grid>
-
-        <Divider />
-
-        <Container>
-          <TitleWithMargin
-            fontWeight="semibold"
-            color="white"
-            size="medium"
-            level={2}
-          >
-            Produtos
-          </TitleWithMargin>
-          <Products {...products} />
-        </Container>
-
-        <Divider />
-
-        <Warning>
-          * Só é possível escolher as opções informadas na descrição.
-        </Warning>
-        <Warning>* O frete é definido apenas na etapa de compra.</Warning>
-        <Warning>
-          * A etapa final de compra será finalizada no Whatsapp.
-        </Warning>
-        <Warning>
-          * Encomendas com início de fabricação ao fim da pré-venda.
-        </Warning>
-      </Container>
 
       <ModalStore isOpen item={products} itemSelected={items[0]} />
 
@@ -210,4 +189,14 @@ const Store = () => {
   )
 }
 
-export default Store
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { itemId } = ctx.query
+
+  return {
+    props: {
+      itemId
+    }
+  }
+}
+
+export default ItemBuy
