@@ -7,6 +7,8 @@ import {
   Error,
   Button,
   Input,
+  Divider,
+  InputWrapper,
   ImageBox
 } from './styles'
 import { ProductProps } from 'components/Products'
@@ -88,36 +90,37 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
           Finalizar compra
         </Title>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div>
+          <InputWrapper>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Nome completo:
             </Title>
             <Input {...register('fullName')} placeholder="Nome completo" />
             <Error>{errors.fullName?.message}</Error>
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <Title fontWeight="light" color="white" size="small" level={3}>
               E-mail:
             </Title>
             <Input {...register('email')} placeholder="E-mail" />
             <Error>{errors.email?.message}</Error>
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Endereço:
             </Title>
             <Input {...register('address')} placeholder="Endereço" />
 
             <Error>{errors.address?.message}</Error>
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <Title fontWeight="light" color="white" size="small" level={3}>
               CEP:
             </Title>
             <Input {...register('cep')} placeholder="CEP" />
             <Error>{errors.cep?.message}</Error>
-          </div>
-          <div>
+          </InputWrapper>
+          <Divider />
+          <InputWrapper>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Selecione a estampa:
             </Title>
@@ -175,13 +178,13 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               )}
             />
             <Error>{errors.shirt?.message}</Error>
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Selecione {itemSelected.limits.bottons} bottons:
             </Title>
             <div>
-              <div style={{ display: 'flex', gap: '3rem' }}>
+              <div style={{ display: 'flex', gap: '3rem', flexWrap: 'wrap' }}>
                 {item.bottons.map(({ name, image }) => (
                   <ImageBox key={`key-botton-${name}`}>
                     <Image
@@ -241,8 +244,8 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               />
               <Error>{errors.bottons?.message}</Error>
             </div>
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Selecione {itemSelected.limits.keychains} chaveiros:
             </Title>
@@ -307,8 +310,8 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               />
               <Error>{errors.keychains?.message}</Error>
             </div>
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Selecione {itemSelected.limits.stickers} adesivos:
             </Title>
@@ -373,8 +376,8 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
               />
               <Error>{errors.stickers?.message}</Error>
             </div>
-          </div>
-          <div>
+          </InputWrapper>
+          <InputWrapper>
             <Title fontWeight="light" color="white" size="small" level={3}>
               Selecione {itemSelected.limits.mugs} caneca:
             </Title>
@@ -441,7 +444,7 @@ const ModalStore = ({ children, item, itemSelected, ...props }: ModalProps) => {
 
               <Error>{errors.mugs?.message}</Error>
             </div>
-          </div>
+          </InputWrapper>
           <Button type="submit" disabled={disabled}>
             {disabled ? 'Carregando...' : 'COMPRAR'}
           </Button>

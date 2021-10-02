@@ -36,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
 
   #select {
     font-size: 2rem !important;
+    margin-top: 1.8rem;
   }
 }
 

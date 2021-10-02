@@ -40,6 +40,10 @@ export const Button = styled.button`
   }
 `
 
+export const InputWrapper = styled.div`
+  margin: 5rem 0;
+`
+
 export const Input = styled.input`
   width: 100%;
   padding: 1.2rem;
@@ -49,6 +53,7 @@ export const Input = styled.input`
   background: black;
   font-weight: 800;
   color: white;
+  margin-top: 1.5rem;
 `
 
 export const ImageBox = styled.div`
@@ -60,4 +65,11 @@ export const ImageBox = styled.div`
   img {
     display: block;
   }
+`
+
+export const Divider = styled.div`
+  width: 100%;
+  height: 0.2rem;
+  margin: 3.5rem 0;
+  background-color: ${({ theme }) => theme.colors.gray};
 `
