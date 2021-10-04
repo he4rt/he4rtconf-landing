@@ -1,9 +1,30 @@
-import { AuthProvider } from 'contexts/Auth'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider, css } from 'styled-components'
 import GlobalStyles from 'styles/global'
 import theme from 'styles/theme'
+import Countdown from 'react-countdown'
+import Title from 'components/Title'
+
+const Alert = styled.div`
+  background: #ff3131;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 0;
+  z-index: 999;
+  ${({ theme }) => css`
+    ${theme.breakpoints.greaterThan.md} {
+      position: fixed;
+    }
+    ${theme.breakpoints.lessThan.xl} {
+      h1 {
+        font-size: ${theme.font.sizes.xxsmall};
+      }
+    }
+  `}
+`
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -36,6 +57,20 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="website" />
       </Head>
       <GlobalStyles />
+      <Alert>
+        <Title fontWeight="semibold" color="white" size="small" level={1}>
+          Última chance! Nossa loja irá fechar em{' '}
+          <Countdown
+            renderer={({ hours, minutes, seconds }) => (
+              <>
+                {hours}h {minutes}m {seconds}s
+              </>
+            )}
+            date={new Date('10/05/2021')}
+          />{' '}
+          com os produtos exclusivos da He4rtConf2021!
+        </Title>
+      </Alert>
       <Component {...pageProps} />
     </ThemeProvider>
   )

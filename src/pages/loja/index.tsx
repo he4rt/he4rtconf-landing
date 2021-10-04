@@ -9,6 +9,8 @@ import Text from 'components/Text'
 import ItemKit, { ItemKitProps } from 'components/ItemKit'
 import Products, { ProductProps } from 'components/Products'
 import Container from 'components/Container'
+import Countdown from 'react-countdown'
+import { AiFillClockCircle } from 'react-icons/ai'
 
 const Warning = styled(Text)`
   ${({ theme }) => css`
@@ -29,8 +31,14 @@ const Grid = styled.div`
   `}
 `
 
+const Flex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
 const TitleWithMargin = styled(Title)`
-  margin-bottom: 3rem;
+  margin-bottom: 4.5rem;
 `
 
 const Divider = styled.div`
@@ -185,6 +193,7 @@ const Store = () => {
         >
           Loja
         </TitleWithMargin>
+
         <Grid>
           {items.map((item) => (
             <ItemKit key={`item-kit-${item.name}`} {...item} />
