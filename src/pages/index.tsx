@@ -11,6 +11,8 @@ import FaqSection from 'components/FaqSection'
 import Timeline, { ScheduleProps } from 'components/Timeline'
 import Highlight from 'components/Highlight'
 import { axiosClient } from 'services/axios'
+import Countdown from 'react-countdown'
+import styled from 'styled-components'
 
 type HomeProps = {
   errorMessage?: string
@@ -19,6 +21,11 @@ type HomeProps = {
   talks: ScheduleProps[]
   referral?: string
 }
+
+const Alert = styled.div`
+  background: red;
+  width: 100%;
+`
 
 const Home = ({
   errorMessage,
