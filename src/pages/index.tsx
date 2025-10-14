@@ -13,6 +13,7 @@ import Highlight from 'components/Highlight'
 import { axiosClient } from 'services/axios'
 import Countdown from 'react-countdown'
 import styled from 'styled-components'
+import { partners, talks, speakers } from 'data'
 
 type HomeProps = {
   errorMessage?: string
@@ -91,19 +92,12 @@ const Home = ({
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const axios = await axiosClient(ctx)
-  const speakersRes = await axios.get('/speakers')
-  const partnersRes = await axios.get('/sponsors')
-  const talksRes = await axios.get('/talks')
-
-  console.log(talksRes.data)
-
   if (ctx.query.error) {
     return {
       props: {
-        speakers: speakersRes.data.data,
-        partners: partnersRes.data,
-        talks: talksRes.data,
+        speakers: speakers,
+        partners: partners,
+        talks: talks,
         errorMessage: ctx.query.error
       }
     }
@@ -112,9 +106,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   if (ctx.query.referral) {
     return {
       props: {
-        speakers: speakersRes.data.data,
-        partners: partnersRes.data,
-        talks: talksRes.data,
+        speakers: speakers,
+        partners: partners,
+        talks: talks,
         referral: ctx.query.referral
       }
     }
@@ -122,9 +116,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      speakers: speakersRes.data.data,
-      partners: partnersRes.data,
-      talks: talksRes.data
+      speakers: speakers,
+      partners: partners,
+      talks: talks
     }
   }
 }
