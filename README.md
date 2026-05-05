@@ -1,3 +1,10 @@
+> [!WARNING]
+> **Este projeto está descontinuado e arquivado.**
+>
+> A landing da He4rt foi movida para [`he4rt/heartdevs.com`](https://github.com/he4rt/heartdevs.com). Este repositório é mantido apenas para referência histórica e não receberá mais atualizações.
+
+---
+
 - 1. Introdução
 Introdução sobre o evento e a data do evento
 
